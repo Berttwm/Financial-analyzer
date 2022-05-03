@@ -7,6 +7,7 @@
 
 #include <algorithm>
 #include <exception>
+#include <fstream>
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -23,7 +24,14 @@ public:
 
     // Pull all 3 statements (income_stmt, balance_sheet, cash_flow)
     void pull_stmt_annual();
+    void read_stmt_annual_from_files(); // Used as a testing method when reading the json files from ../files/ instead of pulling from api endpoint
+    void parse_json();
 private:
+
+    const char* inc_stmt_json_cstr;
+    const char* bal_sheet_json_cstr;
+    const char* cash_flow_json_cstr;
+
 
     std::string base_site = "https://financialmodelingprep.com/";
     std::string api_key = "65a3fae3b56225e0caf11e3c9ccbcccf";

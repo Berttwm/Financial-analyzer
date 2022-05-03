@@ -9,8 +9,6 @@ int main()
     try
     {
         Puller* puller_tsla = new Puller("TSLA");
-        puller_tsla->pull_stmt_annual();
-
     }
     catch (...)
     {
