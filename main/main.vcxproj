@@ -167,12 +167,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BalanceSheet.cpp" />
+    <ClCompile Include="CashFlow.cpp" />
+    <ClCompile Include="IncomeStatement.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Puller.cpp" />
+    <ClCompile Include="Stock.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Header\BalanceSheet.h" />
+    <ClInclude Include="..\Header\CashFlow.h" />
+    <ClInclude Include="..\Header\IncomeStatement.h" />
     <ClInclude Include="..\Header\Interval.h" />
     <ClInclude Include="..\Header\Puller.h" />
+    <ClInclude Include="..\Header\Stock.h" />
+    <ClInclude Include="Statements.h" />
+    <ClInclude Include="StockUtils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
