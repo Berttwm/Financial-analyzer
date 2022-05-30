@@ -1,5 +1,20 @@
 #include "../Header/Puller.H"
 
+/* Getter Methods */
+rapidjson::Document* Puller::get_d_inc_stmt()
+{
+    return this->d_inc_stmt;
+}
+rapidjson::Document* Puller::get_d_bal_sheet()
+{
+    return this->d_bal_sheet;
+}
+rapidjson::Document* Puller::get_d_cash_flow()
+{
+    return this->d_cash_flow;
+}
+
+
 Puller::Puller(std::string ticker)
     :ticker() // TODO: Check valid ticker
 {
@@ -104,13 +119,12 @@ void Puller::read_stmt_annual_from_files()
 
 void Puller::parse_json()
 {
-    //std::cout << inc_stmt_json_cstr << std::endl;
-
-    rapidjson::Document d_inc_stmt;
-    //std::cout << inc_stmt_json_cstr << std::endl;
-    //d_inc_stmt.Parse(inc_stmt_json_cstr);
-    if (d_inc_stmt.Parse<0>(inc_stmt_json_str.c_str()).HasParseError()) throw std::exception("Unable to parse message");
-    std::string test_str = d_inc_stmt[0]["symbol"].GetString();
-    std::cout << "test string = " << test_str << std::endl;
+    // std::cout << inc_stmt_json_str << std::endl;
+    // d_inc_stmt.Parse(inc_stmt_json_cstr);
+    if (this->d_inc_stmt->Parse<0>(inc_stmt_json_str.c_str()).HasParseError()) throw std::exception("[*ERROR] Unable to parse income statement");
+    if (this->d_bal_sheet->Parse<0>(bal_sheet_json_str.c_str()).HasParseError()) throw std::exception("[*ERROR] Unable to parse balance sheet");
+    if (this->d_cash_flow->Parse<0>(cash_flow_json_str.c_str()).HasParseError()) throw std::exception("[*ERROR] Unable to parse cash flow");
+    //std::string test_str = d_inc_stmt[0]["symbol"].GetString();
+    //std::cout << "test string = " << test_str << std::endl;
     std::cout << "[*LOG] Successfully Parsed Json" << std::endl;
 }
