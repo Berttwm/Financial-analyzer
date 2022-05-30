@@ -69,9 +69,9 @@ void Puller::pull_stmt_annual()
     bal_sheet_file.close();
     cash_flow_file.close();
 
-    this->inc_stmt_json_cstr = resp_inc_stmt.text.c_str();
-    this->bal_sheet_json_cstr = resp_bal_sheet.text.c_str();
-    this->cash_flow_json_cstr = resp_cash_flow.text.c_str();
+    this->inc_stmt_json_str = resp_inc_stmt.text;
+    this->bal_sheet_json_str = resp_bal_sheet.text;
+    this->cash_flow_json_str = resp_cash_flow.text;
 
     std::cout << "[*LOG] Successfully pulled income statement, balance sheet statement, and cash flow statement" << std::endl;
 }
@@ -94,9 +94,9 @@ void Puller::read_stmt_annual_from_files()
     bal_sheet_file.close();
     cash_flow_file.close();
 
-    inc_stmt_json_cstr = inc_stmt_ss.str().c_str();
-    bal_sheet_json_cstr = bal_sheet_ss.str().c_str();
-    cash_flow_json_cstr = cash_flow_ss.str().c_str();
+    inc_stmt_json_str = inc_stmt_ss.str();
+    cash_flow_json_str = bal_sheet_ss.str();
+    cash_flow_json_str = cash_flow_ss.str();
 
     std::cout << "[*LOG] Successfully read statements from files..." << std::endl;
 
@@ -107,9 +107,10 @@ void Puller::parse_json()
     //std::cout << inc_stmt_json_cstr << std::endl;
 
     rapidjson::Document d_inc_stmt;
-    d_inc_stmt.Parse(inc_stmt_json_cstr);
-
-    //std::cout << "Symbol used is: " << d_inc_stmt[0]["symbol"].GetString() << std::endl;
-
+    //std::cout << inc_stmt_json_cstr << std::endl;
+    //d_inc_stmt.Parse(inc_stmt_json_cstr);
+    if (d_inc_stmt.Parse<0>(inc_stmt_json_str.c_str()).HasParseError()) throw std::exception("Unable to parse message");
+    std::string test_str = d_inc_stmt[0]["symbol"].GetString();
+    std::cout << "test string = " << test_str << std::endl;
     std::cout << "[*LOG] Successfully Parsed Json" << std::endl;
 }
