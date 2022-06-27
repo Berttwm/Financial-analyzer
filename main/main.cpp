@@ -17,6 +17,8 @@ int main()
     {
         throw;
     }
+    rapidjson::Document& d_inc_stmt = puller_tsla->get_d_inc_stmt();
+
     Stock* tsla_stock = new Stock(puller_tsla->get_d_inc_stmt(), puller_tsla->get_d_bal_sheet(), puller_tsla->get_d_cash_flow());
 
 

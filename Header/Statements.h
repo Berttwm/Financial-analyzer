@@ -1,5 +1,8 @@
 #pragma once
-//#include "StockUtils.h"
+
+#include "StockUtils.h"
+
+#include "rapidjson/document.h"
 /* Statements Class 
 * Abstract class to support IncomeStatement, BalanceSheet and CashFlow class
 */
