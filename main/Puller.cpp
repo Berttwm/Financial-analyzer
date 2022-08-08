@@ -1,15 +1,15 @@
 #include "../Header/Puller.H"
 
 /* Getter Methods */
-rapidjson::Document* Puller::get_d_inc_stmt()
+rapidjson::Document& Puller::get_d_inc_stmt()
 {
     return this->d_inc_stmt;
 }
-rapidjson::Document* Puller::get_d_bal_sheet()
+rapidjson::Document& Puller::get_d_bal_sheet()
 {
     return this->d_bal_sheet;
 }
-rapidjson::Document* Puller::get_d_cash_flow()
+rapidjson::Document& Puller::get_d_cash_flow()
 {
     return this->d_cash_flow;
 }
@@ -94,23 +94,22 @@ void Puller::pull_stmt_annual()
 void Puller::read_stmt_annual_from_files()
 {
     std::ifstream inc_stmt_file("../files/inc_stmt.json");
-    std::ifstream bal_sheet_file("../files/bal_sheet.json");
-    std::ifstream cash_flow_file("../files/cash_flow.json");
-
     std::stringstream inc_stmt_ss;
-    std::stringstream bal_sheet_ss;
-    std::stringstream cash_flow_ss;
-
     inc_stmt_ss << inc_stmt_file.rdbuf();
-    bal_sheet_ss << bal_sheet_file.rdbuf();
-    cash_flow_ss << cash_flow_file.rdbuf();
-
     inc_stmt_file.close();
-    bal_sheet_file.close();
-    cash_flow_file.close();
-
     inc_stmt_json_str = inc_stmt_ss.str();
-    cash_flow_json_str = bal_sheet_ss.str();
+
+
+    std::ifstream bal_sheet_file("../files/bal_sheet.json");
+    std::stringstream bal_sheet_ss;
+    bal_sheet_ss << bal_sheet_file.rdbuf();
+    bal_sheet_file.close();
+    bal_sheet_json_str = bal_sheet_ss.str();
+
+    std::ifstream cash_flow_file("../files/cash_flow.json");
+    std::stringstream cash_flow_ss;
+    cash_flow_ss << cash_flow_file.rdbuf();
+    cash_flow_file.close();
     cash_flow_json_str = cash_flow_ss.str();
 
     std::cout << "[*LOG] Successfully read statements from files..." << std::endl;
@@ -119,12 +118,23 @@ void Puller::read_stmt_annual_from_files()
 
 void Puller::parse_json()
 {
-    // std::cout << inc_stmt_json_str << std::endl;
+     //std::cout << bal_sheet_json_str << std::endl;
     // d_inc_stmt.Parse(inc_stmt_json_cstr);
-    if (this->d_inc_stmt->Parse<0>(inc_stmt_json_str.c_str()).HasParseError()) throw std::exception("[*ERROR] Unable to parse income statement");
-    if (this->d_bal_sheet->Parse<0>(bal_sheet_json_str.c_str()).HasParseError()) throw std::exception("[*ERROR] Unable to parse balance sheet");
-    if (this->d_cash_flow->Parse<0>(cash_flow_json_str.c_str()).HasParseError()) throw std::exception("[*ERROR] Unable to parse cash flow");
-    //std::string test_str = d_inc_stmt[0]["symbol"].GetString();
-    //std::cout << "test string = " << test_str << std::endl;
+    //std::cout << inc_stmt_json_str << std::endl;
+    //d_inc_stmt = new rapidjson::Document();
+    if (this->d_inc_stmt.Parse<0>(inc_stmt_json_str.c_str()).HasParseError()) throw std::exception("[*ERROR] Unable to parse income statement");
+    if (this->d_bal_sheet.Parse<0>(bal_sheet_json_str.c_str()).HasParseError()) throw std::exception("[*ERROR] Unable to parse balance sheet");
+    if (this->d_cash_flow.Parse<0>(cash_flow_json_str.c_str()).HasParseError()) throw std::exception("[*ERROR] Unable to parse cash flow");
+    
+    // Test print method to play around with json parser - Example to play around with
+    //      d_inc_stmt[0] = latest year, d_inc_stmt[1] = second latest year
+    //      d_inc_stmt[0]["symbol"] = income statement latest year "symbol" 
+    std::string test_str_inc_stmt = d_inc_stmt[0]["symbol"].GetString();
+    std::string test_str_bal_sheet = d_inc_stmt[0]["symbol"].GetString();
+    std::string test_str_cash_flow = d_inc_stmt[0]["symbol"].GetString();
+    std::cout << "test string for inc stmt = " << test_str_inc_stmt << std::endl;
+    std::cout << "test string for bal sheet = " << test_str_inc_stmt << std::endl;
+    std::cout << "test string for cash flow = " << test_str_inc_stmt << std::endl;
+
     std::cout << "[*LOG] Successfully Parsed Json" << std::endl;
 }

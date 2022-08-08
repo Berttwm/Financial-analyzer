@@ -56,7 +56,7 @@
     <ClInclude Include="StockUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Statements.h">
+    <ClInclude Include="..\Header\Statements.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

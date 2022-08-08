@@ -9,7 +9,7 @@
 class Stock
 {
 public:
-	Stock(rapidjson::Document* d_inc_stmt, rapidjson::Document* d_bal_sheet, rapidjson::Document* d_cash_flow); // Try to initialize the 3 Objects here
+	Stock(rapidjson::Document& d_inc_stmt, rapidjson::Document& d_bal_sheet, rapidjson::Document& d_cash_flow); // Try to initialize the 3 Objects here
 
 private:
 	int age;

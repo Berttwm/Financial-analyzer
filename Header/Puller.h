@@ -27,17 +27,18 @@ public:
     void read_stmt_annual_from_files(); // Used as a testing method when reading the json files from ../files/ instead of pulling from api endpoint
     void parse_json();
 
-    rapidjson::Document* get_d_inc_stmt();
-    rapidjson::Document* get_d_bal_sheet();
-    rapidjson::Document* get_d_cash_flow();
+    rapidjson::Document& get_d_inc_stmt();
+    rapidjson::Document& get_d_bal_sheet();
+    rapidjson::Document& get_d_cash_flow();
+
 private:
     std::string inc_stmt_json_str;
     std::string bal_sheet_json_str;
     std::string cash_flow_json_str;
 
-    rapidjson::Document* d_inc_stmt;
-    rapidjson::Document* d_bal_sheet;
-    rapidjson::Document* d_cash_flow;
+    rapidjson::Document d_inc_stmt;
+    rapidjson::Document d_bal_sheet;
+    rapidjson::Document d_cash_flow;
 
 
     std::string base_site = "https://financialmodelingprep.com/";
