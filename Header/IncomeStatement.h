@@ -7,6 +7,6 @@ private:
 
 public:
 	IncomeStatement(rapidjson::Document& d_inc_stmt);
-	void addToMap(IncomeStatementMetrics metric, std::string value);
+	void addToMap(IncomeStatementMetrics metric, std::string);
 
 };
