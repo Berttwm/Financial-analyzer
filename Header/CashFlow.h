@@ -1,10 +1,10 @@
 #pragma once
 #include "Statements.h"
 
-class CashFlow : public Statements<IncomeStatementMetrics>
+class CashFlow : public Statements<CashFlowMetrics>
 {
 private:
 public:
 	CashFlow(rapidjson::Document& d_cash_flow);
-	void addToMap(IncomeStatementMetrics metric, std::string value);
+	void addToMap(CashFlowMetrics metric, std::string);
 };
