@@ -50,11 +50,15 @@ IncomeStatement::IncomeStatement(rapidjson::Document& d_inc_stmt)
 	}
 
 	// print test
-	//for (int i = 0; i < d_inc_stmt.GetStringLength(); i++) {
-		//std::cout << "INCOME STATEMENT TEST = " << this->metrics_yearly_map.at(IncomeStatementMetrics::eps).at(i) << std::endl;
-
-	//}
-
+	for (auto& it : this->metrics_yearly_map)
+	{
+		std::cout << "IncomeStatementMetrics::" << this->statement_to_string_vect[static_cast<int>(it.first)] << " :\t";
+		for (auto &x : it.second)
+		{
+			std::cout << x << ",";
+		}
+		std::cout << std::endl;
+	}
 }
 
 

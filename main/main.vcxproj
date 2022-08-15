@@ -186,7 +186,7 @@
     <ClInclude Include="..\Header\Puller.h" />
     <ClInclude Include="..\Header\Statements.h" />
     <ClInclude Include="..\Header\Stock.h" />
-    <ClInclude Include="StockUtils.h" />
+    <ClInclude Include="..\Header\StockUtils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

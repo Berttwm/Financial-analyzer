@@ -60,6 +60,17 @@ BalanceSheet::BalanceSheet(rapidjson::Document& d_bal_sheet)
 		addToMap(BalanceSheetMetrics::finalLink, d_bal_sheet[i]["finalLink"].GetString());
 		//std::cout << "END" << std::endl;
 	}
+
+	// print test
+	for (auto& it : this->metrics_yearly_map)
+	{
+		std::cout << "BalanceSheetMetrics::" << this->statement_to_string_vect[static_cast<int>(it.first)] << " :\t";
+		for (auto& x : it.second)
+		{
+			std::cout << x << ",";
+		}
+		std::cout << std::endl;
+	}
 }
 void BalanceSheet::addToMap(BalanceSheetMetrics metric, std::string value)
 {

@@ -46,6 +46,17 @@ CashFlow::CashFlow(rapidjson::Document& d_cash_flow)
 		addToMap(CashFlowMetrics::finalLink, d_cash_flow[i]["finalLink"].GetString());
 		//std::cout << "END" << std::endl;
 	}
+
+	// print test
+	for (auto& it : this->metrics_yearly_map)
+	{
+		std::cout << "CashFlowMetrics::" << this->statement_to_string_vect[static_cast<int>(it.first)] << " :\t";
+		for (auto& x : it.second)
+		{
+			std::cout << x << ",";
+		}
+		std::cout << std::endl;
+	}
 }
 void CashFlow::addToMap(CashFlowMetrics metric, std::string value)
 {

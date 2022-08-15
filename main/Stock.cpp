@@ -6,7 +6,6 @@ Stock::Stock(rapidjson::Document& d_inc_stmt, rapidjson::Document& d_bal_sheet, 
 	this->IS = new IncomeStatement(d_inc_stmt);
 	// Step 2: instantiate BS
 	this->BS = new BalanceSheet(d_bal_sheet);
-
 	// Step 3: instantiate CF
 	this->CF = new CashFlow(d_cash_flow);
 

@@ -22,8 +22,8 @@ protected:
 	*	metrics_yearly_map["grossProfit"][2] gives you the latest value for "grossProfit" for 2 years prior
 	*/
 	std::unordered_map<T, std::vector<std::string>> metrics_yearly_map;
+
 public:
 	// push back value to metrics_yearly_map assigned vector
 	virtual void addToMap(T metric, std::string) = 0;
-
 };

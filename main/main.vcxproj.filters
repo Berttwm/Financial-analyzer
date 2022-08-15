@@ -53,10 +53,10 @@
     <ClInclude Include="..\Header\CashFlow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StockUtils.h">
+    <ClInclude Include="..\Header\Statements.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Header\Statements.h">
+    <ClInclude Include="..\Header\StockUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
