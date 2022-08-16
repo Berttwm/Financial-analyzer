@@ -176,6 +176,7 @@
     <ClCompile Include="IncomeStatement.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Puller.cpp" />
+    <ClCompile Include="Scorer.cpp" />
     <ClCompile Include="Stock.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -184,6 +185,8 @@
     <ClInclude Include="..\Header\IncomeStatement.h" />
     <ClInclude Include="..\Header\Interval.h" />
     <ClInclude Include="..\Header\Puller.h" />
+    <ClInclude Include="..\Header\Scorer.h" />
+    <ClInclude Include="..\Header\ScorerUtils.h" />
     <ClInclude Include="..\Header\Statements.h" />
     <ClInclude Include="..\Header\Stock.h" />
     <ClInclude Include="..\Header\StockUtils.h" />

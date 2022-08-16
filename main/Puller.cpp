@@ -16,11 +16,10 @@ rapidjson::Document& Puller::get_d_cash_flow()
 
 
 Puller::Puller(std::string ticker)
-    :ticker() // TODO: Check valid ticker
+    :ticker(ticker) // TODO: Check valid ticker
 {
     /* Step1: Upper case ticker before storage */
     std::transform(ticker.begin(), ticker.end(), ticker.begin(), ::toupper);
-    this->ticker = ticker;
     /* Step 2: Pull statements from API Endpoints (For test, just read from json) */
     // Actual: Pull statements from API endpoint
     // this->pull_stmt_annual();

@@ -1,0 +1,86 @@
+Income Sheets: 
+
+1) Gross Profit Margin: 30% good
+2) Operating Expenses:  consistency between years, above 100% (expense/profit) and wildly fluctuation may indicate lost of profit
+3) Selling General and Admin: 30% of gross profit is very good, consistency is more important should never be above 100
+4) RnD: If the lion share goes to RnD, they need to be consistently innovating to be at the top and it may not be durable in bad times (intel/amd)
+5) Depreciation: Wear and tear of machinery. : 5-10% of gross profit
+
+6) Interest Expense: How much interest cost (banks generally positive, retail negative). Cost for loans etc. Competitive companies pay below 15% Interest Expense over operating cost. 
+7) Gain or Loss: Money earned from sale of assets (like property) - NA
+8) Net Earnings - after all expenses have been deducted from company revenue. (Historical upward trend, not necessarily year on year) Opersting profit is a subset of net earnings 
+9) Higher percent (net earnings/total revenue) than competitors - >20% consistently very good, under 10% consistently very bad
+10) Sales > 700M
+11) No negative earnings for 10 years
+12) At least 2.9% earnings growth every year
+
+EPS - Amount earned/total shares - EPS that tends upwards for 10 years (Usually company with erractic EPS is in too competitive field)
+
+=========================================================
+Balanced Sheets
+1) Assets, 2) Liabilities
+
+(Asset - Liability = net worth/shareholder equity)
+Current Assets (cash equivalent, can be liquidated within a year) - 
+
+Assets:
+1) Cash And Cash Equivalent- low cash high debt == no durability. Look at past 7 years of balance sheets, this will reveal if cash was generated in a one time event. If lots of debt, not good company.
+2) Total Inventory - Consistently rising, if fast rise and fast drop implies field they are competing in is too competitive
+3) Total Receivables, Net (how much other companies owe, cash does not immd transact on sale) 
+	- low net receivables to gross sales compared to competitors consistently is good. Company does not need to offer flexible payment options and people would still purchase.
+4) Prepaid Expenses/Other Expenses (goods your company is waiting to acquire/be delivered to) - NA
+5) Total current assets 
+	- Current Assets/Current Liabilities (current ratio = 1.2-2.0, graham says > 2) is the sweet spot. (tho most current companies are below 1) not effective gauge of competitive durability.
+6) Property/Plant/Equipment (Companies that have to constantly update their manufacturing facilities to try to stay competitive) 
+	- Cost as a proportion of total debt (or even earning has) has to be relatively low. 
+	= If it takes 10 years to pay off current day equipment debt, not worth. Consistent increments also means need to keep upgrading
+7) Goodwill (purchase price - (net sum of assets and liabilities, incl intangibles like IP)) 
+	- increasing goodwill over years imply more acquisitions, can possibly cross refer if the acquisitions are of good companies
+8) Intangibles assets (no physical attribute, can’t be touched) 
+	- internally developed intangibles is not reflected on balance sheets, if you know the company has an increased in assets due to intangibles, consider it
+9) Long term assets (is at cost price, cannot reflect appreciation) 
+	- probably cross refer with actual acquisitions if they have appreciated
+10)Total Assets (Total current + long term) 
+	- Use net earnings / total assets for efficiency of assets in cash generating. Must cross refer with capital, high assets negates low efficiency, but low assets and high efficiency means it is still a penetrable field.
+11) Cheap assets: Market Cap < (Assets - Liabilities) * 1.5
+
+Liabilities:
+1) Current Liabilities (money owe within current year)
+2) Accounts Payable (Money owed to vendors for purchases incurred)
+3) Accrued Expense (Incurred but yet to be paid for, tax wages rent)
+4) Short term debt (Money owed by the corporation and due within the year) 
+	- bad in high interest rate environment, good in short term bad in long term. If short term debt exceeds long term debt, company is looking to earn more in liquid cash (Wells Fargo - 57c of short term debt for every long term debt)
+5) Long term debt due (long term debt that have to be paid off in current year) 
+	- Generally companies should require little to no long term debt. If sudden long term debt due, check horizon, too much long term debt due will lower price for stocks to buy.
+6) Total Current Assets/Total Current Liabilities (liquidity of company, higher imply higher liquidity, greater ability to pay off current liabilities) 
+	- should be above 1 for companies w weaker assets, strong companies doesn’t matter.
+7) Long term debt (due more than a year later)
+	- little to no long term debt over 10 years imply strong in its field, in any given year, should have sufficient earnings to pay back long term debt in 3/4 years (even lower is better)
+8) Deferred income tax (due not yet paid taxes)
+9) Minority Interest - value not belonging to this balance sheet (when the company owns above 80% or more of another company) of the acquired company.  
+	(i.e owning 90% of company XYZ means you put 100% of XYZ on your balance sheet and 10% of it in minority interest)
+10) Other liabilities - catch all for anything else
+11) Total liabilities (debt to equities ratio indicates whether the company is using debt or equity to finance its operations, durable company uses its earning power, others uses debt) 
+	- adjusted debt to equity ratio = (Total liabilities / Shareholders Equity + treasury stock), must be adjusted with share buybacks, bad companies have higher ratio, good companies below 0.8
+
+Total Shareholder Equity/net worth/book value (amt of money the shareholders/owners put in) - net worth = total assets - total liabilities. we can use this to calculate return on shareholders equity.
+1) Common stock (ownership in companies, board of directors decisions)- par value, not value sold to public
+2) Preferred Stock (no voting rights but right to fixed/adjustable dividend) - par value, not value sold to public - absence of pref stock in durable company
+3) Paid in Capital - value of the entire volume of (stock par price - stock sold price)
+4) Retained Earnings (Company net earnings retained to keep company growing) 
+	- the most important factor is the rate of growth of the retained earnings,(Over 5 years - 7.9%(coke) to 23% (Berkshire))
+5) Treasury Stock (Stocks company bought back w tbh r idea to reissue, companies w a lot money tend to buy back a lot of their stocks) 
+	- convert the negative number to positive and add to the shareholders equity before using net earnings to divide this new value. Reflects company return on equity minus financial engineering. Presence of this and stock buying back is good indicators.
+6) Shareholders Equity (Total assets - total liabilities) 
+	-  net earnings / shareholder equities = return on shareholder equity (gauge for how much the company generates for shareholders), durable companies above 15%, caveat, companies w negative value but consistent net earnings it can mean durable company.
+
+=========================================================
+cash flow statement (whether there is more cash coming in or out): breaks into 3
+1) Cash from Operating Activities (cash in from core business)
+2) Cash flow from investing operations 
+3) Total other investing
+4) Cash flow from financing (dividends activity, selling and buying of company stock)
+- Adding 1,2,3 gives you net change in cash
+
+Capital Expenditure (outlays of cash on assets permanent (longer than 1 year) in nature, different from current expenditure)- portion of earnings : capital expenditure must be low. Historically (over 10 years) using 50% or less of its annual net earnings, 25% is very good
+Issuance (Retirement) of Stock, Net (nets out selling and buying back of shares - year after year of buying back shares is good
