@@ -24,7 +24,7 @@ int main()
     Stock* tsla_stock = new Stock(puller_tsla->get_d_inc_stmt(), puller_tsla->get_d_bal_sheet(), puller_tsla->get_d_cash_flow());
 
     // Step 3: Pass `Stock` object to `Scorer` object
-    Scorer* scorer = new Scorer(tsla_stock);
+    Scorer* scorer = new Scorer(*tsla_stock);
 
     return 0;
 }
