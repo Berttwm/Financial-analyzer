@@ -1,6 +1,8 @@
 #include "../Header/IncomeStatement.h"
 #include <iostream>
 #include <string>
+#include <sstream>
+#include <iomanip>
 
 IncomeStatement::IncomeStatement(rapidjson::Document& d_inc_stmt)
 {
@@ -8,6 +10,9 @@ IncomeStatement::IncomeStatement(rapidjson::Document& d_inc_stmt)
 
 	for (int i = 0; i < d_inc_stmt.GetStringLength(); i++) {
 		//std::cout << "this is " << i << " " << d_inc_stmt[i]["date"].GetString() << std::endl;
+		// create stream to take in double variables and set to precision of 17
+		std::ostringstream streamObj;
+		streamObj << std::setprecision(17);
 		addToMap(IncomeStatementMetrics::date, d_inc_stmt[i]["date"].GetString());
 		addToMap(IncomeStatementMetrics::symbol, d_inc_stmt[i]["symbol"].GetString());
 		addToMap(IncomeStatementMetrics::reportedCurrency, d_inc_stmt[i]["reportedCurrency"].GetString());
@@ -19,7 +24,10 @@ IncomeStatement::IncomeStatement(rapidjson::Document& d_inc_stmt)
 		addToMap(IncomeStatementMetrics::revenue, std::to_string(d_inc_stmt[i]["revenue"].GetInt64()));
 		addToMap(IncomeStatementMetrics::costOfRevenue, std::to_string(d_inc_stmt[i]["costOfRevenue"].GetInt64()));
 		addToMap(IncomeStatementMetrics::grossProfit, std::to_string(d_inc_stmt[i]["grossProfit"].GetInt64()));
-		addToMap(IncomeStatementMetrics::grossProfitRatio, std::to_string(d_inc_stmt[i]["grossProfitRatio"].GetDouble()));
+		// change precision gross profit ratio
+		streamObj << d_inc_stmt[i]["grossProfitRatio"].GetDouble();
+		addToMap(IncomeStatementMetrics::grossProfitRatio, streamObj.str());
+		streamObj.str("");
 		addToMap(IncomeStatementMetrics::researchAndDevelopmentExpenses, std::to_string(d_inc_stmt[i]["researchAndDevelopmentExpenses"].GetInt64()));
 		addToMap(IncomeStatementMetrics::generalAndAdministrativeExpenses, std::to_string(d_inc_stmt[i]["generalAndAdministrativeExpenses"].GetInt64()));
 		addToMap(IncomeStatementMetrics::sellingAndMarketingExpenses, std::to_string(d_inc_stmt[i]["sellingAndMarketingExpenses"].GetInt64()));
@@ -31,15 +39,27 @@ IncomeStatement::IncomeStatement(rapidjson::Document& d_inc_stmt)
 		addToMap(IncomeStatementMetrics::interestExpense, std::to_string(d_inc_stmt[i]["interestExpense"].GetInt64()));
 		addToMap(IncomeStatementMetrics::depreciationAndAmortization, std::to_string(d_inc_stmt[i]["depreciationAndAmortization"].GetInt64()));
 		addToMap(IncomeStatementMetrics::ebitda, std::to_string(d_inc_stmt[i]["ebitda"].GetInt64()));
-		addToMap(IncomeStatementMetrics::ebitdaratio, std::to_string(d_inc_stmt[i]["ebitdaratio"].GetDouble()));
+		// change precision ebita ratio
+		streamObj << d_inc_stmt[i]["ebitdaratio"].GetDouble();
+		addToMap(IncomeStatementMetrics::ebitdaratio, streamObj.str());
+		streamObj.str("");
 		addToMap(IncomeStatementMetrics::operatingIncome, std::to_string(d_inc_stmt[i]["operatingIncome"].GetInt64()));
-		addToMap(IncomeStatementMetrics::operatingIncomeRatio, std::to_string(d_inc_stmt[i]["operatingIncomeRatio"].GetDouble()));
+		// change precision operating income ratio
+		streamObj << d_inc_stmt[i]["operatingIncomeRatio"].GetDouble();
+		addToMap(IncomeStatementMetrics::operatingIncomeRatio, streamObj.str());
+		streamObj.str("");
 		addToMap(IncomeStatementMetrics::totalOtherIncomeExpensesNet, std::to_string(d_inc_stmt[i]["totalOtherIncomeExpensesNet"].GetInt64()));
 		addToMap(IncomeStatementMetrics::incomeBeforeTax, std::to_string(d_inc_stmt[i]["incomeBeforeTax"].GetInt64()));
-		addToMap(IncomeStatementMetrics::incomeBeforeTaxRatio, std::to_string(d_inc_stmt[i]["incomeBeforeTaxRatio"].GetDouble()));
+		// change precision income before tax ratio
+		streamObj << d_inc_stmt[i]["incomeBeforeTaxRatio"].GetDouble();
+		addToMap(IncomeStatementMetrics::incomeBeforeTaxRatio, streamObj.str());
+		streamObj.str("");
 		addToMap(IncomeStatementMetrics::incomeTaxExpense, std::to_string(d_inc_stmt[i]["incomeTaxExpense"].GetInt64()));
 		addToMap(IncomeStatementMetrics::netIncome, std::to_string(d_inc_stmt[i]["netIncome"].GetInt64()));
-		addToMap(IncomeStatementMetrics::netIncomeRatio, std::to_string(d_inc_stmt[i]["netIncomeRatio"].GetDouble()));
+		// change precision net income ratio
+		streamObj << d_inc_stmt[i]["netIncomeRatio"].GetDouble();
+		addToMap(IncomeStatementMetrics::netIncomeRatio, streamObj.str());
+		streamObj.str("");
 		addToMap(IncomeStatementMetrics::eps, std::to_string(d_inc_stmt[i]["eps"].GetDouble()));
 		addToMap(IncomeStatementMetrics::epsdiluted, std::to_string(d_inc_stmt[i]["epsdiluted"].GetDouble()));
 		addToMap(IncomeStatementMetrics::weightedAverageShsOut, std::to_string(d_inc_stmt[i]["weightedAverageShsOut"].GetInt64()));
