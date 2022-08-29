@@ -5,8 +5,15 @@
 #include <vector>
 
 /* Stock Utils
-*
+* Utility class to support Stock and Metric Classes
 */
+
+enum class SheetType
+{
+	IncomeStatement,
+	BalanceSheet,
+	CashFlow
+};
 
 /* Income Statement Utils
 *
