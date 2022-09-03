@@ -1,5 +1,5 @@
 #pragma once
-/* ScorerUtils
+/* ScorerUtils - Utility class to support Scorer and Metric Classes
 * Helper class for scorer
 *	Single Year metrics measure only current year metrics
 *	Multi Year metrics measure for stated amount of years (usually 10) or for the number of readily available statements, whichever is less.
@@ -12,11 +12,27 @@
 // Metrics should either account for all categories, or simply HIGH/FAIL (pass/fail)
 enum class ScoringTier
 {
-	HIGH = 10,
-	MID = 7,
+	HIGH = 10, // Higher points if hit the best category
+	MED = 6,
 	LOW = 3,
 	FAIL = 0,
 };
+
+/* MetricYearType
+* Determines if the metric being processed shall be processed as a single, or multi year entity.
+*/
+enum class MetricYearType
+{
+	Single,
+	Multi
+};
+
+/* The following enum classes are simply for reference at this juncture. Meaning that they are not 
+* actively called in the code (i.e. we will not be using `SingleYearIncomeStmtMetrics::SGA`)
+* I intend to use the following table as a reference guide for an overview of the available methods
+* 
+* However, please utilize them if there is a way to integrate them for implementation of metric.
+*/
 
 /* Income statement score metrics */
 enum class SingleYearIncomeStmtMetrics{

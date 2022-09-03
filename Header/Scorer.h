@@ -3,6 +3,7 @@
 #include "ScorerUtils.h"
 #include "Stock.h"
 
+/* To take in a stock object and provide interface for scoring system */
 class Scorer
 {
 private:
@@ -14,23 +15,20 @@ private:
 	Stock& stock;
 	const int stock_data_years; // number of years of data available for the passed `Stock` object
 
-	// process a current year score metrics. 
-	void process(SingleYearIncomeStmtMetrics);
+	// variables
+	std::unordered_map<SheetType, int> SheetTypeScore = // Score of each SheetType, each starts from 0
+	{
+		{SheetType::IncomeStatement, 0},
+		{SheetType::BalanceSheet, 0},
+		{SheetType::CashFlow , 0}
+	};
 
-	// process a multi year score metrics for `num_years`, or maximum recorded duration (whichever is lower). 
-	void process(MultiYearIncomeStmtMetrics, const int num_years);
-
-	// process a current year score metrics. 
-	void process(SingleYearBalanceSheetMetrics);
-
-	// process a multi year score metrics for `num_years`, or maximum recorded duration (whichever is lower). 
-	void process(MultiYearBalanceSheetMetrics, const int num_years);
 
 	// process a current year score metrics. 
-	void process(SingleYearCashFlowMetrics);
+	void process();
 
 	// process a multi year score metrics for `num_years`, or maximum recorded duration (whichever is lower). 
-	void process(MultiYearCashFlowMetrics, const int num_years);
+	//void process(const int num_years);
 
 
 public:
