@@ -1,6 +1,6 @@
 #include "../Header/Scorer.h"
 
-Scorer::Scorer(Stock &stock)
+Scorer::Scorer(const Stock &stock)
 	: stock(stock),
 	stock_data_years(5) // TODO: Change this method
 {
