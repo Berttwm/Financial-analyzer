@@ -12,7 +12,7 @@ private:
 	int CURR_SCORE = 0; // initial score
 	
 	// Derived variables
-	Stock& stock;
+	const Stock& stock;
 	const int stock_data_years; // number of years of data available for the passed `Stock` object
 
 	// variables
@@ -32,6 +32,6 @@ private:
 
 
 public:
-	Scorer(Stock &stock);
+	Scorer(const Stock &stock);
 
 };
