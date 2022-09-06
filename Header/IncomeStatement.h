@@ -45,6 +45,7 @@ private:
 		"link",
 		"finalLink",
 	};
+	void convertDouble(IncomeStatementMetrics metric, double value);
 public:
 	IncomeStatement(rapidjson::Document& d_inc_stmt);
 	void addToMap(IncomeStatementMetrics metric, std::string);
