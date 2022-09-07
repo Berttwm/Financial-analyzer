@@ -50,4 +50,6 @@ private:
 public:
 	CashFlow(rapidjson::Document& d_cash_flow);
 	void addToMap(CashFlowMetrics metric, std::string);
+	void addToMap(CashFlowMetrics metric, std::int64_t);
+	void addToMap(CashFlowMetrics metric, double);
 };

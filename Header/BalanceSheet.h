@@ -4,6 +4,7 @@
 class BalanceSheet : public Statements<BalanceSheetMetrics>
 {
 private:
+	// Need to make sure vector ordering follows the enum metrics
 	std::vector<std::string> statement_to_string_vect =
 	{
 		"date",
@@ -64,4 +65,6 @@ private:
 public:
 	BalanceSheet(rapidjson::Document& d_bal_sheet);
 	void addToMap(BalanceSheetMetrics metric, std::string);
+	void addToMap(BalanceSheetMetrics metric, std::int64_t);
+	void addToMap(BalanceSheetMetrics metric, double);
 };
