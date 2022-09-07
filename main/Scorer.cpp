@@ -1,8 +1,7 @@
 #include "../Header/Scorer.h"
 
 Scorer::Scorer(const Stock &stock)
-	: stock(stock),
-	stock_data_years(5) // TODO: Change this method
+	: stock(stock)
 {
 
 }
@@ -10,6 +9,7 @@ Scorer::Scorer(const Stock &stock)
 void Scorer::process()
 {
 	// TODO: Implement recursive calling on Metric classes
+	GrossProfitMargin_SY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores);
 }
 
 //void Scorer::process(const int num_years)

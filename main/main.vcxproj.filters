@@ -42,7 +42,7 @@
     <ClCompile Include="Scorer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Metric\IS_SY_Debt.cpp">
+    <ClCompile Include="Metric\GrossProfitMargin_SY.cpp">
       <Filter>Source Files\Metric</Filter>
     </ClCompile>
   </ItemGroup>
@@ -77,10 +77,16 @@
     <ClInclude Include="..\Header\Scorer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Header\Metric.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\Header\Metric\GrossProfitMargin_SY.h">
+      <Filter>Header Files\Metric</Filter>
     </ClInclude>
-    <ClInclude Include="..\Header\Metric\IS_SY_Debt.h">
+    <ClInclude Include="..\Header\Metric\MetricSY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\MetricMY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\Metric.h">
       <Filter>Header Files\Metric</Filter>
     </ClInclude>
   </ItemGroup>

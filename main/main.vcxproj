@@ -175,7 +175,7 @@
     <ClCompile Include="CashFlow.cpp" />
     <ClCompile Include="IncomeStatement.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Metric\IS_SY_Debt.cpp" />
+    <ClCompile Include="Metric\GrossProfitMargin_SY.cpp" />
     <ClCompile Include="Puller.cpp" />
     <ClCompile Include="Scorer.cpp" />
     <ClCompile Include="Stock.cpp" />
@@ -185,8 +185,10 @@
     <ClInclude Include="..\Header\CashFlow.h" />
     <ClInclude Include="..\Header\IncomeStatement.h" />
     <ClInclude Include="..\Header\Interval.h" />
-    <ClInclude Include="..\Header\Metric.h" />
-    <ClInclude Include="..\Header\Metric\IS_SY_Debt.h" />
+    <ClInclude Include="..\Header\Metric\GrossProfitMargin_SY.h" />
+    <ClInclude Include="..\Header\Metric\Metric.h" />
+    <ClInclude Include="..\Header\Metric\MetricMY.h" />
+    <ClInclude Include="..\Header\Metric\MetricSY.h" />
     <ClInclude Include="..\Header\Puller.h" />
     <ClInclude Include="..\Header\Scorer.h" />
     <ClInclude Include="..\Header\ScorerUtils.h" />

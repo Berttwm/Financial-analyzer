@@ -3,26 +3,45 @@
 #include "ScorerUtils.h"
 #include "Stock.h"
 
+// Include statements for metrics to be scored
+#include "Metric/GrossProfitMargin_SY.h"
+
 /* To take in a stock object and provide interface for scoring system */
 class Scorer
 {
 private:
 	// Fixed variables
-	const int MAX_SCORE = 0; // TODO: Change Max Score
+	const int MAX_SCORE = 10; // TODO: Change Max Score
 	int CURR_SCORE = 0; // initial score
 	
 	// Derived variables
 	const Stock& stock;
-	const int stock_data_years; // number of years of data available for the passed `Stock` object
 
-	// variables
-	std::unordered_map<SheetType, int> SheetTypeScore = // Score of each SheetType, each starts from 0
+	// Scoring variables
+	std::unordered_map<CategoryType, int> CategoryScores = // Score of each CategoryType, each category starts from 0
 	{
-		{SheetType::IncomeStatement, 0},
-		{SheetType::BalanceSheet, 0},
-		{SheetType::CashFlow , 0}
+		{CategoryType::Single, 0},
+		{CategoryType::Multi, 0},
+		{CategoryType::IncomeStatement, 0},
+		{CategoryType::BalanceSheet, 0},
+		{CategoryType::CashFlow , 0}
 	};
-
+	std::unordered_map<MetricType, int> MetricScores = // Score of each SheetType, each starts from 0
+	{
+		{MetricType::GrossProfitMargin, 0},
+	};
+	std::unordered_map<CategoryType, int> MaxCategoryScores = // Max scores of each category. Incremented by 10 each time a category is added
+	{
+		{CategoryType::Single, 0},
+		{CategoryType::Multi, 0},
+		{CategoryType::IncomeStatement, 0},
+		{CategoryType::BalanceSheet, 0},
+		{CategoryType::CashFlow , 0}
+	};
+	std::unordered_map<MetricType, int> MaxMetricScores = // Max scores of each category. Incremented by 10 each time a category is added
+	{
+		{MetricType::GrossProfitMargin, 0},
+	};
 
 	// process a current year score metrics. 
 	void process();

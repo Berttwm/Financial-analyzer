@@ -17,6 +17,33 @@ enum class ScoringTier
 	LOW = 3,
 	FAIL = 0,
 };
+/* CategoryType
+* Determines the categories that can be scored and reported back to user.
+*/
+enum class CategoryType
+{
+	Single,
+	Multi,
+	IncomeStatement,
+	BalanceSheet,
+	CashFlow
+};
+
+/* MetricType
+* Determines the Metrics that are currently being tracked scored
+* Every new metric template added should be included inside
+*/
+enum class MetricType
+{
+	GrossProfitMargin,
+};
+
+/* The following enum classes are simply for reference at this juncture. Meaning that they are not 
+* actively called in the code (i.e. we will not be using `SingleYearIncomeStmtMetrics::SGA`)
+* I intend to use the following table as a reference guide for an overview of the available methods
+* 
+* However, please utilize them if there is a way to integrate them for implementation of metric.
+*/
 
 /* MetricYearType
 * Determines if the metric being processed shall be processed as a single, or multi year entity.
@@ -26,13 +53,6 @@ enum class MetricYearType
 	Single,
 	Multi
 };
-
-/* The following enum classes are simply for reference at this juncture. Meaning that they are not 
-* actively called in the code (i.e. we will not be using `SingleYearIncomeStmtMetrics::SGA`)
-* I intend to use the following table as a reference guide for an overview of the available methods
-* 
-* However, please utilize them if there is a way to integrate them for implementation of metric.
-*/
 
 /* Income statement score metrics */
 enum class SingleYearIncomeStmtMetrics{
