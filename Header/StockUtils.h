@@ -8,6 +8,9 @@
 * Utility class to support Stock and Metric Classes
 */
 
+/* SheetType 
+* Used by Scorer
+*/
 enum class SheetType
 {
 	IncomeStatement,

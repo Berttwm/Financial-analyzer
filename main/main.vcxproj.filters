@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Metric">
+      <UniqueIdentifier>{3330aa55-554c-4577-8fd7-ec5743c8a579}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Metric">
+      <UniqueIdentifier>{8d9ada03-7a5e-4f64-ba43-565cd43345f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -35,6 +41,9 @@
     </ClCompile>
     <ClCompile Include="Scorer.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Metric\IS_SY_Debt.cpp">
+      <Filter>Source Files\Metric</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +76,12 @@
     </ClInclude>
     <ClInclude Include="..\Header\Scorer.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\IS_SY_Debt.h">
+      <Filter>Header Files\Metric</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

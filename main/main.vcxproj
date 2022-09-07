@@ -92,7 +92,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <AdditionalOptions>-D_ITERATOR_DEBUG_LEVEL=0 %(AdditionalOptions)</AdditionalOptions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
@@ -114,7 +114,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <AdditionalOptions>-D_ITERATOR_DEBUG_LEVEL=0 %(AdditionalOptions)</AdditionalOptions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
@@ -136,7 +136,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <AdditionalOptions>-D_ITERATOR_DEBUG_LEVEL=0 %(AdditionalOptions)</AdditionalOptions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
@@ -158,7 +158,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <AdditionalOptions>-D_ITERATOR_DEBUG_LEVEL=0 %(AdditionalOptions)</AdditionalOptions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
@@ -175,6 +175,7 @@
     <ClCompile Include="CashFlow.cpp" />
     <ClCompile Include="IncomeStatement.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Metric\IS_SY_Debt.cpp" />
     <ClCompile Include="Puller.cpp" />
     <ClCompile Include="Scorer.cpp" />
     <ClCompile Include="Stock.cpp" />
@@ -184,6 +185,8 @@
     <ClInclude Include="..\Header\CashFlow.h" />
     <ClInclude Include="..\Header\IncomeStatement.h" />
     <ClInclude Include="..\Header\Interval.h" />
+    <ClInclude Include="..\Header\Metric.h" />
+    <ClInclude Include="..\Header\Metric\IS_SY_Debt.h" />
     <ClInclude Include="..\Header\Puller.h" />
     <ClInclude Include="..\Header\Scorer.h" />
     <ClInclude Include="..\Header\ScorerUtils.h" />
