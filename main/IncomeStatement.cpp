@@ -6,54 +6,24 @@
 
 IncomeStatement::IncomeStatement(rapidjson::Document& d_inc_stmt)
 {
-	//std::cout << "INCOME STATEMENT TEST = " << d_inc_stmt.GetStringLength() << std::endl;
-
 	for (int i = 0; i < d_inc_stmt.GetStringLength(); i++) {
-		//std::cout << "this is " << i << " " << d_inc_stmt[i]["date"].GetString() << std::endl;
-		addToMap(IncomeStatementMetrics::date, d_inc_stmt[i]["date"].GetString());
-		addToMap(IncomeStatementMetrics::symbol, d_inc_stmt[i]["symbol"].GetString());
-		addToMap(IncomeStatementMetrics::reportedCurrency, d_inc_stmt[i]["reportedCurrency"].GetString());
-		addToMap(IncomeStatementMetrics::cik, d_inc_stmt[i]["cik"].GetString());
-		addToMap(IncomeStatementMetrics::fillingDate, d_inc_stmt[i]["fillingDate"].GetString());
-		addToMap(IncomeStatementMetrics::acceptedDate, d_inc_stmt[i]["acceptedDate"].GetString());
-		addToMap(IncomeStatementMetrics::calendarYear, d_inc_stmt[i]["calendarYear"].GetString());
-		addToMap(IncomeStatementMetrics::period, d_inc_stmt[i]["period"].GetString());
-		addToMap(IncomeStatementMetrics::revenue, std::to_string(d_inc_stmt[i]["revenue"].GetInt64()));
-		addToMap(IncomeStatementMetrics::costOfRevenue, std::to_string(d_inc_stmt[i]["costOfRevenue"].GetInt64()));
-		addToMap(IncomeStatementMetrics::grossProfit, std::to_string(d_inc_stmt[i]["grossProfit"].GetInt64()));
-		// change precision gross profit ratio
-		convertDouble(IncomeStatementMetrics::grossProfitRatio, d_inc_stmt[i]["grossProfitRatio"].GetDouble());
-		addToMap(IncomeStatementMetrics::researchAndDevelopmentExpenses, std::to_string(d_inc_stmt[i]["researchAndDevelopmentExpenses"].GetInt64()));
-		addToMap(IncomeStatementMetrics::generalAndAdministrativeExpenses, std::to_string(d_inc_stmt[i]["generalAndAdministrativeExpenses"].GetInt64()));
-		addToMap(IncomeStatementMetrics::sellingAndMarketingExpenses, std::to_string(d_inc_stmt[i]["sellingAndMarketingExpenses"].GetInt64()));
-		addToMap(IncomeStatementMetrics::sellingGeneralAndAdministrativeExpenses, std::to_string(d_inc_stmt[i]["sellingGeneralAndAdministrativeExpenses"].GetInt64()));
-		addToMap(IncomeStatementMetrics::otherExpenses, std::to_string(d_inc_stmt[i]["otherExpenses"].GetInt64()));
-		addToMap(IncomeStatementMetrics::operatingExpenses, std::to_string(d_inc_stmt[i]["operatingExpenses"].GetInt64()));
-		addToMap(IncomeStatementMetrics::costAndExpenses, std::to_string(d_inc_stmt[i]["costAndExpenses"].GetInt64()));
-		addToMap(IncomeStatementMetrics::interestIncome, std::to_string(d_inc_stmt[i]["interestIncome"].GetInt64()));
-		addToMap(IncomeStatementMetrics::interestExpense, std::to_string(d_inc_stmt[i]["interestExpense"].GetInt64()));
-		addToMap(IncomeStatementMetrics::depreciationAndAmortization, std::to_string(d_inc_stmt[i]["depreciationAndAmortization"].GetInt64()));
-		addToMap(IncomeStatementMetrics::ebitda, std::to_string(d_inc_stmt[i]["ebitda"].GetInt64()));
-		// change precision ebita ratio
-		convertDouble(IncomeStatementMetrics::ebitdaratio, d_inc_stmt[i]["ebitdaratio"].GetDouble());
-		addToMap(IncomeStatementMetrics::operatingIncome, std::to_string(d_inc_stmt[i]["operatingIncome"].GetInt64()));
-		// change precision operating income ratio
-		convertDouble(IncomeStatementMetrics::operatingIncomeRatio, d_inc_stmt[i]["operatingIncomeRatio"].GetDouble());
-		addToMap(IncomeStatementMetrics::totalOtherIncomeExpensesNet, std::to_string(d_inc_stmt[i]["totalOtherIncomeExpensesNet"].GetInt64()));
-		addToMap(IncomeStatementMetrics::incomeBeforeTax, std::to_string(d_inc_stmt[i]["incomeBeforeTax"].GetInt64()));
-		// change precision income before tax ratio
-		convertDouble(IncomeStatementMetrics::incomeBeforeTaxRatio, d_inc_stmt[i]["incomeBeforeTaxRatio"].GetDouble());
-		addToMap(IncomeStatementMetrics::incomeTaxExpense, std::to_string(d_inc_stmt[i]["incomeTaxExpense"].GetInt64()));
-		addToMap(IncomeStatementMetrics::netIncome, std::to_string(d_inc_stmt[i]["netIncome"].GetInt64()));
-		// change precision net income ratio
-		convertDouble(IncomeStatementMetrics::netIncomeRatio, d_inc_stmt[i]["netIncomeRatio"].GetDouble());
-		addToMap(IncomeStatementMetrics::eps, std::to_string(d_inc_stmt[i]["eps"].GetDouble()));
-		addToMap(IncomeStatementMetrics::epsdiluted, std::to_string(d_inc_stmt[i]["epsdiluted"].GetDouble()));
-		addToMap(IncomeStatementMetrics::weightedAverageShsOut, std::to_string(d_inc_stmt[i]["weightedAverageShsOut"].GetInt64()));
-		addToMap(IncomeStatementMetrics::weightedAverageShsOutDil, std::to_string(d_inc_stmt[i]["weightedAverageShsOutDil"].GetInt64()));
-		addToMap(IncomeStatementMetrics::link, d_inc_stmt[i]["link"].GetString());
-		addToMap(IncomeStatementMetrics::finalLink, d_inc_stmt[i]["finalLink"].GetString());	
-		//std::cout << "END" << std::endl;
+		for (int j = 0; j < statement_to_string_vect.size(); j++) {
+			// Need to make sure stmt vector has the same ordering as income metrics enum
+			const char* metric = (statement_to_string_vect[j].c_str());
+			IncomeStatementMetrics enum_metric = IncomeStatementMetrics(j);
+			if (d_inc_stmt[i][metric].IsString()) {
+				addToMap(enum_metric, d_inc_stmt[i][metric].GetString());
+			}
+			else if (d_inc_stmt[i][metric].IsInt64()) {
+				addToMap(enum_metric, d_inc_stmt[i][metric].GetInt64());
+			}
+			else if (d_inc_stmt[i][metric].IsDouble()) {
+				addToMap(enum_metric, d_inc_stmt[i][metric].GetDouble());
+			}
+			else {
+				printf("Error: No such data type.");
+			}
+		}
 	}
 
 	// print test
@@ -68,7 +38,12 @@ IncomeStatement::IncomeStatement(rapidjson::Document& d_inc_stmt)
 	}
 }
 
-void IncomeStatement::convertDouble(IncomeStatementMetrics metric, double value)
+void IncomeStatement::addToMap(IncomeStatementMetrics metric, std::int64_t value)
+{
+	addToMap(metric, std::to_string(value));
+}
+
+void IncomeStatement::addToMap(IncomeStatementMetrics metric, double value)
 {
 	// create stream to take in double variables and set to precision of 17
 	std::ostringstream streamObj;
@@ -76,8 +51,8 @@ void IncomeStatement::convertDouble(IncomeStatementMetrics metric, double value)
 	streamObj << value;
 	addToMap(metric, streamObj.str());
 	streamObj.str("");
-}
 
+}
 
 void IncomeStatement::addToMap(IncomeStatementMetrics metric, std::string value)
 {

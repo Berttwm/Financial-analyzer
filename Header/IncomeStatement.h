@@ -4,6 +4,7 @@
 class IncomeStatement : public Statements<IncomeStatementMetrics>
 {
 private:
+	// Need to make sure vector ordering follows the enum class
 	std::vector<std::string> statement_to_string_vect=
 	{
 		"date",
@@ -45,9 +46,9 @@ private:
 		"link",
 		"finalLink",
 	};
-	void convertDouble(IncomeStatementMetrics metric, double value);
 public:
 	IncomeStatement(rapidjson::Document& d_inc_stmt);
 	void addToMap(IncomeStatementMetrics metric, std::string);
-
+	void addToMap(IncomeStatementMetrics metric, std::int64_t);
+	void addToMap(IncomeStatementMetrics metric, double);
 };
