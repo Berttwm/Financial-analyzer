@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+
 #include "../Stock.h"
 #include "../ScorerUtils.h"
 #include "../StockUtils.h"
@@ -11,7 +13,6 @@
 *		i.e. `Debt_SY` implies Debt_SingleYear
 * 
 */
-template<CategoryType... CT>
 class Metric
 {
 private:
@@ -30,10 +31,14 @@ private:
 	virtual bool highScore() = 0;
 	virtual bool medScore() = 0;
 	virtual bool lowScore() = 0;
-	virtual std::vector<CategoryType> updateCategoryScores() = 0;
-	virtual std::vector<MetricType> updateMetricScores() = 0;
+	//virtual std::vector<CategoryType> updateCategoryScores() = 0;
+	//virtual std::vector<MetricType> updateMetricScores() = 0;
+
+protected:
+	std::vector<CategoryType> categoryvector;
+	std::vector<MetricType> metricvector;
+
 public:
-	template<CategoryType... CT>
 	Metric(const Stock& stock, int& score, std::unordered_map<CategoryType, int>* CategoryScores, std::unordered_map<MetricType, int>* MetricScores, 
 				std::unordered_map<CategoryType, int>* MaxCategoryScores, std::unordered_map<MetricType, int>* MaxMetricScores)
 		:stock(stock),
@@ -43,7 +48,6 @@ public:
 		MaxCategoryScores(MaxCategoryScores),
 		MaxMetricScores(MaxMetricScores)
 	{
-		//this->updateCategoryScores();
 	};
 
 	int scoreMetric()
@@ -66,13 +70,13 @@ public:
 			this->score = static_cast<int>(ScoringTier::FAIL);
 		}
 		// Step 2: Update Category Types affected by this score
-		for (auto category : updateCategoryScores())
+		for (auto category : this->categoryvector)
 		{
-			(* this->CategoryScores)[category] += this->score;
+			(*this->CategoryScores)[category] += this->score;
 			(*this->MaxCategoryScores)[category] += static_cast<int>(ScoringTier::HIGH); // Each Category added increments category score by 10
 		}
 
-		for (auto metric : updateMetricScores())
+		for (auto metric : this->metricvector)
 		{
 			(*this->MetricScores)[metric] += this->score;
 			(*this->MaxMetricScores)[metric] += static_cast<int>(ScoringTier::HIGH); // Each Metric added increments metric score by 10

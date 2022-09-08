@@ -43,9 +43,6 @@ private:
 		{MetricType::GrossProfitMargin, 0},
 	};
 
-	// process a current year score metrics. 
-	void process();
-
 	// process a multi year score metrics for `num_years`, or maximum recorded duration (whichever is lower). 
 	//void process(const int num_years);
 
@@ -53,4 +50,17 @@ private:
 public:
 	Scorer(const Stock &stock);
 
+	// process a current year score metrics. 
+	void process();
+
+	// GETTERS:
+	int get_curr_score();
+
+	std::unordered_map<CategoryType, int> get_categoryscores();
+
+	std::unordered_map<MetricType, int> get_metricscores();
+
+	std::unordered_map<CategoryType, int> get_maxcategoryscores();
+
+	std::unordered_map<MetricType, int> get_maxmetricscores();
 };

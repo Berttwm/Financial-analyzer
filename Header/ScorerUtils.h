@@ -26,7 +26,7 @@ enum class CategoryType
 	Multi,
 	IncomeStatement,
 	BalanceSheet,
-	CashFlow
+	CashFlow,
 };
 
 /* MetricType

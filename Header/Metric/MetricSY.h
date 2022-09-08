@@ -11,21 +11,35 @@
 *
 */
 
-template<CategoryType... CT>
-class MetricSY : public Metric<CT ...>
+template<MetricType MT, CategoryType... CTs>
+class MetricSY : public Metric
 {
 private:
 	virtual bool highScore() = 0;
 	virtual bool medScore() = 0;
 	virtual bool lowScore() = 0;
-	virtual std::vector<CategoryType> updateCategoryScores() = 0;
-	virtual std::vector<MetricType> updateMetricScores() = 0;
+	template<CategoryType... CT>
+	void updateCategoryScores()
+	{
+		//cycle through template arguments and update category accordingly
+		//std::vector<CategoryType> vec = { CT... };
+		//for (CategoryType cat: vec) {
+			//std::cout << cat << std::endl;
+		//}
+		this->categoryvector = { CTs... };
+	};
+	template<MetricType MT>
+	void updateMetricScores()
+	{
+		this->metricvector = { MT };
+	};
 public:
 
 	MetricSY(const Stock& stock, int& score, std::unordered_map<CategoryType, int>* CategoryScores, std::unordered_map<MetricType, int>* MetricScores,
 		std::unordered_map<CategoryType, int>* MaxCategoryScores, std::unordered_map<MetricType, int>* MaxMetricScores)
 		: Metric(stock, score, CategoryScores, MetricScores, MaxCategoryScores, MaxMetricScores)
 	{
-
+		this->updateCategoryScores();
+		this->updateMetricScores<MT>();
 	};
 };

@@ -12,8 +12,8 @@
 *
 */
 
-template<CategoryType... CT>
-class MetricMY : public Metric<CT ...>
+template<MetricType MT, CategoryType... CTs>
+class MetricMY : public Metric
 {
 private:
 	int year_count; // Simply pass in desired testing period, constructor will decide actual number of years to use
@@ -21,8 +21,23 @@ private:
 	virtual bool highScore() = 0;
 	virtual bool medScore() = 0;
 	virtual bool lowScore() = 0;
-	virtual std::vector<CategoryType> updateCategoryScores() = 0;
-	virtual std::vector<MetricType> updateMetricScores() = 0;
+	template<CategoryType... CTs>
+	void updateCategoryScores()
+	{
+		// cycle through template arguments and update category accordingly
+		//std::vector<CategoryType> vec = { CT... };
+		//for (CategoryType cat: vec) {
+		//	std::cout << cat << std::endl;
+		//}
+		//return vec;
+		this->categoryvector = { CTs... };
+
+	};
+	template<MetricType MT>
+	void updateMetricScores()
+	{
+		this->metricvector = { MT };
+	};
 public:
 
 	MetricMY(const Stock& stock, int& score, std::unordered_map<CategoryType, int>* CategoryScores, std::unordered_map<MetricType, int>* MetricScores,
@@ -30,6 +45,7 @@ public:
 		: Metric(stock, score, CategoryScores, MetricScores, MaxCategoryScores, MaxMetricScores),
 		year_count(year_count) // TODO: Initialize this by comparing minimum of 1) number of years for testing period, number of years of data collected 
 	{
-
+		this->updateCategoryScores();
+		this->updateMetricScores<MT>();
 	};
 };
