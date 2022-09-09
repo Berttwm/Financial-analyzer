@@ -1,29 +1,29 @@
-# Financial-analyzer
-Trying to create the next lazy stock financials analyzer
+# **Val** v1.0  -The Financial-analyzer (value investing principles)
+Have you ever wanted an AI-Powered, data-driven, history-analyzed, quick-compute program to do your quantitative assessments? Insert your favorite stock tickers and **Val** will do all the hard work within a matter of seconds for you. 
+
+**Val** is currently undergoing production for *version 1.0* which comes equipped with an **1) overall** and **2) category** score per stock symbol you typed in.
+> Version 1.0 value investing metrics and scoring inspired by texts from: **Warren Buffet and the Interpretation of Financial Statements - David Clark and Mary Buffett**
+
+> Version 2.0 will use AI and historical data analysis to aide the analysis of companies. (Future developments await)
+
 
 # Iterations (Rough Plan)
+The following segment dictates the rough timeline this project will follow. The timeline is currently only concrete for version 1.0, and version 2.0 will be further discussed after at least iteration 2 of version 1.0 is complete.
 
-## Iteration 1 - CLI (TODO by June 31)
-1. [ ] Gather key metrics (Simple ratios) 
-2. [ ] Ensure working CLI
-3. [ ] Able to provide a simple scoring
+# Version 1.0 - Grading Simulator 
+## Iteration 1 - MVP (TODO by September 31)
+1. [ ] Gather few Metrics (3-5 metrics)
+2. [ ] Grading by total score and by categories
+3. [ ] Simple CLI - `./program [Stock Ticker]`
 
-## Iteration 2 - Complete (TODO by August 31)
-1. [ ] Gather all key metrics from (Warren Buffed Interpetation of Financial Statements)
-2. [ ] Comparisons with similar stocks
-3. [ ] Analysis of top scoring present companies
-4. [ ] Analysis of top scoring past companies
-5. [ ] Unit and integration Testing
+## Iteration 2 - Complete (TODO by October 31)
+1. [ ] Full Metrics
+2. [ ] CLI Full with options
+3. [ ] Partial Testing
 
 ## Iteration 3 - Graphical UI (TODO by September 31)
-1. [ ] Working graphical UI
-2. [ ] Completed analytics tool
-3. [ ] Predictive selection for stock
-4. [ ] Systems Testing
-5. [ ] User Guide/ Developer Guide
+1. [ ] Complete testing
+2. [ ] Multi platform integration
+3. [ ] Code Cleanup
 
-## Iteration 4 - Launch (TODO by December 31)
-1. [ ] Full graphical UI
-2. [ ] Full analytics suite
-3. [ ] Finished documentation/Wiki
-4. [ ] Repackage for launches
+# Version 2.0 - AI Powered Grading (To be discussed)
