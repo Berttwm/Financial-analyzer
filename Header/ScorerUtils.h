@@ -1,4 +1,6 @@
 #pragma once
+#include <unordered_map>
+#include <string>
 /* ScorerUtils - Utility class to support Scorer and Metric Classes
 * Helper class for scorer
 *	Single Year metrics measure only current year metrics
@@ -28,7 +30,17 @@ enum class CategoryType
 	BalanceSheet,
 	CashFlow,
 };
-
+/* CategoryTypeString 
+* Provides a string form of all available CategoryTypes
+*/
+const std::unordered_map<CategoryType, std::string> CategoryTypeString =
+{
+	{CategoryType::Single, "Single"},
+	{CategoryType::Multi, "Multi"},
+	{CategoryType::IncomeStatement, "IncomeStatement"},
+	{CategoryType::BalanceSheet, "BalanceSheet"},
+	{CategoryType::CashFlow, "CashFlow"}
+};
 /* MetricType
 * Determines the Metrics that are currently being tracked scored
 * Every new metric template added should be included inside
@@ -37,7 +49,13 @@ enum class MetricType
 {
 	GrossProfitMargin,
 };
-
+/* MetricTypeString
+* Provides a string form of all available CategoryTypes
+*/
+const std::unordered_map<MetricType, std::string> MetricTypeString =
+{
+	{MetricType::GrossProfitMargin, "GrossProfitMargin"}
+};
 /* The following enum classes are simply for reference at this juncture. Meaning that they are not 
 * actively called in the code (i.e. we will not be using `SingleYearIncomeStmtMetrics::SGA`)
 * I intend to use the following table as a reference guide for an overview of the available methods
