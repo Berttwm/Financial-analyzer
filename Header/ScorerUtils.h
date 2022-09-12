@@ -8,7 +8,8 @@
 *
 *	SocringTier provides a scoring grade for each metric (HIGH = 10, FAIL =0)
 * 
-*	Different scorer for each (Inc Stmt, Bal Sht, CF) to obtain separate scoring grades for each category 
+*	Multiple Metrics will include multiple CategoryTypes. This is intended to allow multiple category scoring for each metric 
+*	Single Metric will include single MetricType. This is intended to collate every metrics individual score.
 */
 
 // Metrics should either account for all categories, or simply HIGH/FAIL (pass/fail)

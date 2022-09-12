@@ -8,7 +8,7 @@
 *
 * The naming format of derived class should be `[MetricName]_[MetricYearType]`
 *	MetricYearType = [ SY, MY ] (Single Year, Multi Year)
-*		i.e. `Debt_SY` implies Debt_SingleYear
+*		i.e. `Debt_MY` implies Debt_MultiYear
 *
 */
 
@@ -24,14 +24,7 @@ private:
 	template<CategoryType... CTs>
 	void updateCategoryScores()
 	{
-		// cycle through template arguments and update category accordingly
-		//std::vector<CategoryType> vec = { CT... };
-		//for (CategoryType cat: vec) {
-		//	std::cout << cat << std::endl;
-		//}
-		//return vec;
 		this->categoryvector = { CTs... };
-
 	};
 	template<MetricType MT>
 	void updateMetricScores()

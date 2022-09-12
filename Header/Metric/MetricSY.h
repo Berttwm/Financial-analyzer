@@ -21,11 +21,6 @@ private:
 	template<CategoryType... CT>
 	void updateCategoryScores()
 	{
-		//cycle through template arguments and update category accordingly
-		//std::vector<CategoryType> vec = { CT... };
-		//for (CategoryType cat: vec) {
-			//std::cout << cat << std::endl;
-		//}
 		this->categoryvector = { CTs... };
 	};
 	template<MetricType MT>

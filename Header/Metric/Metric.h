@@ -31,10 +31,8 @@ private:
 	virtual bool highScore() = 0;
 	virtual bool medScore() = 0;
 	virtual bool lowScore() = 0;
-	//virtual std::vector<CategoryType> updateCategoryScores() = 0;
-	//virtual std::vector<MetricType> updateMetricScores() = 0;
 
-protected:
+protected: // category/metric vector placed in protected to allow child class access, yet prevent public classes access.
 	std::vector<CategoryType> categoryvector;
 	std::vector<MetricType> metricvector;
 
