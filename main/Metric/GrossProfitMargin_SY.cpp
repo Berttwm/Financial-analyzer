@@ -5,6 +5,7 @@ GrossProfitMargin_SY::GrossProfitMargin_SY(const Stock& stock, int& score, std::
 	: MetricSY(stock, score, CategoryScores, MetricScores, MaxCategoryScores, MaxMetricScores)
 {
 	this->scoreMetric();
+	stock.test_func();
 
 }
 
@@ -28,18 +29,3 @@ bool GrossProfitMargin_SY::lowScore()
 	//if(this->stock) ...
 	return true;
 }
-//template<CategoryType... CT>
-//std::vector<CategoryType> GrossProfitMargin_SY::updateCategoryScores()
-//{
-//	// cycle through template arguments and update category accordingly
-//	std::vector<CategoryType> vec = { CT... };
-//	//for (CategoryType cat: vec) {
-//	//	std::cout << cat << std::endl;
-//	//}
-//	return vec;
-//}
-//template<CategoryType... CT>
-//std::vector<MetricType> GrossProfitMargin_SY::updateMetricScores()
-//{
-//	// cycle through template arguments and update metrics accordingly
-//}

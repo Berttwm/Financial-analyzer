@@ -5,7 +5,7 @@ class IncomeStatement : public Statements<IncomeStatementMetrics>
 {
 private:
 	// Need to make sure vector ordering follows the enum class
-	std::vector<std::string> statement_to_string_vect=
+	std::vector<std::string> statement_to_string_vect =
 	{
 		"date",
 		"symbol",

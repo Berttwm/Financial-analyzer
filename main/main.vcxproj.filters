@@ -89,5 +89,35 @@
     <ClInclude Include="..\Header\Metric\Metric.h">
       <Filter>Header Files\Metric</Filter>
     </ClInclude>
+    <ClInclude Include="..\Header\Metric\SGA_SY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\OperatingExpenses_MY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\SGA_MY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\DebtRatio_SY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\DebtRatio_MY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\CashFlowOperatingActivites_SY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\CashFlowInvestingOperations_SY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\CashFlowOperatingActivites_MY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\CashFlowInvestingOperations_MY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\SellingAndBuyingStock_MY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -28,7 +28,7 @@ private:
 	};
 	std::unordered_map<MetricType, int> MetricScores = // Score of each SheetType, each starts from 0
 	{
-		{MetricType::GrossProfitMargin, 0},
+		{MetricType::GrossProfitMargin_SY, 0},
 	};
 	std::unordered_map<CategoryType, int> MaxCategoryScores = // Max scores of each category. Incremented by 10 each time a category is added
 	{
@@ -40,7 +40,20 @@ private:
 	};
 	std::unordered_map<MetricType, int> MaxMetricScores = // Max scores of each category. Incremented by 10 each time a category is added
 	{
-		{MetricType::GrossProfitMargin, 0},
+		// Income Statements
+		{MetricType::GrossProfitMargin_SY, 0},
+		{MetricType::SGA_SY, 0},
+		{MetricType::OperatingExpenses_MY, 0},
+		{MetricType::SGA_MY, 0},
+		// Balance Sheets
+		{MetricType::DebtRatio_SY, 0},
+		{MetricType::DebtRatio_MY, 0},
+		// Cash Flows
+		{MetricType::CashFlowOperatingActivites_SY, 0},
+		{MetricType::CashFlowInvestingOperations_SY, 0},
+		{MetricType::CashFlowOperatingActivites_MY, 0},
+		{MetricType::CashFlowInvestingOperations_MY, 0},
+		{MetricType::SellingAndBuyingStock_MY, 0},
 	};
 
 	// process a multi year score metrics for `num_years`, or maximum recorded duration (whichever is lower). 

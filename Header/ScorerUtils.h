@@ -48,14 +48,45 @@ const std::unordered_map<CategoryType, std::string> CategoryTypeString =
 */
 enum class MetricType
 {
-	GrossProfitMargin,
+	// Income Statements
+	GrossProfitMargin_SY,
+	SGA_SY,
+	OperatingExpenses_MY,
+	SGA_MY,
+	// Balance Sheets
+	DebtRatio_SY,
+	DebtRatio_MY,
+	// Cash Flows
+	CashFlowOperatingActivites_SY,
+	CashFlowInvestingOperations_SY,
+	CashFlowOperatingActivites_MY,
+	CashFlowInvestingOperations_MY,
+	SellingAndBuyingStock_MY,
+
+
+
+
 };
 /* MetricTypeString
 * Provides a string form of all available CategoryTypes
 */
 const std::unordered_map<MetricType, std::string> MetricTypeString =
 {
-	{MetricType::GrossProfitMargin, "GrossProfitMargin"}
+	// Income Statements
+	{MetricType::GrossProfitMargin_SY, "GrossProfitMargin"},
+	{MetricType::SGA_SY, "SGA_SY"},
+	{MetricType::OperatingExpenses_MY, "OperatingExpenses_MY"},
+	{MetricType::SGA_MY, "SGA_MY"},
+	// Balance Sheets
+	{MetricType::DebtRatio_SY, "DebtRatio_SY"},
+	{MetricType::DebtRatio_MY, "DebtRatio_MY"},
+	// Cash Flows
+	{MetricType::CashFlowOperatingActivites_SY, "CashFlowOperatingActivites_SY"},
+	{MetricType::CashFlowInvestingOperations_SY, "CashFlowInvestingOperations_SY"},
+	{MetricType::CashFlowOperatingActivites_MY, "CashFlowOperatingActivites_MY"},
+	{MetricType::CashFlowInvestingOperations_MY, "CashFlowInvestingOperations_MY"},
+	{MetricType::SellingAndBuyingStock_MY, "SellingAndBuyingStock_MY"},
+
 };
 /* The following enum classes are simply for reference at this juncture. Meaning that they are not 
 * actively called in the code (i.e. we will not be using `SingleYearIncomeStmtMetrics::SGA`)
@@ -87,7 +118,7 @@ enum class MultiYearIncomeStmtMetrics {
 
 /* Balance sheet score metrics */
 enum class SingleYearBalanceSheetMetrics {
-	CashToDebtRatio, // check for cash > debt
+	DebtRatio, // check for cash > debt
 };
 
 enum class MultiYearBalanceSheetMetrics {

@@ -18,7 +18,7 @@
 
 // This shall be our benchmark SY class.
 
-class GrossProfitMargin_SY : public MetricSY<MetricType::GrossProfitMargin, CategoryType::Single, CategoryType::IncomeStatement>
+class GrossProfitMargin_SY : public MetricSY<MetricType::GrossProfitMargin_SY, CategoryType::Single, CategoryType::IncomeStatement>
 {
 private:
 	bool highScore() override;
