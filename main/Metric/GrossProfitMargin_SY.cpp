@@ -5,14 +5,20 @@ GrossProfitMargin_SY::GrossProfitMargin_SY(const Stock& stock, int& score, std::
 	: MetricSY(stock, score, CategoryScores, MetricScores, MaxCategoryScores, MaxMetricScores)
 {
 	this->scoreMetric();
-	stock.test_func();
-
 }
 
 bool GrossProfitMargin_SY::highScore()
 {
 	// reference stock's income statement
 	//if(this->stock) ...
+
+	std::string grossProfitStr = stock.get_IS_metric(IncomeStatementMetrics::grossProfit, 0);
+	std::string revenueStr = stock.get_IS_metric(IncomeStatementMetrics::revenue, 0);
+	int num_years = stock.get_num_years_data(); // Not needed for SY statements
+	// TODO: turn above 2 string into the correct type and use it in highScore, medScore, and lowScore.
+	std::cout << "grossProfitStr = " << grossProfitStr << std::endl;
+	std::cout << "revenueStr = " << revenueStr << std::endl;
+	std::cout << "num_years = " << num_years << std::endl;
 	return true;
 }
 

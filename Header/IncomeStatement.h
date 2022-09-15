@@ -51,4 +51,6 @@ public:
 	void addToMap(IncomeStatementMetrics metric, std::string);
 	void addToMap(IncomeStatementMetrics metric, std::int64_t);
 	void addToMap(IncomeStatementMetrics metric, double);
+	std::string getKeyFromMap(IncomeStatementMetrics statementMetric, int year_from) const;
+	int get_num_years_collected() const;
 };

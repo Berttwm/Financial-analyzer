@@ -16,7 +16,6 @@
 class Metric
 {
 private:
-	int& score; // score to return
 	std::unordered_map<CategoryType, int>* CategoryScores; // CategoryScores DS to store scores of different categories
 	std::unordered_map<MetricType, int>* MetricScores; // MetricScores DS to store scores of different metrics
 	std::unordered_map<CategoryType, int>* MaxCategoryScores; // CategoryScores DS to store scores of different categories
@@ -26,15 +25,16 @@ private:
 	* Conditions for highScore, medScore and lowScore. Returns a boolean of whether the condition has been met
 	* Used in `scoreMetric()` function which first checks for highScore, medScore, then lowScore.
 	*/
-	const Stock& stock;
 
 	virtual bool highScore() = 0;
 	virtual bool medScore() = 0;
 	virtual bool lowScore() = 0;
 
 protected: // category/metric vector placed in protected to allow child class access, yet prevent public classes access.
+	int& score; // score to return
 	std::vector<CategoryType> categoryvector;
 	std::vector<MetricType> metricvector;
+	const Stock& stock;
 
 public:
 	Metric(const Stock& stock, int& score, std::unordered_map<CategoryType, int>* CategoryScores, std::unordered_map<MetricType, int>* MetricScores, 

@@ -68,3 +68,13 @@ void IncomeStatement::addToMap(IncomeStatementMetrics metric, std::string value)
 		this->metrics_yearly_map[metric].push_back(value);
 	}
 }
+
+std::string IncomeStatement::getKeyFromMap(IncomeStatementMetrics statementMetric, int year_from) const
+{
+	return this->metrics_yearly_map.find(statementMetric)->second[year_from];
+}
+
+int IncomeStatement::get_num_years_collected() const
+{
+	return this->metrics_yearly_map.find(IncomeStatementMetrics::date)->second.size();
+}

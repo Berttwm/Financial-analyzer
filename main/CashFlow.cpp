@@ -67,3 +67,13 @@ void CashFlow::addToMap(CashFlowMetrics metric, std::string value)
 		this->metrics_yearly_map[metric].push_back(value);
 	}
 }
+
+std::string CashFlow::getKeyFromMap(CashFlowMetrics statementMetric, int year_from) const
+{
+	return this->metrics_yearly_map.find(statementMetric)->second[year_from];
+}
+
+int CashFlow::get_num_years_collected() const
+{
+	return this->metrics_yearly_map.find(CashFlowMetrics::date)->second.size();
+}

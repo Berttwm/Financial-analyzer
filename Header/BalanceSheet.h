@@ -67,4 +67,6 @@ public:
 	void addToMap(BalanceSheetMetrics metric, std::string);
 	void addToMap(BalanceSheetMetrics metric, std::int64_t);
 	void addToMap(BalanceSheetMetrics metric, double);
+	std::string getKeyFromMap(BalanceSheetMetrics statementMetric, int year_from) const;
+	int get_num_years_collected() const;
 };

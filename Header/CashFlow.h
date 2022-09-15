@@ -52,4 +52,6 @@ public:
 	void addToMap(CashFlowMetrics metric, std::string);
 	void addToMap(CashFlowMetrics metric, std::int64_t);
 	void addToMap(CashFlowMetrics metric, double);
+	std::string getKeyFromMap(CashFlowMetrics statementMetric, int year_from) const;
+	int get_num_years_collected() const;
 };

@@ -67,3 +67,13 @@ void BalanceSheet::addToMap(BalanceSheetMetrics metric, std::string value)
 		this->metrics_yearly_map[metric].push_back(value);
 	}
 }
+
+std::string BalanceSheet::getKeyFromMap(BalanceSheetMetrics statementMetric, int year_from) const
+{
+	return this->metrics_yearly_map.find(statementMetric)->second[year_from];
+}
+
+int BalanceSheet::get_num_years_collected() const
+{
+	return this->metrics_yearly_map.find(BalanceSheetMetrics::date)->second.size();
+}

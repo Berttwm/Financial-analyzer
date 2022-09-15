@@ -1,7 +1,7 @@
 #pragma once
 #include "MetricSY.h"
 /*
-* Debt_SY - SingleYear_Debt
+* GrossProfitMargin_SY - SingleYear_GrossProfitMargin
 * 
 * Description: Calculates the current year gross profit margin
 * 
