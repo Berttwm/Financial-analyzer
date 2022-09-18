@@ -26,8 +26,8 @@ protected:
 public:
 	// push back value to metrics_yearly_map assigned vector
 	virtual void addToMap(T metric, std::string) = 0;
-	virtual void addToMap(T metric, std::int64_t) = 0;
-	virtual void addToMap(T metric, double) = 0;
+	virtual void addToMapInt(T metric, std::int64_t) = 0;
+	virtual void addToMapDouble(T metric, double) = 0;
 
 	// year_from = number of years from the latest year (i.e. year_from = 3 implies 3 years from the latest statement date) 
 	virtual std::string getKeyFromMap(T statementMetric, int year_from) const = 0;

@@ -3,7 +3,7 @@
 Stock::Stock(rapidjson::Document& d_inc_stmt, rapidjson::Document& d_bal_sheet, rapidjson::Document& d_cash_flow)
 	: IS(new IncomeStatement(d_inc_stmt)),
 	BS(new BalanceSheet(d_bal_sheet)),
-	CF(new CashFlow(d_bal_sheet))
+	CF(new CashFlow(d_cash_flow))
 {
 	//// Step 1: instantiate IS (factory maybe)
 	//this->IS = new IncomeStatement(d_inc_stmt);

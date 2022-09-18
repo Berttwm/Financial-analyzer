@@ -7,21 +7,21 @@
 IncomeStatement::IncomeStatement(rapidjson::Document& d_inc_stmt)
 {
 	for (int i = 0; i < d_inc_stmt.GetStringLength(); i++) {
-		for (int j = 0; j < statement_to_string_vect.size(); j++) {
-			// Need to make sure stmt vector has the same ordering as income metrics enum
-			const char* metric = (statement_to_string_vect[j].c_str());
-			IncomeStatementMetrics enum_metric = IncomeStatementMetrics(j);
+		for (auto metric_pair : IncomeStatementMetricsStrings) {
+			IncomeStatementMetrics enum_metric = metric_pair.first;
+			const char* metric = (metric_pair.second.c_str());
 			if (d_inc_stmt[i][metric].IsString()) {
 				addToMap(enum_metric, d_inc_stmt[i][metric].GetString());
 			}
 			else if (d_inc_stmt[i][metric].IsInt64()) {
-				addToMap(enum_metric, d_inc_stmt[i][metric].GetInt64());
+				addToMapInt(enum_metric, d_inc_stmt[i][metric].GetInt64());
 			}
 			else if (d_inc_stmt[i][metric].IsDouble()) {
-				addToMap(enum_metric, d_inc_stmt[i][metric].GetDouble());
+				addToMapDouble(enum_metric, d_inc_stmt[i][metric].GetDouble());
 			}
 			else {
-				printf("Error: No such data type.");
+				printf("IncStmtError: No such data type.\n");
+				printf(metric);
 			}
 		}
 	}
@@ -38,12 +38,12 @@ IncomeStatement::IncomeStatement(rapidjson::Document& d_inc_stmt)
 	}
 }
 
-void IncomeStatement::addToMap(IncomeStatementMetrics metric, std::int64_t value)
+void IncomeStatement::addToMapInt(IncomeStatementMetrics metric, std::int64_t value)
 {
 	addToMap(metric, std::to_string(value));
 }
 
-void IncomeStatement::addToMap(IncomeStatementMetrics metric, double value)
+void IncomeStatement::addToMapDouble(IncomeStatementMetrics metric, double value)
 {
 	// create stream to take in double variables and set to precision of 17
 	std::ostringstream streamObj;

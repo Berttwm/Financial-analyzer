@@ -65,8 +65,8 @@ private:
 public:
 	BalanceSheet(rapidjson::Document& d_bal_sheet);
 	void addToMap(BalanceSheetMetrics metric, std::string);
-	void addToMap(BalanceSheetMetrics metric, std::int64_t);
-	void addToMap(BalanceSheetMetrics metric, double);
+	void addToMapInt(BalanceSheetMetrics metric, std::int64_t);
+	void addToMapDouble(BalanceSheetMetrics metric, double);
 	std::string getKeyFromMap(BalanceSheetMetrics statementMetric, int year_from) const;
 	int get_num_years_collected() const;
 };

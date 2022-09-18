@@ -209,7 +209,7 @@ const std::unordered_map<BalanceSheetMetrics, std::string> BalanceSheetMetricsSt
 	{BalanceSheetMetrics::accumulatedOtherComprehensiveIncomeLoss, "accumulatedOtherComprehensiveIncomeLoss"},
 	{BalanceSheetMetrics::othertotalStockholdersEquity, "othertotalStockholdersEquity"},
 	{BalanceSheetMetrics::totalStockholdersEquity, "totalStockholdersEquity"},
-	{BalanceSheetMetrics::totalLiabilitiesAndStockholdersEquity, "dtotalLiabilitiesAndStockholdersEquityate"},
+	{BalanceSheetMetrics::totalLiabilitiesAndStockholdersEquity, "totalLiabilitiesAndStockholdersEquity"},
 	{BalanceSheetMetrics::minorityInterest, "minorityInterest"},
 	{BalanceSheetMetrics::totalEquity, "totalEquity"},
 	{BalanceSheetMetrics::totalLiabilitiesAndTotalEquity, "totalLiabilitiesAndTotalEquity"},

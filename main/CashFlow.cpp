@@ -7,21 +7,21 @@
 CashFlow::CashFlow(rapidjson::Document& d_cash_flow)
 {
 	for (int i = 0; i < d_cash_flow.GetStringLength(); i++) {
-		for (int j = 0; j < statement_to_string_vect.size(); j++) {
-			// Need to make sure stmt vector has the same ordering as metrics enum
-			const char* metric = (statement_to_string_vect[j].c_str());
-			CashFlowMetrics enum_metric = CashFlowMetrics(j);
+		for (auto metric_pair : CashFlowMetricsStrings) {
+			CashFlowMetrics enum_metric = metric_pair.first;
+			const char* metric = (metric_pair.second.c_str());
 			if (d_cash_flow[i][metric].IsString()) {
 				addToMap(enum_metric, d_cash_flow[i][metric].GetString());
 			}
 			else if (d_cash_flow[i][metric].IsInt64()) {
-				addToMap(enum_metric, d_cash_flow[i][metric].GetInt64());
+				addToMapInt(enum_metric, d_cash_flow[i][metric].GetInt64());
 			}
 			else if (d_cash_flow[i][metric].IsDouble()) {
-				addToMap(enum_metric, d_cash_flow[i][metric].GetDouble());
+				addToMapDouble(enum_metric, d_cash_flow[i][metric].GetDouble());
 			}
 			else {
-				printf("Error: No such data type.");
+				printf("CashFlowError: No such data type.\n");
+				printf(metric);
 			}
 		}
 	}
@@ -38,12 +38,12 @@ CashFlow::CashFlow(rapidjson::Document& d_cash_flow)
 	}
 }
 
-void CashFlow::addToMap(CashFlowMetrics metric, std::int64_t value)
+void CashFlow::addToMapInt(CashFlowMetrics metric, std::int64_t value)
 {
 	addToMap(metric, std::to_string(value));
 }
 
-void CashFlow::addToMap(CashFlowMetrics metric, double value)
+void CashFlow::addToMapDouble(CashFlowMetrics metric, double value)
 {
 	// create stream to take in double variables and set to precision of 17
 	std::ostringstream streamObj;

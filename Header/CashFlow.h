@@ -50,8 +50,8 @@ private:
 public:
 	CashFlow(rapidjson::Document& d_cash_flow);
 	void addToMap(CashFlowMetrics metric, std::string);
-	void addToMap(CashFlowMetrics metric, std::int64_t);
-	void addToMap(CashFlowMetrics metric, double);
+	void addToMapInt(CashFlowMetrics metric, std::int64_t);
+	void addToMapDouble(CashFlowMetrics metric, double);
 	std::string getKeyFromMap(CashFlowMetrics statementMetric, int year_from) const;
 	int get_num_years_collected() const;
 };
