@@ -19,19 +19,21 @@ bool GrossProfitMargin_SY::highScore()
 	std::cout << "grossProfitStr = " << grossProfitStr << std::endl;
 	std::cout << "revenueStr = " << revenueStr << std::endl;
 	std::cout << "num_years = " << num_years << std::endl;
-	return true;
+	std::cout << "grossProfitMargin = " << grossProfitMargin << std::endl;
+	// More than 30%
+	return grossProfitMargin >= 0.3;
 }
 
 bool GrossProfitMargin_SY::medScore()
 {
 	// reference stock's income statement
-	//if(this->stock) ...
-	return true;
+	// Between 10-30%
+	return 0.3 > grossProfitMargin >= 0.1;
 }
 
 bool GrossProfitMargin_SY::lowScore()
 {
 	// reference stock's income statement
-	//if(this->stock) ...
-	return true;
+	//Less than 10%
+	return 0.1 > grossProfitMargin > 0;
 }
