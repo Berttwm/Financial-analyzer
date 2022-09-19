@@ -20,8 +20,8 @@ CashFlow::CashFlow(rapidjson::Document& d_cash_flow)
 				addToMapDouble(enum_metric, d_cash_flow[i][metric].GetDouble());
 			}
 			else {
-				printf("CashFlowError: No such data type.\n");
-				printf(metric);
+				std::cout << "CashFlowError: No such data type." << std::endl;
+				std::cout << metric << std::endl;
 			}
 		}
 	}

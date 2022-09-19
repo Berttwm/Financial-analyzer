@@ -20,8 +20,8 @@ BalanceSheet::BalanceSheet(rapidjson::Document& d_bal_sheet)
 				addToMapDouble(enum_metric, d_bal_sheet[i][metric].GetDouble());
 			}
 			else {
-				printf("BalSheetError: No such data type.\n");
-				printf(metric);
+				std::cout << "BalSheetError: No such data type." << std::endl;
+				std::cout << metric << std::endl;
 			}
 		}
 	}

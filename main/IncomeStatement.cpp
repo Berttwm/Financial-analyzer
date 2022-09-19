@@ -20,8 +20,8 @@ IncomeStatement::IncomeStatement(rapidjson::Document& d_inc_stmt)
 				addToMapDouble(enum_metric, d_inc_stmt[i][metric].GetDouble());
 			}
 			else {
-				printf("IncStmtError: No such data type.\n");
-				printf(metric);
+				std::cout << "IncStmtError: No such data type." << std::endl;
+				std::cout << metric << std::endl;
 			}
 		}
 	}
