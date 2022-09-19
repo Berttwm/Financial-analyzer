@@ -22,12 +22,12 @@ protected:
 	*	metrics_yearly_map["grossProfit"][2] gives you the latest value for "grossProfit" for 2 years prior
 	*/
 	std::unordered_map<T, std::vector<std::string>> metrics_yearly_map;
-
-public:
+	// process document object in constructor
+	virtual void processDocumentObject(rapidjson::Document& doc) = 0;
 	// push back value to metrics_yearly_map assigned vector
 	virtual void addToMap(T metric, std::string) = 0;
-	virtual void addToMapInt(T metric, std::int64_t) = 0;
-	virtual void addToMapDouble(T metric, double) = 0;
+public:
+
 
 	// year_from = number of years from the latest year (i.e. year_from = 3 implies 3 years from the latest statement date) 
 	virtual std::string getKeyFromMap(T statementMetric, int year_from) const = 0;

@@ -6,18 +6,29 @@
 
 IncomeStatement::IncomeStatement(rapidjson::Document& d_inc_stmt)
 {
-	for (int i = 0; i < d_inc_stmt.GetStringLength(); i++) {
+	this->processDocumentObject(d_inc_stmt);
+}
+
+void IncomeStatement::processDocumentObject(rapidjson::Document& doc)
+{
+	for (int i = 0; i < doc.GetStringLength(); i++) {
 		for (auto metric_pair : IncomeStatementMetricsStrings) {
 			IncomeStatementMetrics enum_metric = metric_pair.first;
 			const char* metric = (metric_pair.second.c_str());
-			if (d_inc_stmt[i][metric].IsString()) {
-				addToMap(enum_metric, d_inc_stmt[i][metric].GetString());
+			if (doc[i][metric].IsString()) {
+				addToMap(enum_metric, doc[i][metric].GetString());
 			}
-			else if (d_inc_stmt[i][metric].IsInt64()) {
-				addToMapInt(enum_metric, d_inc_stmt[i][metric].GetInt64());
+			else if (doc[i][metric].IsInt64()) {
+				int value = doc[i][metric].GetInt64();
+				addToMap(enum_metric, std::to_string(value));
 			}
-			else if (d_inc_stmt[i][metric].IsDouble()) {
-				addToMapDouble(enum_metric, d_inc_stmt[i][metric].GetDouble());
+			else if (doc[i][metric].IsDouble()) {
+				double value = doc[i][metric].GetDouble();
+				std::ostringstream streamObj;
+				streamObj << std::setprecision(17);
+				streamObj << value;
+				addToMap(enum_metric, streamObj.str());
+				streamObj.str("");
 			}
 			else {
 				std::cout << "IncStmtError: No such data type." << std::endl;
@@ -25,33 +36,14 @@ IncomeStatement::IncomeStatement(rapidjson::Document& d_inc_stmt)
 			}
 		}
 	}
-
-	// print test
 	for (auto& it : this->metrics_yearly_map)
 	{
-		std::cout << "IncomeStatementMetrics::" << this->statement_to_string_vect[static_cast<int>(it.first)] << " :\t";
-		for (auto &x : it.second)
+		for (auto& x : it.second)
 		{
 			std::cout << x << ",";
 		}
 		std::cout << std::endl;
 	}
-}
-
-void IncomeStatement::addToMapInt(IncomeStatementMetrics metric, std::int64_t value)
-{
-	addToMap(metric, std::to_string(value));
-}
-
-void IncomeStatement::addToMapDouble(IncomeStatementMetrics metric, double value)
-{
-	// create stream to take in double variables and set to precision of 17
-	std::ostringstream streamObj;
-	streamObj << std::setprecision(17);
-	streamObj << value;
-	addToMap(metric, streamObj.str());
-	streamObj.str("");
-
 }
 
 void IncomeStatement::addToMap(IncomeStatementMetrics metric, std::string value)

@@ -6,51 +6,44 @@
 
 CashFlow::CashFlow(rapidjson::Document& d_cash_flow)
 {
-	for (int i = 0; i < d_cash_flow.GetStringLength(); i++) {
+	this->processDocumentObject(d_cash_flow);
+}
+
+void CashFlow::processDocumentObject(rapidjson::Document& doc)
+{
+	for (int i = 0; i < doc.GetStringLength(); i++) {
 		for (auto metric_pair : CashFlowMetricsStrings) {
 			CashFlowMetrics enum_metric = metric_pair.first;
 			const char* metric = (metric_pair.second.c_str());
-			if (d_cash_flow[i][metric].IsString()) {
-				addToMap(enum_metric, d_cash_flow[i][metric].GetString());
+			if (doc[i][metric].IsString()) {
+				addToMap(enum_metric, doc[i][metric].GetString());
 			}
-			else if (d_cash_flow[i][metric].IsInt64()) {
-				addToMapInt(enum_metric, d_cash_flow[i][metric].GetInt64());
+			else if (doc[i][metric].IsInt64()) {
+				int value = doc[i][metric].GetInt64();
+				addToMap(enum_metric, std::to_string(value));
 			}
-			else if (d_cash_flow[i][metric].IsDouble()) {
-				addToMapDouble(enum_metric, d_cash_flow[i][metric].GetDouble());
+			else if (doc[i][metric].IsDouble()) {
+				double value = doc[i][metric].GetDouble();
+				std::ostringstream streamObj;
+				streamObj << std::setprecision(17);
+				streamObj << value;
+				addToMap(enum_metric, streamObj.str());
+				streamObj.str("");
 			}
 			else {
-				std::cout << "CashFlowError: No such data type." << std::endl;
+				std::cout << "IncStmtError: No such data type." << std::endl;
 				std::cout << metric << std::endl;
 			}
 		}
 	}
-
-	// print test
 	for (auto& it : this->metrics_yearly_map)
 	{
-		std::cout << "CashFlowMetrics::" << this->statement_to_string_vect[static_cast<int>(it.first)] << " :\t";
 		for (auto& x : it.second)
 		{
 			std::cout << x << ",";
 		}
 		std::cout << std::endl;
 	}
-}
-
-void CashFlow::addToMapInt(CashFlowMetrics metric, std::int64_t value)
-{
-	addToMap(metric, std::to_string(value));
-}
-
-void CashFlow::addToMapDouble(CashFlowMetrics metric, double value)
-{
-	// create stream to take in double variables and set to precision of 17
-	std::ostringstream streamObj;
-	streamObj << std::setprecision(17);
-	streamObj << value;
-	addToMap(metric, streamObj.str());
-	streamObj.str("");
 }
 
 void CashFlow::addToMap(CashFlowMetrics metric, std::string value)
