@@ -31,10 +31,14 @@ private:
 public:
 
 	MetricSY(const Stock& stock, int& score, std::unordered_map<CategoryType, int>* CategoryScores, std::unordered_map<MetricType, int>* MetricScores,
-		std::unordered_map<CategoryType, int>* MaxCategoryScores, std::unordered_map<MetricType, int>* MaxMetricScores)
-		: Metric(stock, score, CategoryScores, MetricScores, MaxCategoryScores, MaxMetricScores)
+		std::unordered_map<CategoryType, int>* MaxCategoryScores, std::unordered_map<MetricType, int>* MaxMetricScores, std::unordered_map<MetricType, double>* MetricPerformance)
+		: Metric(stock, score, CategoryScores, MetricScores, MaxCategoryScores, MaxMetricScores, MetricPerformance)
 	{
 		this->updateCategoryScores();
 		this->updateMetricScores<MT>();
+		// Step 3: Update Performance for this metric
+		auto it = this->MetricPerformance->find(MT);
+		if (it != this->MetricPerformance->end())
+			it->second = this->performance;
 	};
 };

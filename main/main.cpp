@@ -53,6 +53,11 @@ int main()
     {
         std::cout << "metric: " << MetricTypeString.find(metric.first)->second << ", value: " << metric.second << std::endl;
     }
+    std::cout << std::endl << "Metrics individual performances ..." << std::endl;
+    for (auto metric : scorer->get_metricperformance())
+    {
+        std::cout << "metric: " << MetricTypeString.find(metric.first)->second << ", value: " << metric.second << std::endl;
+    }
     std::cout << "=== End of processing ===" << std::endl;
     return 0;
 }

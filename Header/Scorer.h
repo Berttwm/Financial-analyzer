@@ -56,6 +56,23 @@ private:
 		{MetricType::SellingAndBuyingStock_MY, 0},
 	};
 
+	std::unordered_map<MetricType, double> MetricPerformance = // The actual datapoint collected from the metric. Percentages are represented as ratio (30% = 0.3)
+	{
+		// Income Statements
+		{MetricType::GrossProfitMargin_SY, 0}, // GrossProfit/totalRevenue
+		{MetricType::SGA_SY, 0},
+		{MetricType::OperatingExpenses_MY, 0},
+		{MetricType::SGA_MY, 0},
+		// Balance Sheets
+		{MetricType::DebtRatio_SY, 0},
+		{MetricType::DebtRatio_MY, 0},
+		// Cash Flows
+		{MetricType::CashFlowOperatingActivites_SY, 0},
+		{MetricType::CashFlowInvestingOperations_SY, 0},
+		{MetricType::CashFlowOperatingActivites_MY, 0},
+		{MetricType::CashFlowInvestingOperations_MY, 0},
+		{MetricType::SellingAndBuyingStock_MY, 0},
+	};
 	// process a multi year score metrics for `num_years`, or maximum recorded duration (whichever is lower). 
 	//void process(const int num_years);
 
@@ -76,4 +93,7 @@ public:
 	std::unordered_map<CategoryType, int> get_maxcategoryscores();
 
 	std::unordered_map<MetricType, int> get_maxmetricscores();
+
+	std::unordered_map<MetricType, double> get_metricperformance();
+
 };

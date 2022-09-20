@@ -24,8 +24,7 @@ private:
 	bool highScore() override;
 	bool medScore() override;
 	bool lowScore() override;
-	double grossProfitMargin = std::stold(stock.get_IS_metric(IncomeStatementMetrics::grossProfitRatio, 0));
 public:
 	GrossProfitMargin_SY(const Stock& stock, int& score, std::unordered_map<CategoryType, int>* CategoryScores, std::unordered_map<MetricType, int>* MetricScores,
-		std::unordered_map<CategoryType, int>* MaxCategoryScores, std::unordered_map<MetricType, int>* MaxMetricScores);
+		std::unordered_map<CategoryType, int>* MaxCategoryScores, std::unordered_map<MetricType, int>* MaxMetricScores, std::unordered_map<MetricType, double> *MetricPerformance);
 };

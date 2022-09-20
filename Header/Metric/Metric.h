@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <unordered_map>
 
 #include "../Stock.h"
 #include "../ScorerUtils.h"
@@ -20,7 +21,6 @@ private:
 	std::unordered_map<MetricType, int>* MetricScores; // MetricScores DS to store scores of different metrics
 	std::unordered_map<CategoryType, int>* MaxCategoryScores; // CategoryScores DS to store scores of different categories
 	std::unordered_map<MetricType, int>* MaxMetricScores; // MetricScores DS to store scores of different metrics
-
 	/* highScore() / medScore() / lowScore() 
 	* Conditions for highScore, medScore and lowScore. Returns a boolean of whether the condition has been met
 	* Used in `scoreMetric()` function which first checks for highScore, medScore, then lowScore.
@@ -32,19 +32,27 @@ private:
 
 protected: // category/metric vector placed in protected to allow child class access, yet prevent public classes access.
 	int& score; // score to return
+	double performance; // performance of the stock (i.e. GrossProfitMargin performance = actual gross profit margin the stock has)
 	std::vector<CategoryType> categoryvector;
 	std::vector<MetricType> metricvector;
 	const Stock& stock;
 
+	std::unordered_map<MetricType, double>* MetricPerformance; // MetricPerformance to store performance result of metric
+	void set_performance(double performance)
+	{
+		this->performance = performance;
+	}
+
 public:
 	Metric(const Stock& stock, int& score, std::unordered_map<CategoryType, int>* CategoryScores, std::unordered_map<MetricType, int>* MetricScores, 
-				std::unordered_map<CategoryType, int>* MaxCategoryScores, std::unordered_map<MetricType, int>* MaxMetricScores)
+				std::unordered_map<CategoryType, int>* MaxCategoryScores, std::unordered_map<MetricType, int>* MaxMetricScores, std::unordered_map<MetricType, double>* MetricPerformance)
 		:stock(stock),
 		score(score),
 		CategoryScores(CategoryScores),
 		MetricScores(MetricScores),
 		MaxCategoryScores(MaxCategoryScores),
-		MaxMetricScores(MaxMetricScores)
+		MaxMetricScores(MaxMetricScores),
+		MetricPerformance(MetricPerformance)
 	{
 	};
 

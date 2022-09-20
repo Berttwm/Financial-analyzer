@@ -34,11 +34,15 @@ private:
 public:
 
 	MetricMY(const Stock& stock, int& score, std::unordered_map<CategoryType, int>* CategoryScores, std::unordered_map<MetricType, int>* MetricScores,
-		std::unordered_map<CategoryType, int>* MaxCategoryScores, std::unordered_map<MetricType, int>* MaxMetricScores, int year_count)
+		std::unordered_map<CategoryType, int>* MaxCategoryScores, std::unordered_map<MetricType, int>* MaxMetricScores, std::unordered_map<MetricType, double> *MetricPerformance, int year_count)
 		: Metric(stock, score, CategoryScores, MetricScores, MaxCategoryScores, MaxMetricScores),
 		year_count(year_count) // TODO: Initialize this by comparing minimum of 1) number of years for testing period, number of years of data collected 
 	{
 		this->updateCategoryScores();
 		this->updateMetricScores<MT>();
+		// Step 3: Update Performance for this metric
+		auto it = this->MetricPerformance->find(MT); // TODO FIX THIS
+		if (it != this->MetricPerformance->end())
+			it->second = this->performance;
 	};
 };
