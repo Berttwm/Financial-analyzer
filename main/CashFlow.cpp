@@ -38,6 +38,7 @@ void CashFlow::processDocumentObject(rapidjson::Document& doc)
 	}
 	for (auto& it : this->metrics_yearly_map)
 	{
+		std::cout << CashFlowMetricsStrings.find(it.first)->second << ": ";
 		for (auto& x : it.second)
 		{
 			std::cout << x << ",";

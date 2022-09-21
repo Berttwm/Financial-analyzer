@@ -18,6 +18,10 @@ bool GrossProfitMargin_SY::highScore()
 	std::string revenueStr = stock.get_IS_metric(IncomeStatementMetrics::revenue, 0);
 	int num_years = stock.get_num_years_data(); // Not needed for SY statements
 	// TODO: turn above 2 string into the correct type and use it in highScore, medScore, and lowScore.
+	std::cout << "grossProfitStr = " << grossProfitStr << std::endl;
+	std::cout << "revenueStr = " << revenueStr << std::endl;
+
+	std::cout << "grossProfitMargin = " << (1.0*(stoi(grossProfitStr))) / (1.0 *(stoi(revenueStr))) << std::endl;
 	std::cout << "grossProfitMargin = " << this->performance << std::endl;
 	// More than 30%
 	return this->performance >= 0.3;
