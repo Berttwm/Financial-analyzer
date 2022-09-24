@@ -32,13 +32,13 @@ private:
 
 protected: // category/metric vector placed in protected to allow child class access, yet prevent public classes access.
 	int& score; // score to return
-	double performance; // performance of the stock (i.e. GrossProfitMargin performance = actual gross profit margin the stock has)
+	long double performance; // performance of the stock (i.e. GrossProfitMargin performance = actual gross profit margin the stock has)
 	std::vector<CategoryType> categoryvector;
 	std::vector<MetricType> metricvector;
 	const Stock& stock;
 
 	std::unordered_map<MetricType, double>* MetricPerformance; // MetricPerformance to store performance result of metric
-	void set_performance(double performance)
+	void set_performance(long double performance)
 	{
 		this->performance = performance;
 	}

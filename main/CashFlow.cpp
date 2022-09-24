@@ -60,9 +60,11 @@ void CashFlow::addToMap(CashFlowMetrics metric, std::string value)
 	}
 }
 
-std::string CashFlow::getKeyFromMap(CashFlowMetrics statementMetric, int year_from) const
+long double CashFlow::getKeyFromMap(CashFlowMetrics statementMetric, int year_from) const
 {
-	return this->metrics_yearly_map.find(statementMetric)->second[year_from];
+	long double key = std::stold(this->metrics_yearly_map.find(statementMetric)->second[0]);
+	std::cout << std::setprecision(17) << "CashFlow getKeyFromMap = " << key << std::endl;
+	return key;
 }
 
 int CashFlow::get_num_years_collected() const

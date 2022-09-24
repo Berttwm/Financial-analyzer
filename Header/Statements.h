@@ -30,7 +30,7 @@ public:
 
 
 	// year_from = number of years from the latest year (i.e. year_from = 3 implies 3 years from the latest statement date) 
-	virtual std::string getKeyFromMap(T statementMetric, int year_from) const = 0;
+	virtual long double getKeyFromMap(T statementMetric, int year_from) const = 0;
 
 	virtual int get_num_years_collected() const = 0;
 };

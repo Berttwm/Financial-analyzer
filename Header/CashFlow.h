@@ -9,6 +9,6 @@ protected:
 
 public:
 	CashFlow(rapidjson::Document& d_cash_flow);
-	std::string getKeyFromMap(CashFlowMetrics statementMetric, int year_from) const;
+	long double getKeyFromMap(CashFlowMetrics statementMetric, int year_from) const;
 	int get_num_years_collected() const;
 };

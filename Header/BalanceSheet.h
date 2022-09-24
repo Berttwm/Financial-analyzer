@@ -9,6 +9,6 @@ protected:
 
 public:
 	BalanceSheet(rapidjson::Document& d_bal_sheet);
-	std::string getKeyFromMap(BalanceSheetMetrics statementMetric, int year_from) const;
+	long double getKeyFromMap(BalanceSheetMetrics statementMetric, int year_from) const;
 	int get_num_years_collected() const;
 };

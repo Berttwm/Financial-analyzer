@@ -9,6 +9,6 @@ protected:
 
 public:
 	IncomeStatement(rapidjson::Document& d_inc_stmt);
-	std::string getKeyFromMap(IncomeStatementMetrics statementMetric, int year_from) const;
+	long double getKeyFromMap(IncomeStatementMetrics statementMetric, int year_from) const;
 	int get_num_years_collected() const;
 };

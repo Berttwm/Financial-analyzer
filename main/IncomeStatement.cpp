@@ -60,9 +60,11 @@ void IncomeStatement::addToMap(IncomeStatementMetrics metric, std::string value)
 	}
 }
 
-std::string IncomeStatement::getKeyFromMap(IncomeStatementMetrics statementMetric, int year_from) const
+long double IncomeStatement::getKeyFromMap(IncomeStatementMetrics statementMetric, int year_from) const
 {
-	return this->metrics_yearly_map.find(statementMetric)->second[year_from];
+	long double key = std::stold(this->metrics_yearly_map.find(statementMetric)->second[0]);
+	std::cout << std::setprecision(17) << "IncStmt getKeyFromMap = " << key << std::endl;
+	return key;
 }
 
 int IncomeStatement::get_num_years_collected() const

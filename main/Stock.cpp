@@ -15,17 +15,17 @@ Stock::Stock(rapidjson::Document& d_inc_stmt, rapidjson::Document& d_bal_sheet, 
 	this->num_years_data = this->IS->get_num_years_collected();
 }
 
-std::string Stock::get_IS_metric(IncomeStatementMetrics metric, int year_from) const
+long double Stock::get_IS_metric(IncomeStatementMetrics metric, int year_from) const
 {
 	return this->IS->getKeyFromMap(metric, year_from);
 }
 
-std::string Stock::get_BS_metric(BalanceSheetMetrics metric, int year_from) const
+long double Stock::get_BS_metric(BalanceSheetMetrics metric, int year_from) const
 {
 	return this->BS->getKeyFromMap(metric, year_from);
 }
 
-std::string Stock::get_CF_metric(CashFlowMetrics metric, int year_from) const
+long double Stock::get_CF_metric(CashFlowMetrics metric, int year_from) const
 {
 	return this->CF->getKeyFromMap(metric, year_from);
 }
