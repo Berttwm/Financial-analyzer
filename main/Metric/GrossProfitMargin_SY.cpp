@@ -21,7 +21,7 @@ bool GrossProfitMargin_SY::highScore()
 	std::cout << "grossProfitStr = " << grossProfitStr << std::endl;
 	std::cout << "revenueStr = " << revenueStr << std::endl;
 
-	std::cout << "grossProfitMargin = " << (1.0*(stoi(grossProfitStr))) / (1.0 *(stoi(revenueStr))) << std::endl;
+	//std::cout << "grossProfitMargin = " << (1.0*(stoi(grossProfitStr))) / (1.0 *(stoi(revenueStr))) << std::endl;
 	std::cout << "grossProfitMargin = " << this->performance << std::endl;
 	// More than 30%
 	return this->performance >= 0.3;

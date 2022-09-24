@@ -18,15 +18,13 @@ void IncomeStatement::processDocumentObject(rapidjson::Document& doc)
 			if (doc[i][metric].IsString()) {
 				addToMap(enum_metric, doc[i][metric].GetString());
 			}
-			else if (doc[i][metric].IsInt64()) {
-				int value = doc[i][metric].GetInt64();
-				addToMap(enum_metric, std::to_string(value));
+			else if (doc[i][metric].IsInt64()) {		
+				addToMap(enum_metric, std::to_string(doc[i][metric].GetInt64()));
 			}
 			else if (doc[i][metric].IsDouble()) {
-				double value = doc[i][metric].GetDouble();
 				std::ostringstream streamObj;
 				streamObj << std::setprecision(17);
-				streamObj << value;
+				streamObj << doc[i][metric].GetDouble();;
 				addToMap(enum_metric, streamObj.str());
 				streamObj.str("");
 			}
