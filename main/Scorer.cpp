@@ -24,7 +24,7 @@ void Scorer::process()
 	//}
 
 	// TODO: Implement recursive calling on Metric classes
-	GrossProfitMargin_SY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformance);
+	GrossProfitMargin_SY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances);
 }
 
 // GETTERS:
@@ -54,7 +54,7 @@ std::unordered_map<MetricType, int> Scorer::get_maxmetricscores()
 	return this->MaxMetricScores;
 }
 
-std::unordered_map<MetricType, double> Scorer::get_metricperformance()
+std::unordered_map<MetricType,long double> Scorer::get_metricperformance()
 {
-	return this->MetricPerformance;
+	return this->MetricPerformances;
 }

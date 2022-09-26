@@ -56,7 +56,7 @@ private:
 		{MetricType::SellingAndBuyingStock_MY, 0},
 	};
 
-	std::unordered_map<MetricType, double> MetricPerformance = // The actual datapoint collected from the metric. Percentages are represented as ratio (30% = 0.3)
+	std::unordered_map<MetricType, long double> MetricPerformances = // The actual datapoint collected from the metric. Percentages are represented as ratio (30% = 0.3)
 	{
 		// Income Statements
 		{MetricType::GrossProfitMargin_SY, 0}, // GrossProfit/totalRevenue
@@ -94,6 +94,6 @@ public:
 
 	std::unordered_map<MetricType, int> get_maxmetricscores();
 
-	std::unordered_map<MetricType, double> get_metricperformance();
+	std::unordered_map<MetricType,long double> get_metricperformance();
 
 };

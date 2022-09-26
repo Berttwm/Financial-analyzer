@@ -37,7 +37,7 @@ protected: // category/metric vector placed in protected to allow child class ac
 	std::vector<MetricType> metricvector;
 	const Stock& stock;
 
-	std::unordered_map<MetricType, double>* MetricPerformance; // MetricPerformance to store performance result of metric
+	std::unordered_map<MetricType, long double>* MetricPerformances; // MetricPerformances to store performance result of metric
 	void set_performance(long double performance)
 	{
 		this->performance = performance;
@@ -45,14 +45,14 @@ protected: // category/metric vector placed in protected to allow child class ac
 
 public:
 	Metric(const Stock& stock, int& score, std::unordered_map<CategoryType, int>* CategoryScores, std::unordered_map<MetricType, int>* MetricScores, 
-				std::unordered_map<CategoryType, int>* MaxCategoryScores, std::unordered_map<MetricType, int>* MaxMetricScores, std::unordered_map<MetricType, double>* MetricPerformance)
+				std::unordered_map<CategoryType, int>* MaxCategoryScores, std::unordered_map<MetricType, int>* MaxMetricScores, std::unordered_map<MetricType,long double>* MetricPerformances)
 		:stock(stock),
 		score(score),
 		CategoryScores(CategoryScores),
 		MetricScores(MetricScores),
 		MaxCategoryScores(MaxCategoryScores),
 		MaxMetricScores(MaxMetricScores),
-		MetricPerformance(MetricPerformance)
+		MetricPerformances(MetricPerformances)
 	{
 	};
 
