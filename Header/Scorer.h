@@ -5,6 +5,16 @@
 
 // Include statements for metrics to be scored
 #include "Metric/GrossProfitMargin_SY.h"
+#include "Metric/SGA_SY.h"
+#include "Metric/OperatingExpenses_MY.h"
+#include "Metric/SGA_MY.h"
+#include "Metric/DebtRatio_SY.h"
+#include "Metric/DebtRatio_MY.h"
+#include "Metric/CashFlowOperatingActivites_SY.h"
+#include "Metric/CashFlowInvestingOperations_SY.h"
+#include "Metric/CashFlowOperatingActivites_MY.h"
+#include "Metric/CashFlowInvestingOperations_MY.h"
+#include "Metric/SellingAndBuyingStock_MY.h"
 
 /* To take in a stock object and provide interface for scoring system */
 class Scorer

@@ -73,7 +73,7 @@ enum class MetricType
 const std::unordered_map<MetricType, std::string> MetricTypeString =
 {
 	// Income Statements
-	{MetricType::GrossProfitMargin_SY, "GrossProfitMargin"},
+	{MetricType::GrossProfitMargin_SY, "GrossProfitMargin_SY"},
 	{MetricType::SGA_SY, "SGA_SY"},
 	{MetricType::OperatingExpenses_MY, "OperatingExpenses_MY"},
 	{MetricType::SGA_MY, "SGA_MY"},

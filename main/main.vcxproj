@@ -175,7 +175,17 @@
     <ClCompile Include="CashFlow.cpp" />
     <ClCompile Include="IncomeStatement.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Metric\CashFlowInvestingOperations_MY.cpp" />
+    <ClCompile Include="Metric\CashFlowInvestingOperations_SY.cpp" />
+    <ClCompile Include="Metric\CashFlowOperatingActivites_MY.cpp" />
+    <ClCompile Include="Metric\CashFlowOperatingActivites_SY.cpp" />
+    <ClCompile Include="Metric\DebtRatio_MY.cpp" />
+    <ClCompile Include="Metric\DebtRatio_SY.cpp" />
     <ClCompile Include="Metric\GrossProfitMargin_SY.cpp" />
+    <ClCompile Include="Metric\OperatingExpenses_MY.cpp" />
+    <ClCompile Include="Metric\SellingAndBuyingStock_MY.cpp" />
+    <ClCompile Include="Metric\SGA_MY.cpp" />
+    <ClCompile Include="Metric\SGA_SY.cpp" />
     <ClCompile Include="Puller.cpp" />
     <ClCompile Include="Scorer.cpp" />
     <ClCompile Include="Stock.cpp" />
