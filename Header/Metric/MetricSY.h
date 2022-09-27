@@ -18,12 +18,10 @@ private:
 	virtual bool highScore() = 0;
 	virtual bool medScore() = 0;
 	virtual bool lowScore() = 0;
-	template<CategoryType... CT>
 	void updateCategoryScores()
 	{
 		this->categoryvector = { CTs... };
 	};
-	template<MetricType MT>
 	void updateMetricScores()
 	{
 		this->metricvector = { MT };
@@ -46,6 +44,6 @@ public:
 		: Metric(stock, score, CategoryScores, MetricScores, MaxCategoryScores, MaxMetricScores, MetricPerformances)
 	{
 		this->updateCategoryScores();
-		this->updateMetricScores<MT>();
+		this->updateMetricScores();
 	};
 };

@@ -21,12 +21,10 @@ private:
 	virtual bool highScore() = 0;
 	virtual bool medScore() = 0;
 	virtual bool lowScore() = 0;
-	template<CategoryType... CTs>
 	void updateCategoryScores()
 	{
 		this->categoryvector = { CTs... };
 	};
-	template<MetricType MT>
 	void updateMetricScores()
 	{
 		this->metricvector = { MT };
@@ -50,6 +48,6 @@ public:
 		year_count(year_count) // TODO: Initialize this by comparing minimum of 1) number of years for testing period, number of years of data collected 
 	{
 		this->updateCategoryScores();
-		this->updateMetricScores<MT>();
+		this->updateMetricScores();
 	};
 };
