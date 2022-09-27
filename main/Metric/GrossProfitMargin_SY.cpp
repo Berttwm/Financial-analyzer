@@ -4,6 +4,24 @@
 #include <sstream>
 #include <iomanip>
 
+/*
+* GrossProfitMargin_SY - SingleYear_GrossProfitMargin
+*
+* Description: Calculates the current year gross profit margin
+*
+* Categories used :
+*1) Single
+* 2) IncomeStatement
+*
+* Scoring:
+*High = < 30 %
+*Med = < 20 %
+*Low = < 10 %
+*Fail = < 0 %
+*/
+
+// This shall be our benchmark SY class.
+
 GrossProfitMargin_SY::GrossProfitMargin_SY(const Stock& stock, int& score, std::unordered_map<CategoryType, int>* CategoryScores, std::unordered_map<MetricType, int>* MetricScores,
 	std::unordered_map<CategoryType, int>* MaxCategoryScores, std::unordered_map<MetricType, int>* MaxMetricScores, std::unordered_map<MetricType, long double> *MetricPerformances)
 	: MetricSY(stock, score, CategoryScores, MetricScores, MaxCategoryScores, MaxMetricScores, MetricPerformances)
@@ -28,20 +46,15 @@ bool GrossProfitMargin_SY::highScore()
 
 	std::cout << std::setprecision(17) << "grossProfitMargin calculated = " << (1.0*(grossProfitStr)) / (1.0 *(revenueStr)) << std::endl;
 	std::cout << std::setprecision(17) << "grossProfitMargin = " << this->performance << std::endl;
-	// More than 30%
 	return this->performance >= 0.3;
 }
 
 bool GrossProfitMargin_SY::medScore()
 {
-	// reference stock's income statement
-	// Between 10-30%
-	return 0.3 > this->performance >= 0.1;
+	return this->performance >= 0.2;
 }
 
 bool GrossProfitMargin_SY::lowScore()
 {
-	// reference stock's income statement
-	//Less than 10%
-	return 0.1 > this->performance > 0;
+	return this->performance >= 0.1;
 }

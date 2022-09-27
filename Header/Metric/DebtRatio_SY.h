@@ -11,8 +11,8 @@
 *
 * Scoring:
 *	High = <30% (Recheck)
-*	Med = <40%
-*	Low = <50%
+*	Med = <45%
+*	Low = <60%
 *	Fail = >60%
 */
 

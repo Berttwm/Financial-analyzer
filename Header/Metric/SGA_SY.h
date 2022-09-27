@@ -10,10 +10,10 @@
 *	2) IncomeStatement
 *
 * Scoring:
-*	High = <30%
-*	Med = <20%
-*	Low = <10%
-*	Fail = <0%
+*	High = <= 30%
+*	Med = <= 40%
+*	Low =  <= 50%
+*	Fail = > 50% or negative
 */
 
 class SGA_SY : public MetricSY<MetricType::SGA_SY, CategoryType::Single, CategoryType::IncomeStatement>
