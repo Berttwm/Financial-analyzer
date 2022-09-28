@@ -11,6 +11,8 @@
 #include "Metric/DebtRatio_SY.h"
 #include "Metric/DebtRatio_MY.h"
 #include "Metric/SellingAndBuyingStock_MY.h"
+#include "Metric/CapexMargin_SY.h"
+#include "Metric/CapexMargin_MY.h"
 
 /* To take in a stock object and provide interface for scoring system */
 class Scorer
@@ -56,6 +58,9 @@ private:
 		{MetricType::DebtRatio_MY, 0},
 		// Cash Flows
 		{MetricType::SellingAndBuyingStock_MY, 0},
+		{MetricType::CapexMargin_SY, 0},
+		{MetricType::CapexMargin_MY, 0},
+
 	};
 
 	std::unordered_map<MetricType, long double> MetricPerformances = // The actual datapoint collected from the metric. Percentages are represented as ratio (30% = 0.3)
@@ -70,10 +75,11 @@ private:
 		{MetricType::DebtRatio_MY, 0},
 		// Cash Flows
 		{MetricType::SellingAndBuyingStock_MY, 0},
+		{MetricType::CapexMargin_SY, 0},
+		{MetricType::CapexMargin_MY, 0},
 	};
 	// process a multi year score metrics for `num_years`, or maximum recorded duration (whichever is lower). 
 	//void process(const int num_years);
-
 
 public:
 	Scorer(const Stock &stock);

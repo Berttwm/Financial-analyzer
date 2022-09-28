@@ -58,6 +58,8 @@ enum class MetricType
 	DebtRatio_MY,
 	// Cash Flows
 	SellingAndBuyingStock_MY,
+	CapexMargin_SY,
+	CapexMargin_MY,
 
 
 
@@ -78,54 +80,6 @@ const std::unordered_map<MetricType, std::string> MetricTypeString =
 	{MetricType::DebtRatio_MY, "DebtRatio_MY"},
 	// Cash Flows
 	{MetricType::SellingAndBuyingStock_MY, "SellingAndBuyingStock_MY"},
-
-};
-/* The following enum classes are simply for reference at this juncture. Meaning that they are not 
-* actively called in the code (i.e. we will not be using `SingleYearIncomeStmtMetrics::SGA`)
-* I intend to use the following table as a reference guide for an overview of the available methods
-* 
-* However, please utilize them if there is a way to integrate them for implementation of metric.
-*/
-
-/* MetricYearType
-* Determines if the metric being processed shall be processed as a single, or multi year entity.
-*/
-enum class MetricYearType
-{
-	Single,
-	Multi
-};
-
-/* Income statement score metrics */
-enum class SingleYearIncomeStmtMetrics{
-	GrossProfitMargin, // >30%
-	SGA, // < 30%
-};
-
-enum class MultiYearIncomeStmtMetrics {
-	OperatingExpenses, // consistency between years
-	SGA, // year on year should never cross 100%
-};
-
-
-/* Balance sheet score metrics */
-enum class SingleYearBalanceSheetMetrics {
-	DebtRatio, // check for cash > debt
-};
-
-enum class MultiYearBalanceSheetMetrics {
-	Debt, // look at past 7 years for consistency of (cash > debt) ratio
-};
-
-
-/* Cash flow score metrics */
-enum class SingleYearCashFlowMetrics {
-	CashFlowOperatingActivites, // Check for current cash flow from operating activities
-	CashFlowInvestingOperations, // Check for current cash flow from investing activities
-};
-
-enum class MultiYearCashFlowMetrics {
-	CashFlowOperatingActivites, // Check for positive cash flow from operations
-	CashFlowInvestingOperations, // Check for positive cash flow from investing
-	SellingAndBuyingStock, // Check if company has bought or sold shares recently
+	{MetricType::CapexMargin_SY, "CapexMargin_SY"},
+	{MetricType::CapexMargin_MY, "CapexMargin_MY"},
 };

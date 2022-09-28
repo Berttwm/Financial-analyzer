@@ -175,6 +175,8 @@
     <ClCompile Include="CashFlow.cpp" />
     <ClCompile Include="IncomeStatement.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Metric\CapexMargin_MY.cpp" />
+    <ClCompile Include="Metric\CapexMargin_SY.cpp" />
     <ClCompile Include="Metric\DebtRatio_MY.cpp" />
     <ClCompile Include="Metric\DebtRatio_SY.cpp" />
     <ClCompile Include="Metric\GrossProfitMargin_SY.cpp" />
@@ -191,6 +193,8 @@
     <ClInclude Include="..\Header\CashFlow.h" />
     <ClInclude Include="..\Header\IncomeStatement.h" />
     <ClInclude Include="..\Header\Interval.h" />
+    <ClInclude Include="..\Header\Metric\CapexMargin_MY.h" />
+    <ClInclude Include="..\Header\Metric\CapexMargin_SY.h" />
     <ClInclude Include="..\Header\Metric\DebtRatio_SY.h" />
     <ClInclude Include="..\Header\Metric\DebtRatio_MY.h" />
     <ClInclude Include="..\Header\Metric\GrossProfitMargin_SY.h" />
