@@ -57,10 +57,6 @@ enum class MetricType
 	DebtRatio_SY,
 	DebtRatio_MY,
 	// Cash Flows
-	CashFlowOperatingActivites_SY,
-	CashFlowInvestingOperations_SY,
-	CashFlowOperatingActivites_MY,
-	CashFlowInvestingOperations_MY,
 	SellingAndBuyingStock_MY,
 
 
@@ -81,10 +77,6 @@ const std::unordered_map<MetricType, std::string> MetricTypeString =
 	{MetricType::DebtRatio_SY, "DebtRatio_SY"},
 	{MetricType::DebtRatio_MY, "DebtRatio_MY"},
 	// Cash Flows
-	{MetricType::CashFlowOperatingActivites_SY, "CashFlowOperatingActivites_SY"},
-	{MetricType::CashFlowInvestingOperations_SY, "CashFlowInvestingOperations_SY"},
-	{MetricType::CashFlowOperatingActivites_MY, "CashFlowOperatingActivites_MY"},
-	{MetricType::CashFlowInvestingOperations_MY, "CashFlowInvestingOperations_MY"},
 	{MetricType::SellingAndBuyingStock_MY, "SellingAndBuyingStock_MY"},
 
 };

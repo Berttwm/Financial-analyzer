@@ -60,18 +60,6 @@
     <ClCompile Include="Metric\DebtRatio_MY.cpp">
       <Filter>Source Files\Metric</Filter>
     </ClCompile>
-    <ClCompile Include="Metric\CashFlowOperatingActivites_SY.cpp">
-      <Filter>Source Files\Metric</Filter>
-    </ClCompile>
-    <ClCompile Include="Metric\CashFlowInvestingOperations_SY.cpp">
-      <Filter>Source Files\Metric</Filter>
-    </ClCompile>
-    <ClCompile Include="Metric\CashFlowOperatingActivites_MY.cpp">
-      <Filter>Source Files\Metric</Filter>
-    </ClCompile>
-    <ClCompile Include="Metric\CashFlowInvestingOperations_MY.cpp">
-      <Filter>Source Files\Metric</Filter>
-    </ClCompile>
     <ClCompile Include="Metric\SellingAndBuyingStock_MY.cpp">
       <Filter>Source Files\Metric</Filter>
     </ClCompile>
@@ -132,18 +120,6 @@
       <Filter>Header Files\Metric</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\Metric\DebtRatio_MY.h">
-      <Filter>Header Files\Metric</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Header\Metric\CashFlowOperatingActivites_SY.h">
-      <Filter>Header Files\Metric</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Header\Metric\CashFlowInvestingOperations_SY.h">
-      <Filter>Header Files\Metric</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Header\Metric\CashFlowOperatingActivites_MY.h">
-      <Filter>Header Files\Metric</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Header\Metric\CashFlowInvestingOperations_MY.h">
       <Filter>Header Files\Metric</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\Metric\SellingAndBuyingStock_MY.h">

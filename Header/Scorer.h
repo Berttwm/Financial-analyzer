@@ -10,10 +10,6 @@
 #include "Metric/SGA_MY.h"
 #include "Metric/DebtRatio_SY.h"
 #include "Metric/DebtRatio_MY.h"
-#include "Metric/CashFlowOperatingActivites_SY.h"
-#include "Metric/CashFlowInvestingOperations_SY.h"
-#include "Metric/CashFlowOperatingActivites_MY.h"
-#include "Metric/CashFlowInvestingOperations_MY.h"
 #include "Metric/SellingAndBuyingStock_MY.h"
 
 /* To take in a stock object and provide interface for scoring system */
@@ -59,10 +55,6 @@ private:
 		{MetricType::DebtRatio_SY, 0},
 		{MetricType::DebtRatio_MY, 0},
 		// Cash Flows
-		{MetricType::CashFlowOperatingActivites_SY, 0},
-		{MetricType::CashFlowInvestingOperations_SY, 0},
-		{MetricType::CashFlowOperatingActivites_MY, 0},
-		{MetricType::CashFlowInvestingOperations_MY, 0},
 		{MetricType::SellingAndBuyingStock_MY, 0},
 	};
 
@@ -77,10 +69,6 @@ private:
 		{MetricType::DebtRatio_SY, 0},
 		{MetricType::DebtRatio_MY, 0},
 		// Cash Flows
-		{MetricType::CashFlowOperatingActivites_SY, 0},
-		{MetricType::CashFlowInvestingOperations_SY, 0},
-		{MetricType::CashFlowOperatingActivites_MY, 0},
-		{MetricType::CashFlowInvestingOperations_MY, 0},
 		{MetricType::SellingAndBuyingStock_MY, 0},
 	};
 	// process a multi year score metrics for `num_years`, or maximum recorded duration (whichever is lower). 
