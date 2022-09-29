@@ -22,7 +22,7 @@ Puller::Puller(std::string ticker)
     std::transform(ticker.begin(), ticker.end(), ticker.begin(), ::toupper);
     /* Step 2: Pull statements from API Endpoints (For test, just read from json) */
     // Actual: Pull statements from API endpoint
-    // this->pull_stmt_annual();
+    //this->pull_stmt_annual();
     // For testing: Read statements from stored json files
     this->read_stmt_annual_from_files(); // TEST METHOD
     

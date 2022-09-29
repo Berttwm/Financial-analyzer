@@ -12,7 +12,8 @@ SellingAndBuyingStock_MY::SellingAndBuyingStock_MY(const Stock& stock, int& scor
 	// iterate from earliest date available (year_count) to latest date
 	for (int i = this->year_count - 1; i >= 0; i--)
 	{
-		long double commonStockRepurchased = stock.get_CF_metric(CashFlowMetrics::commonStockRepurchased, i);
+		// Stock repurchase is always negative
+		long double commonStockRepurchased = abs(stock.get_CF_metric(CashFlowMetrics::commonStockRepurchased, i));
 		if (i == this->year_count - 1)
 		{
 			continue;
