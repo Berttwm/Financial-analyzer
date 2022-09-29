@@ -12,9 +12,10 @@ The following segment dictates the rough timeline this project will follow. The 
 
 # Version 1.0 - Grading Simulator 
 ## Iteration 1 - MVP (TODO by September 31)
-1. [ ] Gather few Metrics (3-5 metrics)
-2. [ ] Grading by total score and by categories
-3. [ ] Simple CLI - `./program [Stock Ticker]`
+1. [X] Gather few Metrics (3-5 metrics) - **9 Metrics completed**
+2. [X] Grading by total score and by categories - **5 categories, every metric individual metric score, completed**
+3. [X] Simple CLI - `./program [Stock Ticker]` - **Works with TSLA**
+> COMPLETED!!!
 
 ## Iteration 2 - Complete (TODO by October 31)
 1. [ ] Full Metrics
