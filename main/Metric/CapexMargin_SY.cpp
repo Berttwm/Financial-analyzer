@@ -8,25 +8,25 @@ CapexMargin_SY::CapexMargin_SY(const Stock& stock, int& score, std::unordered_ma
 	std::unordered_map<CategoryType, int>* MaxCategoryScores, std::unordered_map<MetricType, int>* MaxMetricScores, std::unordered_map<MetricType, long double>* MetricPerformances)
 	: MetricSY(stock, score, CategoryScores, MetricScores, MaxCategoryScores, MaxMetricScores, MetricPerformances)
 {
-	long double totalLiabilities = stock.get_BS_metric(BalanceSheetMetrics::totalLiabilities, 0);
-	long double totalAssets = stock.get_BS_metric(BalanceSheetMetrics::totalAssets, 0);
-	long double DebtRatio = totalLiabilities / totalAssets;
-	this->set_performance(DebtRatio); // set actual performance of this metric (i.e. actual gross profit margin)
+	long double capitalExpenditure = abs(stock.get_CF_metric(CashFlowMetrics::capitalExpenditure, 0)); // Capex is always negative
+	long double netIncome = stock.get_IS_metric(IncomeStatementMetrics::netIncome, 0);
+	long double Capex_SY = capitalExpenditure / netIncome;
+	this->set_performance(Capex_SY); // set actual performance of this metric (i.e. actual gross profit margin)
 	this->scoreMetric();
 	this->updateMetricPerformances();
 }
 
 bool CapexMargin_SY::highScore()
 {
-	return this->performance <= 0.3;
+	return this->performance <= 0.25;
 }
 
 bool CapexMargin_SY::medScore()
 {
-	return this->performance <= 0.45;
+	return this->performance <= 0.5;
 }
 
 bool CapexMargin_SY::lowScore()
 {
-	return this->performance <= 0.6;
+	return this->performance <= 0.75;
 }

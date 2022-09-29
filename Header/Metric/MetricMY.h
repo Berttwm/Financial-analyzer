@@ -16,7 +16,6 @@ template<MetricType MT, CategoryType... CTs>
 class MetricMY : public Metric
 {
 private:
-	int year_count; // Simply pass in desired testing period, constructor will decide actual number of years to use
 
 	virtual bool highScore() = 0;
 	virtual bool medScore() = 0;
@@ -33,6 +32,8 @@ protected:
 	/* updateMetricPerformance() - Only called **AFTER** performance has been set!
 	*	Updates the std::unordered_map MetricPerformances with the performance score of current metric.
 	*/
+	int year_count; // Simply pass in desired testing period, constructor will decide actual number of years to use
+
 	void updateMetricPerformances() 
 	{
 		auto it = this->MetricPerformances->find(MT); // TODO FIX THIS
