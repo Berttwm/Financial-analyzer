@@ -28,6 +28,7 @@ Puller::Puller(std::string ticker)
     
     /* Step 3: Parse JSON data*/
     this->parse_json();
+    
 }
 
 void Puller::pull_stmt_annual()
@@ -92,20 +93,26 @@ void Puller::pull_stmt_annual()
 
 void Puller::read_stmt_annual_from_files()
 {
-    std::ifstream inc_stmt_file("../files/inc_stmt.json");
+    std::ifstream filepath("../files/" + ticker + "/inc_stmt.json");
+    if (!filepath)
+    {
+        throw std::exception("[*ERROR] The file doesn't exist");
+    }
+
+    std::ifstream inc_stmt_file("../files/" + ticker + "/inc_stmt.json");
     std::stringstream inc_stmt_ss;
     inc_stmt_ss << inc_stmt_file.rdbuf();
     inc_stmt_file.close();
     inc_stmt_json_str = inc_stmt_ss.str();
 
 
-    std::ifstream bal_sheet_file("../files/bal_sheet.json");
+    std::ifstream bal_sheet_file("../files/" + ticker + "/bal_sheet.json");
     std::stringstream bal_sheet_ss;
     bal_sheet_ss << bal_sheet_file.rdbuf();
     bal_sheet_file.close();
     bal_sheet_json_str = bal_sheet_ss.str();
 
-    std::ifstream cash_flow_file("../files/cash_flow.json");
+    std::ifstream cash_flow_file("../files/" + ticker + "/cash_flow.json");
     std::stringstream cash_flow_ss;
     cash_flow_ss << cash_flow_file.rdbuf();
     cash_flow_file.close();
@@ -129,11 +136,11 @@ void Puller::parse_json()
     //      d_inc_stmt[0] = latest year, d_inc_stmt[1] = second latest year
     //      d_inc_stmt[0]["symbol"] = income statement latest year "symbol" 
     std::string test_str_inc_stmt = d_inc_stmt[0]["symbol"].GetString();
-    std::string test_str_bal_sheet = d_inc_stmt[0]["symbol"].GetString();
+    std::string test_str_bal_sheet = d_bal_sheet[0]["symbol"].GetString();
     std::string test_str_cash_flow = d_inc_stmt[0]["symbol"].GetString();
     std::cout << "test string for inc stmt = " << test_str_inc_stmt << std::endl;
-    std::cout << "test string for bal sheet = " << test_str_inc_stmt << std::endl;
-    std::cout << "test string for cash flow = " << test_str_inc_stmt << std::endl;
+    std::cout << "test string for bal sheet = " << test_str_bal_sheet << std::endl;
+    std::cout << "test string for cash flow = " << test_str_cash_flow << std::endl;
 
     std::cout << "[*LOG] Successfully Parsed Json" << std::endl;
 }

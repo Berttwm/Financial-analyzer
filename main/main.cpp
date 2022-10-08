@@ -1,24 +1,53 @@
 #include <iostream>
 #include <cpr/cpr.h>
+#include <CLI11.hpp>
 
 #include "../Header/Puller.h"
 #include "../Header/Scorer.h"
 #include "../Header/Stock.h"
 
+
 #define stringify( name ) #name
 
 using namespace std;
 
+//int main() {
+//    CLI::App app{ "App description" };
+//
+//    //std::string filename = "default";
+//    //app.add_option("-f,--file", filename, "A help string");
+//    //cout << "Type a number: \n";
+//    //CLI11_PARSE(app, argc, argv);
+//    //cout << "Passed?: ";
+//    //return 0;
+//
+//    //try {
+//    //    app.parse(argc, argv);
+//    //    cout << "Passed?: ";
+//    //}
+//    //catch (const CLI::ParseError& e) {
+//    //    return app.exit(e);
+//    //}
+//}
+
+const std::string WELCOME_MESSAGE = "Welcome to Financial Analyzer!\nPlease enter a stock symbol:";
+
 int main()
 {
+    std::string input;
+    std::cout << WELCOME_MESSAGE << std::endl; 
+    std::cin >> input; 
+    std::cout << "Finding data on stock..." << std::endl;
+
     // Step 1: Pull from API endpoint
     Puller* puller_tsla;
     try
     {
-        puller_tsla = new Puller("AAPL");
+        puller_tsla = new Puller(input);
     }
     catch (...)
     {
+        std::cout << "Unable to find stock." << std::endl;
         throw;
     }
 
