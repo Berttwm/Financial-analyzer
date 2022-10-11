@@ -12,15 +12,15 @@ DebtRatio_MY::DebtRatio_MY(const Stock& stock, int& score, std::unordered_map<Ca
 	// iterate from earliest date available (year_count) to latest date
 	for (int i = this->year_count - 1; i >= 0; i--)
 	{
-		long double totalLiabilities = stock.get_BS_metric(BalanceSheetMetrics::totalLiabilities, 0);
+		long double totalDebt = stock.get_BS_metric(BalanceSheetMetrics::totalDebt, 0);
 		long double totalAssets = stock.get_BS_metric(BalanceSheetMetrics::totalAssets, 0);
-		long double DebtRatio = totalLiabilities / totalAssets;
+		long double DebtRatio = totalDebt / totalAssets;
 		if (i == this->year_count - 1)
 		{
 			// first iteration skips comparison
 			continue;
 		}
-		if (DebtRatio > 0.3)
+		if (DebtRatio > 1)
 		{
 			DebtRatio_fail_count++;
 		}

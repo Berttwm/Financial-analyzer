@@ -15,7 +15,7 @@ int main()
     Puller* puller_tsla;
     try
     {
-        puller_tsla = new Puller("AAPL");
+        puller_tsla = new Puller("AMZN");
     }
     catch (...)
     {
