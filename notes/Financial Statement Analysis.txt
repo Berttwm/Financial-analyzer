@@ -1,18 +1,18 @@
 Income Sheets: 
 
-1) Gross Profit Margin: 30% good
-2) Operating Expenses:  consistency between years, above 100% (expense/profit) and wildly fluctuation may indicate lost of profit
-3) Selling General and Admin: 30% of gross profit is very good, consistency is more important should never be above 100
-4) RnD: If the lion share goes to RnD, they need to be consistently innovating to be at the top and it may not be durable in bad times (intel/amd)
-5) Depreciation: Wear and tear of machinery. : 5-10% of gross profit
+--1) Gross Profit Margin: 30% good
+--2) Operating Expenses:  consistency between years, above 100% (expense/profit) and wildly fluctuation may indicate lost of profit
+--3) Selling General and Admin: 30% of gross profit is very good, consistency is more important should never be above 100
+-4) RnD: If the lion share goes to RnD, they need to be consistently innovating to be at the top and it may not be durable in bad times (intel/amd)
+-5) Depreciation: Wear and tear of machinery. : 5-10% of gross profit
 
-6) Interest Expense: How much interest cost (banks generally positive, retail negative). Cost for loans etc. Competitive companies pay below 15% Interest Expense over operating cost. 
-7) Gain or Loss: Money earned from sale of assets (like property) - NA
-8) Net Earnings - after all expenses have been deducted from company revenue. (Historical upward trend, not necessarily year on year) Opersting profit is a subset of net earnings 
-9) Higher percent (net earnings/total revenue) than competitors - >20% consistently very good, under 10% consistently very bad
-10) Sales > 700M
-11) No negative earnings for 10 years
-12) At least 2.9% earnings growth every year
+-6) Interest Expense: How much interest cost (banks generally positive, retail negative). Cost for loans etc. Competitive companies pay below 15% Interest Expense over operating cost. 
+**7) Gain or Loss: Money earned from sale of assets (like property) - NA
+-8) Net Earnings - after all expenses have been deducted from company revenue. (Historical upward trend, not necessarily year on year) Operating profit is a subset of net earnings 
+-9) Higher percent (net earnings/total revenue) than competitors - >20% consistently very good, under 10% consistently very bad
+**10) Sales > 700M 
+-11) No negative earnings for 10 years
+-12) At least 2.9% earnings growth every year
 
 EPS - Amount earned/total shares - EPS that tends upwards for 10 years (Usually company with erractic EPS is in too competitive field)
 

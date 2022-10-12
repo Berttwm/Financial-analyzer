@@ -8,6 +8,16 @@
 #include "Metric/SGA_SY.h"
 #include "Metric/OperatingExpenses_MY.h"
 #include "Metric/SGA_MY.h"
+#include "Metric/RND_SY.h"
+#include "Metric/RND_MY.h"
+#include "Metric/Depreciation_SY.h"
+#include "Metric/Depreciation_MY.h"
+#include "Metric/InterestExpense_SY.h"
+#include "Metric/InterestExpense_MY.h"
+#include "Metric/NetEarnings_MY.h"
+#include "Metric/NetEarningsOverRevenue_MY.h"
+#include "Metric/NegativeEarnings_MY.h"
+#include "Metric/EarningsGrowth_MY.h"
 #include "Metric/DebtRatio_SY.h"
 #include "Metric/DebtRatio_MY.h"
 #include "Metric/SellingAndBuyingStock_MY.h"
@@ -53,6 +63,18 @@ private:
 		{MetricType::SGA_SY, 0},
 		{MetricType::OperatingExpenses_MY, 0},
 		{MetricType::SGA_MY, 0},
+
+		{MetricType::RND_SY, 0},
+		{MetricType::RND_MY, 0},
+		{MetricType::Depreciation_SY, 0},
+		{MetricType::Depreciation_MY, 0},
+		{MetricType::InterestExpense_SY, 0},
+		{MetricType::InterestExpense_MY, 0},
+		{MetricType::NetEarnings_MY, 0},
+		{MetricType::NetEarningsOverRevenue_MY, 0},
+		{MetricType::NegativeEarnings_MY, 0},
+		{MetricType::EarningsGrowth_MY, 0},
+
 		// Balance Sheets
 		{MetricType::DebtRatio_SY, 0},
 		{MetricType::DebtRatio_MY, 0},
@@ -70,6 +92,17 @@ private:
 		{MetricType::SGA_SY, 0},
 		{MetricType::OperatingExpenses_MY, 0},
 		{MetricType::SGA_MY, 0},
+
+		{MetricType::RND_SY, 0},
+		{MetricType::RND_MY, 0},
+		{MetricType::Depreciation_SY, 0},
+		{MetricType::Depreciation_MY, 0},
+		{MetricType::InterestExpense_SY, 0},
+		{MetricType::InterestExpense_MY, 0},
+		{MetricType::NetEarnings_MY, 0},
+		{MetricType::NetEarningsOverRevenue_MY, 0},
+		{MetricType::NegativeEarnings_MY, 0},
+		{MetricType::EarningsGrowth_MY, 0},
 		// Balance Sheets
 		{MetricType::DebtRatio_SY, 0},
 		{MetricType::DebtRatio_MY, 0},

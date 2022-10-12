@@ -69,6 +69,36 @@
     <ClCompile Include="Metric\CapexMargin_SY.cpp">
       <Filter>Source Files\Metric</Filter>
     </ClCompile>
+    <ClCompile Include="Metric\RND_SY.cpp">
+      <Filter>Source Files\Metric</Filter>
+    </ClCompile>
+    <ClCompile Include="Metric\RND_MY.cpp">
+      <Filter>Source Files\Metric</Filter>
+    </ClCompile>
+    <ClCompile Include="Metric\Depreciation_SY.cpp">
+      <Filter>Source Files\Metric</Filter>
+    </ClCompile>
+    <ClCompile Include="Metric\Depreciation_MY.cpp">
+      <Filter>Source Files\Metric</Filter>
+    </ClCompile>
+    <ClCompile Include="Metric\InterestExpense_SY.cpp">
+      <Filter>Source Files\Metric</Filter>
+    </ClCompile>
+    <ClCompile Include="Metric\InterestExpense_MYcpp.cpp">
+      <Filter>Source Files\Metric</Filter>
+    </ClCompile>
+    <ClCompile Include="Metric\NetEarnings_MY.cpp">
+      <Filter>Source Files\Metric</Filter>
+    </ClCompile>
+    <ClCompile Include="Metric\NetEarningsOverRevenue_MY.cpp">
+      <Filter>Source Files\Metric</Filter>
+    </ClCompile>
+    <ClCompile Include="Metric\NegativeEarnings_MY.cpp">
+      <Filter>Source Files\Metric</Filter>
+    </ClCompile>
+    <ClCompile Include="Metric\EarningsGrowth_MY.cpp">
+      <Filter>Source Files\Metric</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Header\Puller.h">
@@ -135,6 +165,36 @@
       <Filter>Header Files\Metric</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\Metric\CapexMargin_MY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\RND_SY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\RND_MY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\Depreciation_MY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\Depreciation_SY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\InterestExpense_SY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\InterestExpense_MY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\NetEarnings_MY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\NetEarningsOverRevenue_MY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\NegativeEarnings_MY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\EarningsGrowth_MY.h">
       <Filter>Header Files\Metric</Filter>
     </ClInclude>
   </ItemGroup>

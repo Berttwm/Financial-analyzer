@@ -25,12 +25,26 @@ void Scorer::process()
 	int year_count = this->stock.get_num_years_data(); // To determine number of years to pass into MY (Multiyear metrics)
 
 	// TODO: Implement recursive calling on Metric classes
+	// Income Statements
 	GrossProfitMargin_SY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances);
 	SGA_SY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances);
 	OperatingExpenses_MY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances, year_count);
 	SGA_MY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances, year_count);
+	RND_SY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances);
+	RND_MY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances, year_count);
+	Depreciation_SY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances);
+	Depreciation_MY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances, year_count);
+	InterestExpense_SY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances);
+	InterestExpense_MY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances, year_count);
+	NetEarnings_MY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances, year_count);
+	NetEarningsOverRevenue_MY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances, year_count);
+	NegativeEarnings_MY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances, year_count);
+	EarningsGrowth_MY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances, year_count);
+	// Balance Sheets
 	DebtRatio_SY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances);
 	DebtRatio_MY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances, year_count);
+	
+	// CashFlows
 	SellingAndBuyingStock_MY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances, year_count);
 	CapexMargin_SY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances);
 	CapexMargin_MY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances, year_count);
