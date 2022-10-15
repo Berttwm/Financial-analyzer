@@ -6,56 +6,52 @@
 #include "../Header/Scorer.h"
 #include "../Header/Stock.h"
 
+//#include "CLI/App.hpp"
+//#include "CLI/Formatter.hpp"
+//#include "CLI/Config.hpp"
+
 
 #define stringify( name ) #name
 
 using namespace std;
 
-//int main() {
-//    CLI::App app{ "App description" };
-//
-//    //std::string filename = "default";
-//    //app.add_option("-f,--file", filename, "A help string");
-//    //cout << "Type a number: \n";
+//int main(int argc, char** argv) {
+//    //CLI::App app{ "App description" };
+//    
 //    //CLI11_PARSE(app, argc, argv);
-//    //cout << "Passed?: ";
-//    //return 0;
-//
-//    //try {
-//    //    app.parse(argc, argv);
-//    //    cout << "Passed?: ";
-//    //}
-//    //catch (const CLI::ParseError& e) {
-//    //    return app.exit(e);
-//    //}
+//    return 0;
 //}
 
-const std::string WELCOME_MESSAGE = "Welcome to Financial Analyzer!\nPlease enter a stock symbol:";
 
-int main()
+const std::string WELCOME_MESSAGE = "Welcome to Financial Analyzer!";
+
+int main(int argc, char** argv) 
 {
-    std::string input;
+    if (argc < 2) {
+        std::cout << "Please input a stock symbol." << std::endl;
+        return -1;
+    }
+
+    std::string input = argv[1];
     std::cout << WELCOME_MESSAGE << std::endl; 
-    std::cin >> input; 
-    std::cout << "Finding data on stock..." << std::endl;
 
     // Step 1: Pull from API endpoint
-    Puller* puller_tsla;
+    Puller* puller_stock;
     try
     {
-        puller_tsla = new Puller("AMZN");
+        puller_stock = new Puller(input);
     }
     catch (...)
     {
         std::cout << "Unable to find stock." << std::endl;
-        throw;
+        return -1;
     }
 
     // Step 2: Create `Stock` object
-    Stock* tsla_stock = new Stock(puller_tsla->get_d_inc_stmt(), puller_tsla->get_d_bal_sheet(), puller_tsla->get_d_cash_flow());
+    Stock* stock = new Stock(puller_stock->get_d_inc_stmt(), puller_stock->get_d_bal_sheet(), puller_stock->get_d_cash_flow());
 
     // Step 3: Pass `Stock` object to `Scorer` object
-    Scorer* scorer = new Scorer(*tsla_stock);
+    Scorer* scorer = new Scorer(*stock);
 
     // Step 4: Use the scorer to iterate through metrics
     scorer->process();
