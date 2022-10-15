@@ -3,7 +3,7 @@
 /*
 * SGA_SY - SingleYear_DebtRatio
 *
-* Description: Calculates the current year Debt Ratio. (i.e. Total Liabilities / Total Assets)
+* Description: Calculates the current year Debt Ratio. (i.e. Total Debt/ Total Assets)
 *
 * Categories used:
 *	1) Single

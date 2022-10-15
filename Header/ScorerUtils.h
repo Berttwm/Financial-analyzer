@@ -53,6 +53,22 @@ enum class MetricType
 	SGA_SY,
 	OperatingExpenses_MY,
 	SGA_MY,
+	
+	// NEW
+	RND_SY,
+	RND_MY,
+	Depreciation_SY,
+	Depreciation_MY,
+	InterestExpense_SY,
+	InterestExpense_MY,
+	// SalesOfAssets_SY/MY // money earned over sales of assets
+	NetEarnings_MY,
+	NetEarningsOverRevenue_MY,
+	// SalesFigure, // Over 700M
+	NegativeEarnings_MY,
+	EarningsGrowth_MY,
+	// NEW
+	
 	// Balance Sheets
 	DebtRatio_SY,
 	DebtRatio_MY,
@@ -75,6 +91,16 @@ const std::unordered_map<MetricType, std::string> MetricTypeString =
 	{MetricType::SGA_SY, "SGA_SY"},
 	{MetricType::OperatingExpenses_MY, "OperatingExpenses_MY"},
 	{MetricType::SGA_MY, "SGA_MY"},
+	{MetricType::RND_SY, "RND_SY"},
+	{MetricType::RND_MY, "RND_MY"},
+	{MetricType::Depreciation_SY, "Depreciation_SY"},
+	{MetricType::Depreciation_MY, "Depreciation_MY"},
+	{MetricType::InterestExpense_SY, "InterestExpense_SY"},
+	{MetricType::InterestExpense_MY, "InterestExpense_MY"},
+	{MetricType::NetEarnings_MY, "NetEarnings_MY"},
+	{MetricType::NetEarningsOverRevenue_MY, "NetEarningsOverRevenue_MY"},
+	{MetricType::NegativeEarnings_MY, "NegativeEarnings_MY"},
+	{MetricType::EarningsGrowth_MY, "EarningsGrowth_MY"},
 	// Balance Sheets
 	{MetricType::DebtRatio_SY, "DebtRatio_SY"},
 	{MetricType::DebtRatio_MY, "DebtRatio_MY"},

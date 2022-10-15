@@ -43,7 +43,7 @@ int main()
     Puller* puller_tsla;
     try
     {
-        puller_tsla = new Puller(input);
+        puller_tsla = new Puller("AMZN");
     }
     catch (...)
     {
