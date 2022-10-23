@@ -96,7 +96,7 @@ void Puller::read_stmt_annual_from_files()
     std::ifstream filepath("../files/" + ticker + "/inc_stmt.json");
     if (!filepath)
     {
-        throw std::exception("[*ERROR] The file doesn't exist");
+        throw std::exception("The file doesn't exist");
     }
 
     std::ifstream inc_stmt_file("../files/" + ticker + "/inc_stmt.json");
