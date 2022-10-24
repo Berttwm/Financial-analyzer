@@ -35,7 +35,7 @@ int main(int argc, char** argv)
     catch (...)
     {
         // catch any other errors (that we have no information about)
-        std::cerr << "Unknown failure occurred. Possible memory corruption" << std::endl;
+        std::cerr << "Unknown error occurred." << std::endl;
     }
 
     return 0;

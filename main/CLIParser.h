@@ -23,7 +23,11 @@ public:
 	void parse_input();
 
 private:
-	int num_args;
+	const int num_args;
 	char** argv;
+
+	void parse_stock_only();
+	void parse_all_scoring();
+	void parse_select_score();
 
 };
