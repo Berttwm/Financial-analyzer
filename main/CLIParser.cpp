@@ -18,13 +18,13 @@ void CLIParser::parse_input()
     std::cout << "+++++++++++ PARSE INPUT +++++++++++" << std::endl;
     switch (num_args) {
     case 2:
-        parse_stock_only();
+        parse_entire_stock();
         break;
     case 3:
-        parse_all_scoring();
+        parse_whole_category();
         break;
     case 4:
-        parse_select_score();
+        parse_specified_category();
         break;
     default:
         throw std::exception("Inavlid input arguments");
@@ -34,7 +34,7 @@ void CLIParser::parse_input()
 }
 
 
-void CLIParser::parse_stock_only()
+void CLIParser::parse_entire_stock()
 {
     
     std::cout << std::endl << "[*] === Processing complete... Printing debug statements" << std::endl;
@@ -83,7 +83,7 @@ void CLIParser::parse_stock_only()
     std::cout << "=== End of processing ===" << std::endl;
 }
 
-void CLIParser::parse_all_scoring()
+void CLIParser::parse_whole_category()
 {
     std::cout << "+++++++++++ PARSE ALL SCORING +++++++++++" << std::endl;
     std::string input = argv[1];
@@ -123,7 +123,7 @@ void CLIParser::parse_all_scoring()
    
 }
 
-void CLIParser::parse_select_score()
+void CLIParser::parse_specified_category()
 {
     std::cout << "+++++++++++ PARSE SELECT SCORE +++++++++++" << std::endl;
     std::string input = argv[1];

@@ -26,8 +26,8 @@ private:
 	const int num_args;
 	char** argv;
 
-	void parse_stock_only();
-	void parse_all_scoring();
-	void parse_select_score();
+	void parse_entire_stock();
+	void parse_whole_category();
+	void parse_specified_category();
 
 };

@@ -11,8 +11,6 @@
 
 using namespace std;
 
-const std::string WELCOME_MESSAGE = "Welcome to Financial Analyzer!";
-
 int main(int argc, char** argv) 
 {
     CLIParser* cli_parser;
