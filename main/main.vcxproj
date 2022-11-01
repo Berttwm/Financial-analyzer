@@ -183,7 +183,7 @@
     <ClCompile Include="Metric\Depreciation_SY.cpp" />
     <ClCompile Include="Metric\EarningsGrowth_MY.cpp" />
     <ClCompile Include="Metric\GrossProfitMargin_SY.cpp" />
-    <ClCompile Include="Metric\InterestExpense_MYcpp.cpp" />
+    <ClCompile Include="Metric\InterestExpense_MY.cpp" />
     <ClCompile Include="Metric\InterestExpense_SY.cpp" />
     <ClCompile Include="Metric\NegativeEarnings_MY.cpp" />
     <ClCompile Include="Metric\NetEarningsOverRevenue_MY.cpp" />

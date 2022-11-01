@@ -3,7 +3,7 @@
 /*
 * NetEarningsOverRevenue_MY - MultiYear_NetEarningsOverRevenue
 *
-* Description: Year on year net earnings/total revenue. >20% consistently
+* Description: Year on year net earnings/total revenue. >10% consistently
 *
 * Categories used:
 *	1) Multi

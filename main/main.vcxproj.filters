@@ -84,7 +84,7 @@
     <ClCompile Include="Metric\InterestExpense_SY.cpp">
       <Filter>Source Files\Metric</Filter>
     </ClCompile>
-    <ClCompile Include="Metric\InterestExpense_MYcpp.cpp">
+    <ClCompile Include="Metric\InterestExpense_MY.cpp">
       <Filter>Source Files\Metric</Filter>
     </ClCompile>
     <ClCompile Include="Metric\NetEarnings_MY.cpp">

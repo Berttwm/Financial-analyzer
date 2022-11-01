@@ -20,7 +20,7 @@ RND_MY::RND_MY(const Stock& stock, int& score, std::unordered_map<CategoryType, 
 		{
 			RND_prev = RND_curr;
 			// first iteration skips comparison
-			continue;
+			//continue;
 		}
 		if (RND_curr > 1)
 		{

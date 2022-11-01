@@ -8,24 +8,24 @@ InterestExpense_SY::InterestExpense_SY(const Stock& stock, int& score, std::unor
 	std::unordered_map<CategoryType, int>* MaxCategoryScores, std::unordered_map<MetricType, int>* MaxMetricScores, std::unordered_map<MetricType, long double>* MetricPerformances)
 	: MetricSY(stock, score, CategoryScores, MetricScores, MaxCategoryScores, MaxMetricScores, MetricPerformances)
 {
-	//long double sellingGeneralAndAdministrativeExpenses = stock.get_IS_metric(IncomeStatementMetrics::sellingGeneralAndAdministrativeExpenses, 0);
-	//long double grossProfit = stock.get_IS_metric(IncomeStatementMetrics::grossProfit, 0);
-	//this->set_performance(sellingGeneralAndAdministrativeExpenses / grossProfit); // set actual performance of this metric (i.e. actual gross profit margin)
+	long double interestExpense = stock.get_IS_metric(IncomeStatementMetrics::interestExpense, 0);
+	long double operatingExpenses = stock.get_IS_metric(IncomeStatementMetrics::operatingExpenses, 0);
+	this->set_performance(interestExpense / operatingExpenses); // set actual performance of this metric (i.e. actual gross profit margin)
 	this->scoreMetric();
 	this->updateMetricPerformances();
 }
 
 bool InterestExpense_SY::highScore()
 {
-	return (this->performance >= 0 && this->performance <= 0.3);
+	return (this->performance >= 0 && this->performance <= 0.15);
 }
 
 bool InterestExpense_SY::medScore()
 {
-	return (this->performance >= 0 && this->performance <= 0.4);
+	return (this->performance >= 0 && this->performance <= 0.3);
 }
 
 bool InterestExpense_SY::lowScore()
 {
-	return (this->performance >= 0 && this->performance <= 0.5);
+	return (this->performance >= 0 && this->performance <= 0.45);
 }
