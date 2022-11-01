@@ -55,8 +55,8 @@ enum class MetricType
 	SGA_MY,
 	
 	// NEW
-	RND_SY,
-	RND_MY,
+	RND_SY, // done
+	RND_MY, // done
 	Depreciation_SY,
 	Depreciation_MY,
 	InterestExpense_SY,

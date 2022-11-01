@@ -22,7 +22,7 @@ SGA_MY::SGA_MY(const Stock& stock, int& score, std::unordered_map<CategoryType, 
 			// first iteration skips comparison
 			continue;
 		}
-		if (SGA_curr > SGA_prev)
+		if (SGA_curr > 1)
 		{
 			SGA_fail_count++;
 		}
