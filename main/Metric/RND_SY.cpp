@@ -8,9 +8,9 @@ RND_SY::RND_SY(const Stock& stock, int& score, std::unordered_map<CategoryType, 
 	std::unordered_map<CategoryType, int>* MaxCategoryScores, std::unordered_map<MetricType, int>* MaxMetricScores, std::unordered_map<MetricType, long double>* MetricPerformances)
 	: MetricSY(stock, score, CategoryScores, MetricScores, MaxCategoryScores, MaxMetricScores, MetricPerformances)
 {
-	//long double sellingGeneralAndAdministrativeExpenses = stock.get_IS_metric(IncomeStatementMetrics::sellingGeneralAndAdministrativeExpenses, 0);
-	//long double grossProfit = stock.get_IS_metric(IncomeStatementMetrics::grossProfit, 0);
-	//this->set_performance(sellingGeneralAndAdministrativeExpenses / grossProfit); // set actual performance of this metric (i.e. actual gross profit margin)
+	long double RnD = stock.get_IS_metric(IncomeStatementMetrics::researchAndDevelopmentExpenses, 0);
+	long double grossProfit = stock.get_IS_metric(IncomeStatementMetrics::grossProfit, 0);
+	this->set_performance(RnD / grossProfit); // set actual performance of this metric (i.e. actual gross profit margin)
 	this->scoreMetric();
 	this->updateMetricPerformances();
 }

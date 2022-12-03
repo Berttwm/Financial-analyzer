@@ -14,7 +14,7 @@
 *	High = <= 15%
 *	Med = <= 30%
 *	Low =  <= 45%
-*	Fail = > 50%
+*	Fail => 45%
 */
 
 class InterestExpense_SY : public MetricSY<MetricType::InterestExpense_SY, CategoryType::Single, CategoryType::IncomeStatement>

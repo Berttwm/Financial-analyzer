@@ -55,18 +55,18 @@ enum class MetricType
 	SGA_MY,
 	
 	// NEW
-	RND_SY,
-	RND_MY,
-	Depreciation_SY,
-	Depreciation_MY,
-	InterestExpense_SY,
-	InterestExpense_MY,
+	RND_SY, // done
+	RND_MY, // done
+	Depreciation_SY, // done
+	Depreciation_MY, // done
+	InterestExpense_SY, // done
+	InterestExpense_MY, // done
 	// SalesOfAssets_SY/MY // money earned over sales of assets
-	NetEarnings_MY,
-	NetEarningsOverRevenue_MY,
+	NetEarnings_MY, // done
+	NetEarningsOverRevenue_MY, // done
 	// SalesFigure, // Over 700M
-	NegativeEarnings_MY,
-	EarningsGrowth_MY,
+	NegativeEarnings_MY, // done 
+	EarningsGrowth_MY, // done
 	// NEW
 	
 	// Balance Sheets

@@ -5,10 +5,6 @@
 *
 * Description: Depreciation And Amortization for current year. Should be consistently < 10% of gross profit
 *
-* Categories used:
-*	1) Single
-*	2) IncomeStatement
-*
 * Scoring:
 *	High = 0 cross
 *	Med = 1 cross
