@@ -2,13 +2,14 @@
 #include "../Header/Puller.h"
 #include "../Header/Scorer.h"
 #include "../Header/Stock.h"
+#include "ParserException.h"
 
 CLIParser::CLIParser(int num_args, char** argv)
     :num_args(num_args),
     argv(argv)
 {
     if (num_args < 2) {
-        throw std::exception("Please input a stock symbol");
+        throw ParserException("Please input a stock symbol");
     }
 
 }
@@ -27,7 +28,7 @@ void CLIParser::parse_input()
         parse_specified_category();
         break;
     default:
-        throw std::exception("Inavlid input arguments");
+        throw ParserException("Inavlid input arguments");
     }
     std::cout << "+++++++++++ PARSE ENDDDDD +++++++++++" << std::endl;
 
@@ -118,7 +119,7 @@ void CLIParser::parse_whole_category()
         }
     }
     else {
-        throw std::exception("Please enter a valid argument");
+        throw ParserException("Please enter a valid argument");
     }
 
 }
@@ -169,6 +170,6 @@ void CLIParser::parse_specified_category()
         }
     }
     else {
-        throw std::exception("Please enter a valid argument");
+        throw ParserException("Please enter a valid argument");
     }
 }

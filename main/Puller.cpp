@@ -1,4 +1,5 @@
 #include "../Header/Puller.H"
+#include "ParserException.h";
 
 /* Getter Methods */
 rapidjson::Document& Puller::get_d_inc_stmt()
@@ -63,9 +64,9 @@ void Puller::pull_stmt_annual()
     // Exception checks on 3 URLs
 
     if (resp_inc_stmt.status_code != 200 || resp_bal_sheet.status_code != 200 || resp_cash_flow.status_code != 200)
-        throw std::exception("Pull statement search resulted in unsuccessful HTTP response code");
+        throw ParserException("Pull statement search resulted in unsuccessful HTTP response code");
     if (resp_inc_stmt.text == "[ ]" || resp_bal_sheet.text == "[ ]" || resp_cash_flow.text == "[ ]")
-        throw std::exception("Pull statement search resulted in empty result");
+        throw ParserException("Pull statement search resulted in empty result");
 
     /* Intermediary step, save and load from file */
     std::ofstream inc_stmt_file;
@@ -96,7 +97,7 @@ void Puller::read_stmt_annual_from_files()
     std::ifstream filepath("../files/" + ticker + "/inc_stmt.json");
     if (!filepath)
     {
-        throw std::exception("The file doesn't exist");
+        throw ParserException("The file doesn't exist");
     }
 
     std::ifstream inc_stmt_file("../files/" + ticker + "/inc_stmt.json");
