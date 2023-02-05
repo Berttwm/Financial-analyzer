@@ -20,6 +20,7 @@
 #include "Metric/EarningsGrowth_MY.h"
 #include "Metric/DebtRatio_SY.h"
 #include "Metric/DebtRatio_MY.h"
+#include "Metric/TotalInventory_MY.h"
 #include "Metric/SellingAndBuyingStock_MY.h"
 #include "Metric/CapexMargin_SY.h"
 #include "Metric/CapexMargin_MY.h"
@@ -78,6 +79,7 @@ private:
 		// Balance Sheets
 		{MetricType::DebtRatio_SY, 0},
 		{MetricType::DebtRatio_MY, 0},
+		{MetricType::TotalInventory_MY, 0},
 		// Cash Flows
 		{MetricType::SellingAndBuyingStock_MY, 0},
 		{MetricType::CapexMargin_SY, 0},
@@ -106,6 +108,7 @@ private:
 		// Balance Sheets
 		{MetricType::DebtRatio_SY, 0},
 		{MetricType::DebtRatio_MY, 0},
+		{MetricType::TotalInventory_MY, 0},
 		// Cash Flows
 		{MetricType::SellingAndBuyingStock_MY, 0},
 		{MetricType::CapexMargin_SY, 0},

@@ -194,6 +194,7 @@
     <ClCompile Include="Metric\SellingAndBuyingStock_MY.cpp" />
     <ClCompile Include="Metric\SGA_MY.cpp" />
     <ClCompile Include="Metric\SGA_SY.cpp" />
+    <ClCompile Include="Metric\TotalInventory_MY.cpp" />
     <ClCompile Include="Puller.cpp" />
     <ClCompile Include="Scorer.cpp" />
     <ClCompile Include="Stock.cpp" />
@@ -225,6 +226,7 @@
     <ClInclude Include="..\Header\Metric\SellingAndBuyingStock_MY.h" />
     <ClInclude Include="..\Header\Metric\SGA_MY.h" />
     <ClInclude Include="..\Header\Metric\SGA_SY.h" />
+    <ClInclude Include="..\Header\Metric\TotalInventory_MY.h" />
     <ClInclude Include="..\Header\Puller.h" />
     <ClInclude Include="..\Header\Scorer.h" />
     <ClInclude Include="..\Header\ScorerUtils.h" />
