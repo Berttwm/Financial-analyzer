@@ -71,6 +71,7 @@ enum class MetricType
 	DebtRatio_MY,
 	// New
 	TotalInventory_MY,
+	TotalReceivablesOverRevenue_MY,
 	// New
 
 	// Cash Flows
@@ -105,7 +106,8 @@ const std::unordered_map<MetricType, std::string> MetricTypeString =
 	// Balance Sheets
 	{MetricType::DebtRatio_SY, "DebtRatio_SY"},
 	{MetricType::DebtRatio_MY, "DebtRatio_MY"},
-	{MetricType::TotalInventory_MY, "TotalInventory_MY"},
+	{MetricType::TotalInventory_MY, "TotalInventory_MY"}, //done
+	{MetricType::TotalReceivablesOverRevenue_MY, "TotalReceivablesOverRevenus_MY"},
 	// Cash Flows
 	{MetricType::SellingAndBuyingStock_MY, "SellingAndBuyingStock_MY"},
 	{MetricType::CapexMargin_SY, "CapexMargin_SY"},
