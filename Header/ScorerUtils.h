@@ -52,26 +52,28 @@ enum class MetricType
 	GrossProfitMargin_SY,
 	SGA_SY,
 	OperatingExpenses_MY,
-	SGA_MY,
-	
-	// NEW
-	RND_SY, // done
-	RND_MY, // done
-	Depreciation_SY, // done
-	Depreciation_MY, // done
-	InterestExpense_SY, // done
-	InterestExpense_MY, // done
+	SGA_MY, 
+	RND_SY, 
+	RND_MY, 
+	Depreciation_SY, 
+	Depreciation_MY, 
+	InterestExpense_SY, 
+	InterestExpense_MY, 
 	// SalesOfAssets_SY/MY // money earned over sales of assets
-	NetEarnings_MY, // done
-	NetEarningsOverRevenue_MY, // done
+	NetEarnings_MY, 
+	NetEarningsOverRevenue_MY, 
 	// SalesFigure, // Over 700M
-	NegativeEarnings_MY, // done 
-	EarningsGrowth_MY, // done
-	// NEW
+	NegativeEarnings_MY, 
+	EarningsGrowth_MY,
 	
 	// Balance Sheets
 	DebtRatio_SY,
 	DebtRatio_MY,
+	// New
+	TotalInventory_MY,
+	TotalReceivablesOverRevenue_MY,
+	// New
+
 	// Cash Flows
 	SellingAndBuyingStock_MY,
 	CapexMargin_SY,
@@ -104,6 +106,8 @@ const std::unordered_map<MetricType, std::string> MetricTypeString =
 	// Balance Sheets
 	{MetricType::DebtRatio_SY, "DebtRatio_SY"},
 	{MetricType::DebtRatio_MY, "DebtRatio_MY"},
+	{MetricType::TotalInventory_MY, "TotalInventory_MY"}, //done
+	{MetricType::TotalReceivablesOverRevenue_MY, "TotalReceivablesOverRevenus_MY"},
 	// Cash Flows
 	{MetricType::SellingAndBuyingStock_MY, "SellingAndBuyingStock_MY"},
 	{MetricType::CapexMargin_SY, "CapexMargin_SY"},

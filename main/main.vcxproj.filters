@@ -99,6 +99,12 @@
     <ClCompile Include="Metric\EarningsGrowth_MY.cpp">
       <Filter>Source Files\Metric</Filter>
     </ClCompile>
+    <ClCompile Include="Metric\TotalInventory_MY.cpp">
+      <Filter>Source Files\Metric</Filter>
+    </ClCompile>
+    <ClCompile Include="Metric\TotalReceivablesOverRevenue_MY.cpp">
+      <Filter>Source Files\Metric</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Header\Puller.h">
@@ -195,6 +201,12 @@
       <Filter>Header Files\Metric</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\Metric\EarningsGrowth_MY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\TotalInventory_MY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\TotalReceivablesOverRevenue_MY.h">
       <Filter>Header Files\Metric</Filter>
     </ClInclude>
   </ItemGroup>
