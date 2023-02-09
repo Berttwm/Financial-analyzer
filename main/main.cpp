@@ -7,6 +7,7 @@
 #include "../Header/Stock.h"
 #include "CLIParser.h"
 #include "ParserException.h"
+#include "InputException.h"
 
 #define stringify( name ) #name
 
@@ -20,9 +21,9 @@ int main(int argc, char** argv)
         cli_parser = new CLIParser(argc, argv);
         cli_parser->parse_input();
     }
-    catch (ParserException pe)
+    catch (FAException& pe)
     {
-        // speciffic handling for parse exception error
+        // specific handling for the type of exception error
         std::cerr << pe.what() << std::endl;
     }
 

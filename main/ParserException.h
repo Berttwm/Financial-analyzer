@@ -1,21 +1,14 @@
 #pragma once
 #include <iostream>
 #include <stdio.h>
+#include "FAException.h"
 
 using namespace std;
 
-class ParserException : public std::exception
+class ParserException : public FAException
 {
 
-private:
-	std::string message;
-
 public:
-	ParserException(std::string msg) : message(msg) {}
+	ParserException(std::string msg) : FAException("[Parser Exception Error]: " + msg) {}
 
-	std::string what()
-	{
-
-		return std::string("[Parser Exception Error]: ") + message;
-	}
 };
