@@ -1,63 +1,31 @@
 #include <iostream>
 #include <cpr/cpr.h>
+//#include <CLI11.hpp>
 
 #include "../Header/Puller.h"
 #include "../Header/Scorer.h"
 #include "../Header/Stock.h"
+#include "CLIParser.h"
+#include "ParserException.h"
+#include "InputException.h"
 
 #define stringify( name ) #name
 
 using namespace std;
 
-int main()
+int main(int argc, char** argv)
 {
-    // Step 1: Pull from API endpoint
-    Puller* puller_tsla;
+    CLIParser* cli_parser;
     try
     {
-        puller_tsla = new Puller("AMZN");
+        cli_parser = new CLIParser(argc, argv);
+        cli_parser->parse_input();
     }
-    catch (...)
+    catch (FAException& pe)
     {
-        throw;
+        // specific handling for the type of exception error
+        std::cerr << pe.what() << std::endl;
     }
 
-    // Step 2: Create `Stock` object
-    Stock* tsla_stock = new Stock(puller_tsla->get_d_inc_stmt(), puller_tsla->get_d_bal_sheet(), puller_tsla->get_d_cash_flow());
-
-    // Step 3: Pass `Stock` object to `Scorer` object
-    Scorer* scorer = new Scorer(*tsla_stock);
-
-    // Step 4: Use the scorer to iterate through metrics
-    scorer->process();
-    std::cout << std::endl << "[*] === Processing complete... Printing debug statements" << std::endl;
-    std::cout << "Curr Score: " << scorer->get_curr_score() << std::endl << std::endl;
-    std::cout << "Category scores..." << std::endl;
-    std::unordered_map<CategoryType, int> CategoryScores = scorer->get_categoryscores();
-    for (auto category : scorer->get_categoryscores())
-    {
-        std::cout << "category: " << CategoryTypeString.find(category.first)->second << ", value: " << category.second << std::endl;
-    }
-    std::cout << std::endl << "Metrics scores..." << std::endl;
-    for (auto metric : scorer->get_metricscores())
-    {
-        std::cout << "metric: " << MetricTypeString.find(metric.first)->second << ", value: " << metric.second << std::endl;
-    }
-    std::cout << std::endl << "Category maximum scores..." << std::endl;
-    for (auto category : scorer->get_maxcategoryscores())
-    {
-        std::cout << "category: " << CategoryTypeString.find(category.first)->second << ", value: " << category.second << std::endl;
-    }
-    std::cout << std::endl << "Metrics maximum scores..." << std::endl;
-    for (auto metric : scorer->get_maxmetricscores())
-    {
-        std::cout << "metric: " << MetricTypeString.find(metric.first)->second << ", value: " << metric.second << std::endl;
-    }
-    std::cout << std::endl << "Metrics individual performances ..." << std::endl;
-    for (auto metric : scorer->get_metricperformance())
-    {
-        std::cout << "metric: " << MetricTypeString.find(metric.first)->second << ", value: " << metric.second << std::endl;
-    }
-    std::cout << "=== End of processing ===" << std::endl;
     return 0;
 }
