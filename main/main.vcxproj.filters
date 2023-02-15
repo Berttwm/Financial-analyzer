@@ -105,6 +105,9 @@
     <ClCompile Include="Metric\TotalReceivablesOverRevenue_MY.cpp">
       <Filter>Source Files\Metric</Filter>
     </ClCompile>
+    <ClCompile Include="CLIParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Header\Puller.h">
@@ -208,6 +211,18 @@
     </ClInclude>
     <ClInclude Include="..\Header\Metric\TotalReceivablesOverRevenue_MY.h">
       <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\CLIParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\FAException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\InputException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\ParserException.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

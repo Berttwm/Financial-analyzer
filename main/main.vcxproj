@@ -173,6 +173,7 @@
   <ItemGroup>
     <ClCompile Include="BalanceSheet.cpp" />
     <ClCompile Include="CashFlow.cpp" />
+    <ClCompile Include="CLIParser.cpp" />
     <ClCompile Include="IncomeStatement.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Metric\CapexMargin_MY.cpp" />
@@ -203,7 +204,10 @@
   <ItemGroup>
     <ClInclude Include="..\Header\BalanceSheet.h" />
     <ClInclude Include="..\Header\CashFlow.h" />
+    <ClInclude Include="..\Header\CLIParser.h" />
+    <ClInclude Include="..\Header\FAException.h" />
     <ClInclude Include="..\Header\IncomeStatement.h" />
+    <ClInclude Include="..\Header\InputException.h" />
     <ClInclude Include="..\Header\Interval.h" />
     <ClInclude Include="..\Header\Metric\CapexMargin_MY.h" />
     <ClInclude Include="..\Header\Metric\CapexMargin_SY.h" />
@@ -229,6 +233,7 @@
     <ClInclude Include="..\Header\Metric\SGA_SY.h" />
     <ClInclude Include="..\Header\Metric\TotalInventory_MY.h" />
     <ClInclude Include="..\Header\Metric\TotalReceivablesOverRevenue_MY.h" />
+    <ClInclude Include="..\Header\ParserException.h" />
     <ClInclude Include="..\Header\Puller.h" />
     <ClInclude Include="..\Header\Scorer.h" />
     <ClInclude Include="..\Header\ScorerUtils.h" />

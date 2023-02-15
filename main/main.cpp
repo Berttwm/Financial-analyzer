@@ -1,13 +1,8 @@
 #include <iostream>
 #include <cpr/cpr.h>
-//#include <CLI11.hpp>
 
-#include "../Header/Puller.h"
-#include "../Header/Scorer.h"
-#include "../Header/Stock.h"
-#include "CLIParser.h"
-#include "ParserException.h"
-#include "InputException.h"
+#include "../Header/CLIParser.h"
+#include "../Header/InputException.h"
 
 #define stringify( name ) #name
 

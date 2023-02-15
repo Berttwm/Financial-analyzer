@@ -1,9 +1,9 @@
-#include "CLIParser.h"
+#include "../Header/CLIParser.h"
 #include "../Header/Puller.h"
 #include "../Header/Scorer.h"
 #include "../Header/Stock.h"
-#include "ParserException.h"
-#include "InputException.h"
+#include "../Header/ParserException.h"
+#include "../Header/InputException.h"
 
 CLIParser::CLIParser(int num_args, char** argv)
     :num_args(num_args),
