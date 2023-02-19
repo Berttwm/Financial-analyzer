@@ -22,6 +22,8 @@
 #include "Metric/DebtRatio_MY.h"
 #include "Metric/TotalInventory_MY.h"
 #include "Metric/TotalReceivablesOverRevenue_MY.h"
+#include "Metric/TotalCurrentRatio_SY.h"
+#include "Metric/TotalCurrentRatio_MY.h"
 #include "Metric/SellingAndBuyingStock_MY.h"
 #include "Metric/CapexMargin_SY.h"
 #include "Metric/CapexMargin_MY.h"
@@ -82,6 +84,8 @@ private:
 		{MetricType::DebtRatio_MY, 0},
 		{MetricType::TotalInventory_MY, 0},
 		{MetricType::TotalReceivablesOverRevenue_MY, 0},
+		{MetricType::TotalCurrentRatio_SY, 0},
+		{MetricType::TotalCurrentRatio_MY, 0},
 		// Cash Flows
 		{MetricType::SellingAndBuyingStock_MY, 0},
 		{MetricType::CapexMargin_SY, 0},
@@ -111,7 +115,8 @@ private:
 		{MetricType::DebtRatio_SY, 0},
 		{MetricType::DebtRatio_MY, 0},
 		{MetricType::TotalInventory_MY, 0},
-		{MetricType::TotalReceivablesOverRevenue_MY, 0},
+		{MetricType::TotalCurrentRatio_SY, 0},
+		{MetricType::TotalCurrentRatio_MY, 0},
 		// Cash Flows
 		{MetricType::SellingAndBuyingStock_MY, 0},
 		{MetricType::CapexMargin_SY, 0},
