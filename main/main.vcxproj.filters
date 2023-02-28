@@ -114,6 +114,12 @@
     <ClCompile Include="Metric\TotalCurrentRatio_MY.cpp">
       <Filter>Source Files\Metric</Filter>
     </ClCompile>
+    <ClCompile Include="Metric\PPEDebtRatio_SY.cpp">
+      <Filter>Source Files\Metric</Filter>
+    </ClCompile>
+    <ClCompile Include="Metric\PPEDebtRatio_MY.cpp">
+      <Filter>Source Files\Metric</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Header\Puller.h">
@@ -234,6 +240,12 @@
       <Filter>Header Files\Metric</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\Metric\TotalCurrentRatio_SY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\PPEDebtRatio_SY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\PPEDebtRatio_MY.h">
       <Filter>Header Files\Metric</Filter>
     </ClInclude>
   </ItemGroup>

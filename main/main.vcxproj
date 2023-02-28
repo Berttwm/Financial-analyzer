@@ -190,6 +190,8 @@
     <ClCompile Include="Metric\NetEarningsOverRevenue_MY.cpp" />
     <ClCompile Include="Metric\NetEarnings_MY.cpp" />
     <ClCompile Include="Metric\OperatingExpenses_MY.cpp" />
+    <ClCompile Include="Metric\PPEDebtRatio_MY.cpp" />
+    <ClCompile Include="Metric\PPEDebtRatio_SY.cpp" />
     <ClCompile Include="Metric\RND_MY.cpp" />
     <ClCompile Include="Metric\RND_SY.cpp" />
     <ClCompile Include="Metric\SellingAndBuyingStock_MY.cpp" />
@@ -228,6 +230,8 @@
     <ClInclude Include="..\Header\Metric\NetEarningsOverRevenue_MY.h" />
     <ClInclude Include="..\Header\Metric\NetEarnings_MY.h" />
     <ClInclude Include="..\Header\Metric\OperatingExpenses_MY.h" />
+    <ClInclude Include="..\Header\Metric\PPEDebtRatio_MY.h" />
+    <ClInclude Include="..\Header\Metric\PPEDebtRatio_SY.h" />
     <ClInclude Include="..\Header\Metric\RND_MY.h" />
     <ClInclude Include="..\Header\Metric\RND_SY.h" />
     <ClInclude Include="..\Header\Metric\SellingAndBuyingStock_MY.h" />

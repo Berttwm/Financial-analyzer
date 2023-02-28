@@ -24,12 +24,12 @@ Balanced Sheets
 Current Assets (cash equivalent, can be liquidated within a year) - 
 
 Assets:
-1) Cash And Cash Equivalent- low cash high debt == no durability. Look at past 7 years of balance sheets, this will reveal if cash was generated in a one time event. If lots of debt, not good company.
-2) Total Inventory - Consistently rising, if fast rise and fast drop implies field they are competing in is too competitive
-3) Total Receivables, Net (how much other companies owe, cash does not immd transact on sale) 
+**1) Cash And Cash Equivalent- low cash high debt == no durability. Look at past 7 years of balance sheets, this will reveal if cash was generated in a one time event. If lots of debt, not good company.
+*2) Total Inventory - Consistently rising, if fast rise and fast drop implies field they are competing in is too competitive
+*3) Total Receivables, Net (how much other companies owe, cash does not immd transact on sale) 
 	- low net receivables to gross sales compared to competitors consistently is good. Company does not need to offer flexible payment options and people would still purchase.
-4) Prepaid Expenses/Other Expenses (goods your company is waiting to acquire/be delivered to) - NA
-5) Total current assets 
+-4) Prepaid Expenses/Other Expenses (goods your company is waiting to acquire/be delivered to) - NA
+**5) Total current assets 
 	- Current Assets/Current Liabilities (current ratio = 1.2-2.0, graham says > 2) is the sweet spot. (tho most current companies are below 1) not effective gauge of competitive durability.
 6) Property/Plant/Equipment (Companies that have to constantly update their manufacturing facilities to try to stay competitive) 
 	- Cost as a proportion of total debt (or even earning has) has to be relatively low. 

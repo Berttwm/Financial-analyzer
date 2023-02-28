@@ -7,7 +7,7 @@
 *
 * Categories used:
 *	1) Multi
-*	2) IncomeStatement
+*	2) BalanceSheet
 *
 * Scoring:
 *	High = 0 years fall by >30%

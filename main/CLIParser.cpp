@@ -23,6 +23,7 @@ void CLIParser::parse_input()
         break;
     default:
         throw InputException("Inavlid input arguments");
+        // Expected argument: CLIPArser.exe -h 
     }
 }
 

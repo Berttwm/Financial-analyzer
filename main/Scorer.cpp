@@ -47,6 +47,8 @@ void Scorer::process()
 	TotalReceivablesOverRevenue_MY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances, year_count);
 	TotalCurrentRatio_SY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances);
 	TotalCurrentRatio_MY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances, year_count);
+	PPEDebtRatio_SY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances);
+	PPEDebtRatio_MY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances, year_count);
 
 	// CashFlows
 	SellingAndBuyingStock_MY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances, year_count);

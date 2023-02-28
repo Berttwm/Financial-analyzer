@@ -71,9 +71,11 @@ enum class MetricType
 	DebtRatio_MY,
 	TotalInventory_MY,
 	TotalReceivablesOverRevenue_MY,
-	// New
 	TotalCurrentRatio_SY,
 	TotalCurrentRatio_MY,
+	// New
+	PPEDebtRatio_SY,
+	PPEDebtRatio_MY,
 	// New
 
 	// Cash Flows
@@ -112,6 +114,8 @@ const std::unordered_map<MetricType, std::string> MetricTypeString =
 	{MetricType::TotalReceivablesOverRevenue_MY, "TotalReceivablesOverRevenus_MY"},
 	{MetricType::TotalCurrentRatio_SY, "TotalCurrentRatio_SY"},
 	{MetricType::TotalCurrentRatio_MY, "TotalCurrentRatio_MY"},
+	{MetricType::PPEDebtRatio_SY, "PPEDebtRatio_SY"},
+	{MetricType::PPEDebtRatio_MY, "PPEDebtRatio_MY"},
 	// Cash Flows
 	{MetricType::SellingAndBuyingStock_MY, "SellingAndBuyingStock_MY"},
 	{MetricType::CapexMargin_SY, "CapexMargin_SY"},
