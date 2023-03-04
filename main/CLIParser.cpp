@@ -14,7 +14,13 @@ void CLIParser::parse_input()
 {
     switch (num_args) {
     case 2:
-        parse_entire_stock();
+        // If clause to separate parser
+        if (argv[1] == CLIParser::help) {
+            parse_help();
+        }
+        else {
+            parse_entire_stock();
+        }
         break;
     case 3:
         parse_whole_category();
@@ -26,6 +32,12 @@ void CLIParser::parse_input()
         throw InputException("Inavlid input arguments");
         // Expected argument: CLIPArser.exe -h 
     }
+}
+
+void CLIParser::parse_help()
+{
+    std::cout << "+++++++++++ HELP +++++++++++" << std::endl;
+
 }
 
 Scorer* CLIParser::get_scorer()
@@ -91,7 +103,7 @@ void CLIParser::parse_whole_category()
         get_category_scores(scorer);
     }
     else {
-        throw ParserException("Please enter a valid argument");
+        throw InputException("Please enter a valid argument");
     }
 
 }
@@ -113,35 +125,51 @@ void CLIParser::parse_specified_category()
         get_category_scores(scorer, selected_metric);
     }
     else {
-        throw ParserException("Please enter a valid argument");
+        throw InputException("Please enter a valid argument");
     }
 }
 
 void CLIParser::get_metrics_performances(Scorer* scorer, std::string selected_metric)
 {
+    int found_metric = 0;
+    int has_selected_metric = selected_metric.compare("");
+
     std::cout << std::endl << "Metrics individual performances ..." << std::endl;
     for (auto metric : scorer->get_metricperformance())
     {
         std::string current_metric = MetricTypeString.find(metric.first)->second;
         std::transform(current_metric.begin(), current_metric.end(), current_metric.begin(), ::tolower);
 
-        if (current_metric.compare(selected_metric) == 0 || selected_metric.compare("") == 0) {
+        if (current_metric.compare(selected_metric) == 0 || has_selected_metric == 0) {
             std::cout << "metric: " << MetricTypeString.find(metric.first)->second << ", value: " << metric.second << std::endl;
+            found_metric = 1;
         }
+    }
+
+    if (found_metric == 0) {
+        throw InputException("No such metric found");
     }
 }
 
 void CLIParser::get_category_scores(Scorer* scorer, std::string selected_category)
 {
+    int found_category = 0;
+    int has_selected_category = selected_category.compare("");
+
     std::cout << std::endl << "Category scores..." << std::endl;
     std::unordered_map<CategoryType, int> CategoryScores = scorer->get_categoryscores();
     for (auto category : scorer->get_categoryscores())
     {
         std::string current_metric = CategoryTypeString.find(category.first)->second;
         std::transform(current_metric.begin(), current_metric.end(), current_metric.begin(), ::tolower);
-        if (current_metric.compare(selected_category) == 0 || selected_category.compare("") == 0) {
+        if (current_metric.compare(selected_category) == 0 || has_selected_category == 0) {
             std::cout << "category: " << CategoryTypeString.find(category.first)->second << ", value: " << category.second << std::endl;
+            found_category = 1;
         }
+    }
+
+    if (found_category == 0) {
+        throw InputException("No such category found");
     }
 }
 
