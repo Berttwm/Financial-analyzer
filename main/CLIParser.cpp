@@ -5,6 +5,7 @@
 #include "../Header/ParserException.h"
 #include "../Header/InputException.h"
 
+
 CLIParser::CLIParser(int num_args, char** argv)
     :num_args(num_args),
     argv(argv){}
@@ -27,89 +28,67 @@ void CLIParser::parse_input()
     }
 }
 
+Scorer* CLIParser::get_scorer()
+{
+    // Step 1: Pull from API endpoint
+    std::string input = argv[1];
+
+    Puller* puller_stock = new Puller(input);
+
+    // Step 2: Create `Stock` object
+    Stock* stock = new Stock(puller_stock->get_d_inc_stmt(), puller_stock->get_d_bal_sheet(), puller_stock->get_d_cash_flow());
+
+    // Step 3: Pass `Stock` object to `Scorer` object
+    Scorer* scorer = new Scorer(*stock);
+
+    // Step 4: Use the scorer to iterate through metrics
+    scorer->process();
+
+    return scorer;
+}
+
 
 void CLIParser::parse_entire_stock()
 {
 
     std::cout << std::endl << "[*] === Processing complete... Printing debug statements" << std::endl;
-    std::cout << "+++++++++++ PARSE STOCK ONLY +++++++++++" << std::endl;
-    std::string input = argv[1];
+    std::cout << "+++++++++++ OUTPUT ALL STOCK INFO +++++++++++" << std::endl;
 
-    // Step 1: Pull from API endpoint
-    Puller* puller_stock;
-    puller_stock = new Puller(input);
+    Scorer* scorer = get_scorer();
 
-    // Step 2: Create `Stock` object
-    Stock* stock = new Stock(puller_stock->get_d_inc_stmt(), puller_stock->get_d_bal_sheet(), puller_stock->get_d_cash_flow());
-
-    // Step 3: Pass `Stock` object to `Scorer` object
-    Scorer* scorer = new Scorer(*stock);
-
-    // Step 4: Use the scorer to iterate through metrics
-    scorer->process();
+    // Output current score of stock
     std::cout << "Curr Score: " << scorer->get_curr_score() << std::endl << std::endl;
-    std::cout << "Category scores..." << std::endl;
-    std::unordered_map<CategoryType, int> CategoryScores = scorer->get_categoryscores();
-    for (auto category : scorer->get_categoryscores())
-    {
-        std::cout << "category: " << CategoryTypeString.find(category.first)->second << ", value: " << category.second << std::endl;
-    }
-    std::cout << std::endl << "Metrics scores..." << std::endl;
-    for (auto metric : scorer->get_metricscores())
-    {
-        std::cout << "metric: " << MetricTypeString.find(metric.first)->second << ", value: " << metric.second << std::endl;
-    }
-    std::cout << std::endl << "Category maximum scores..." << std::endl;
-    for (auto category : scorer->get_maxcategoryscores())
-    {
-        std::cout << "category: " << CategoryTypeString.find(category.first)->second << ", value: " << category.second << std::endl;
-    }
-    std::cout << std::endl << "Metrics maximum scores..." << std::endl;
-    for (auto metric : scorer->get_maxmetricscores())
-    {
-        std::cout << "metric: " << MetricTypeString.find(metric.first)->second << ", value: " << metric.second << std::endl;
-    }
-    std::cout << std::endl << "Metrics individual performances ..." << std::endl;
-    for (auto metric : scorer->get_metricperformance())
-    {
-        std::cout << "metric: " << MetricTypeString.find(metric.first)->second << ", value: " << metric.second << std::endl;
-    }
+
+    // Output all category scores of stock
+    get_category_scores(scorer);
+
+    // Output maximum category scores
+    get_max_category_scores(scorer);
+
+    // Output all metric performances 
+    get_metrics_performances(scorer);
+
+    // Output all metric scores of stock
+    get_metric_scores(scorer);
+
+    // Output maximum metric scores
+    get_max_metric_scores(scorer);
+
     std::cout << "=== End of processing ===" << std::endl;
 }
 
 void CLIParser::parse_whole_category()
 {
-    std::cout << "+++++++++++ PARSE ALL SCORING +++++++++++" << std::endl;
-    std::string input = argv[1];
-
-    // Step 1: Pull from API endpoint
-    Puller* puller_stock;
-    puller_stock = new Puller(input);
-
-    // Step 2: Create `Stock` object
-    Stock* stock = new Stock(puller_stock->get_d_inc_stmt(), puller_stock->get_d_bal_sheet(), puller_stock->get_d_cash_flow());
-
-    // Step 3: Pass `Stock` object to `Scorer` object
-    Scorer* scorer = new Scorer(*stock);
-
-    // Step 4: Use the scorer to iterate through metrics
-    scorer->process();
+    std::cout << "+++++++++++ OUTPUT ALL SCORING OF INPUT CATEGORY+++++++++++" << std::endl;
+    
+    Scorer* scorer = get_scorer();
 
     std::string type = argv[2];
     if (type == "-i") {
-        std::cout << std::endl << "Metrics individual performances ..." << std::endl;
-        for (auto metric : scorer->get_metricperformance())
-        {
-            std::cout << "metric: " << MetricTypeString.find(metric.first)->second << ", value: " << metric.second << std::endl;
-        }
+        get_metrics_performances(scorer);
     }
     else if (type == "-c") {
-        std::cout << std::endl << "Category scores..." << std::endl;
-        std::unordered_map<CategoryType, int> CategoryScores = scorer->get_categoryscores();
-        for (auto category : scorer->get_categoryscores())
-        {
-            std::cout << "category: " << CategoryTypeString.find(category.first)->second << ", value: " << category.second << std::endl;
-        }
+        get_category_scores(scorer);
     }
     else {
         throw ParserException("Please enter a valid argument");
@@ -119,50 +98,79 @@ void CLIParser::parse_whole_category()
 
 void CLIParser::parse_specified_category()
 {
-    std::cout << "+++++++++++ PARSE SELECT SCORE +++++++++++" << std::endl;
-    std::string input = argv[1];
-
-    // Step 1: Pull from API endpoint
-    Puller* puller_stock;
-    puller_stock = new Puller(input);
-
-    // Step 2: Create `Stock` object
-    Stock* stock = new Stock(puller_stock->get_d_inc_stmt(), puller_stock->get_d_bal_sheet(), puller_stock->get_d_cash_flow());
-
-    // Step 3: Pass `Stock` object to `Scorer` object
-    Scorer* scorer = new Scorer(*stock);
-
-    // Step 4: Use the scorer to iterate through metrics
-    scorer->process();
+    std::cout << "+++++++++++ OUTPUT SCORE OF INPUT CATEGORY AND METRIC +++++++++++" << std::endl;
+    
+    Scorer* scorer = get_scorer();
 
     std::string type = argv[2];
     std::string selected_metric = argv[3];
     std::transform(selected_metric.begin(), selected_metric.end(), selected_metric.begin(), ::tolower);
 
     if (type == "-i") {
-        std::cout << std::endl << "Metrics individual performances ..." << std::endl;
-        for (auto metric : scorer->get_metricperformance())
-        {
-            std::string current_metric = MetricTypeString.find(metric.first)->second;
-            std::transform(current_metric.begin(), current_metric.end(), current_metric.begin(), ::tolower);
-            if (current_metric.compare(selected_metric) == 0) {
-                std::cout << "metric: " << MetricTypeString.find(metric.first)->second << ", value: " << metric.second << std::endl;
-            }
-        }
+        get_metrics_performances(scorer, selected_metric);
     }
     else if (type == "-c") {
-        std::cout << std::endl << "Category scores..." << std::endl;
-        std::unordered_map<CategoryType, int> CategoryScores = scorer->get_categoryscores();
-        for (auto category : scorer->get_categoryscores())
-        {
-            std::string current_metric = CategoryTypeString.find(category.first)->second;
-            std::transform(current_metric.begin(), current_metric.end(), current_metric.begin(), ::tolower);
-            if (current_metric.compare(selected_metric) == 0) {
-                std::cout << "category: " << CategoryTypeString.find(category.first)->second << ", value: " << category.second << std::endl;
-            }
-        }
+        get_category_scores(scorer, selected_metric);
     }
     else {
         throw ParserException("Please enter a valid argument");
+    }
+}
+
+void CLIParser::get_metrics_performances(Scorer* scorer, std::string selected_metric)
+{
+    std::cout << std::endl << "Metrics individual performances ..." << std::endl;
+    for (auto metric : scorer->get_metricperformance())
+    {
+        std::string current_metric = MetricTypeString.find(metric.first)->second;
+        std::transform(current_metric.begin(), current_metric.end(), current_metric.begin(), ::tolower);
+
+        if (current_metric.compare(selected_metric) == 0 || selected_metric.compare("") == 0) {
+            std::cout << "metric: " << MetricTypeString.find(metric.first)->second << ", value: " << metric.second << std::endl;
+        }
+    }
+}
+
+void CLIParser::get_category_scores(Scorer* scorer, std::string selected_category)
+{
+    std::cout << std::endl << "Category scores..." << std::endl;
+    std::unordered_map<CategoryType, int> CategoryScores = scorer->get_categoryscores();
+    for (auto category : scorer->get_categoryscores())
+    {
+        std::string current_metric = CategoryTypeString.find(category.first)->second;
+        std::transform(current_metric.begin(), current_metric.end(), current_metric.begin(), ::tolower);
+        if (current_metric.compare(selected_category) == 0 || selected_category.compare("") == 0) {
+            std::cout << "category: " << CategoryTypeString.find(category.first)->second << ", value: " << category.second << std::endl;
+        }
+    }
+}
+
+void CLIParser::get_metric_scores(Scorer* scorer)
+{
+    // Output all metric scores of stock
+    std::cout << std::endl << "Metrics scores..." << std::endl;
+    for (auto metric : scorer->get_metricscores())
+    {
+        std::cout << "metric: " << MetricTypeString.find(metric.first)->second << ", value: " << metric.second << std::endl;
+    }
+}
+
+void CLIParser::get_max_category_scores(Scorer* scorer)
+{
+    // Output maximum category scores
+    std::cout << std::endl << "Category maximum scores..." << std::endl;
+    for (auto category : scorer->get_maxcategoryscores())
+    {
+        std::cout << "category: " << CategoryTypeString.find(category.first)->second << ", value: " << category.second << std::endl;
+    }
+}
+
+void CLIParser::get_max_metric_scores(Scorer* scorer)
+{
+    // Output maximum metric scores
+    std::cout << std::endl << "Metrics maximum scores..." << std::endl;
+    for (auto metric : scorer->get_maxmetricscores())
+    {
+        std::cout << "metric: " << MetricTypeString.find(metric.first)->second << ", value: " << metric.second << std::endl;
     }
 }

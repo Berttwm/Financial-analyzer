@@ -4,6 +4,7 @@
 #include "rapidjson/document.h"
 #include "rapidjson/writer.h"
 #include "rapidjson/stringbuffer.h"
+#include "../Header/Scorer.h"
 
 #include <algorithm>
 #include <exception>
@@ -11,9 +12,6 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-//#include "CLI/App.hpp"
-//#include "CLI/Formatter.hpp"
-//#include "CLI/Config.hpp"
 
 class CLIParser
 {
@@ -26,8 +24,17 @@ private:
 	const int num_args;
 	char** argv;
 
+	Scorer* get_scorer();
+
 	void parse_entire_stock();
 	void parse_whole_category();
 	void parse_specified_category();
+
+	void get_metrics_performances(Scorer*, std::string = "");
+	void get_category_scores(Scorer*, std::string = "");
+	void get_metric_scores(Scorer*);
+	void get_max_category_scores(Scorer*);
+	void get_max_metric_scores(Scorer*);
+
 
 };
