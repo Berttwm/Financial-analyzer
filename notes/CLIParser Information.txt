@@ -1,0 +1,27 @@
+# CLI Parser Information 
+Information on how to use the CLI Parser
+
+General: To run the program, user must navigate to the "\Financial-analyzer\Release" folder and run '.\main.exe [PARAMS]'
+
+The PARAMS should be replaced by the given input
+## To get all the information regarding a specific stock
+Input: 'STOCK'
+Expected Output:
+
+
+
+## To get the information of a specified category of a stock
+Input: 'STOCK -i' OR 'STOCK -c'
+Expected Output:
+
+
+
+## To get te information of a specific metric score of a stock
+Input: 'STOCK -i [METRIC]' OR 'STOCK -c [CATEGORY]'
+Expected Output:
+
+
+
+## To get help or more information
+Input: '--help'
+Expected Output:
