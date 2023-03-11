@@ -3,8 +3,8 @@ Information on how to use the CLI Parser
 
 General: To run the program, user must navigate to the "\Financial-analyzer\Release" folder and run '.\main.exe STOCK [PARAMS]'
 Things to take note: 
-- Words in uppercase e.g PARAMS means that it is a user input
-- Words in [] means that it can be omitted
+- Words in uppercase e.g STOCK/PARAMS means that it is a user input
+- Words in [] means that this parameter can be omitted
 
 
 ## To get all the information regarding a specific stock
