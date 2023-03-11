@@ -19,6 +19,12 @@
     <Filter Include="Header Files\Metric">
       <UniqueIdentifier>{8d9ada03-7a5e-4f64-ba43-565cd43345f4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Parser">
+      <UniqueIdentifier>{f46ee7aa-3ecb-457c-94ef-18d518908b0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Parser">
+      <UniqueIdentifier>{8886340e-cbf6-498c-932b-99a59d8263aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -105,9 +111,6 @@
     <ClCompile Include="Metric\TotalReceivablesOverRevenue_MY.cpp">
       <Filter>Source Files\Metric</Filter>
     </ClCompile>
-    <ClCompile Include="CLIParser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Metric\TotalCurrentRatio_SY.cpp">
       <Filter>Source Files\Metric</Filter>
     </ClCompile>
@@ -119,6 +122,9 @@
     </ClCompile>
     <ClCompile Include="Metric\PPEDebtRatio_MY.cpp">
       <Filter>Source Files\Metric</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser\CLIParser.cpp">
+      <Filter>Source Files\Parser</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -224,9 +230,6 @@
     <ClInclude Include="..\Header\Metric\TotalReceivablesOverRevenue_MY.h">
       <Filter>Header Files\Metric</Filter>
     </ClInclude>
-    <ClInclude Include="..\Header\CLIParser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\Header\FAException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -247,6 +250,9 @@
     </ClInclude>
     <ClInclude Include="..\Header\Metric\PPEDebtRatio_MY.h">
       <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\CLIParser.h">
+      <Filter>Header Files\Parser</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

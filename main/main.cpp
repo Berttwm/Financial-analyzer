@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cpr/cpr.h>
 
-#include "../Header/CLIParser.h"
+#include "../Header/Parser/CLIParser.h"
 #include "../Header/InputException.h"
 
 #define stringify( name ) #name

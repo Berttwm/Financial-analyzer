@@ -173,7 +173,7 @@
   <ItemGroup>
     <ClCompile Include="BalanceSheet.cpp" />
     <ClCompile Include="CashFlow.cpp" />
-    <ClCompile Include="CLIParser.cpp" />
+    <ClCompile Include="Parser\CLIParser.cpp" />
     <ClCompile Include="IncomeStatement.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Metric\CapexMargin_MY.cpp" />
