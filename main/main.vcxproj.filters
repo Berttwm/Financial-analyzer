@@ -126,6 +126,9 @@
     <ClCompile Include="Parser\CLIParser.cpp">
       <Filter>Source Files\Parser</Filter>
     </ClCompile>
+    <ClCompile Include="Metric\Goodwill_MY.cpp">
+      <Filter>Source Files\Metric</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Header\Puller.h">
@@ -253,6 +256,9 @@
     </ClInclude>
     <ClInclude Include="..\Header\CLIParser.h">
       <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\Goodwill_MY.h">
+      <Filter>Header Files\Metric</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

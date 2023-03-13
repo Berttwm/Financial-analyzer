@@ -31,12 +31,12 @@ Assets:
 -4) Prepaid Expenses/Other Expenses (goods your company is waiting to acquire/be delivered to) - NA
 **5) Total current assets 
 	- Current Assets/Current Liabilities (current ratio = 1.2-2.0, graham says > 2) is the sweet spot. (tho most current companies are below 1) not effective gauge of competitive durability.
-6) Property/Plant/Equipment (Companies that have to constantly update their manufacturing facilities to try to stay competitive) 
+**6) Property/Plant/Equipment (Companies that have to constantly update their manufacturing facilities to try to stay competitive) 
 	- Cost as a proportion of total debt (or even earning has) has to be relatively low. 
 	= If it takes 10 years to pay off current day equipment debt, not worth. Consistent increments also means need to keep upgrading
-7) Goodwill (purchase price - (net sum of assets and liabilities, incl intangibles like IP)) 
+*7) Goodwill (purchase price - (net sum of assets and liabilities, incl intangibles like IP)) 
 	- increasing goodwill over years imply more acquisitions, can possibly cross refer if the acquisitions are of good companies
-8) Intangibles assets (no physical attribute, can’t be touched) 
+- 8) Intangibles assets (no physical attribute, can’t be touched) 
 	- internally developed intangibles is not reflected on balance sheets, if you know the company has an increased in assets due to intangibles, consider it
 9) Long term assets (is at cost price, cannot reflect appreciation) 
 	- probably cross refer with actual acquisitions if they have appreciated

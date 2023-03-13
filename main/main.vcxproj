@@ -173,6 +173,7 @@
   <ItemGroup>
     <ClCompile Include="BalanceSheet.cpp" />
     <ClCompile Include="CashFlow.cpp" />
+    <ClCompile Include="Metric\Goodwill_MY.cpp" />
     <ClCompile Include="Parser\CLIParser.cpp" />
     <ClCompile Include="IncomeStatement.cpp" />
     <ClCompile Include="main.cpp" />
@@ -220,6 +221,7 @@
     <ClInclude Include="..\Header\Metric\Depreciation_MY.h" />
     <ClInclude Include="..\Header\Metric\Depreciation_SY.h" />
     <ClInclude Include="..\Header\Metric\EarningsGrowth_MY.h" />
+    <ClInclude Include="..\Header\Metric\Goodwill_MY.h" />
     <ClInclude Include="..\Header\Metric\GrossProfitMargin_SY.h" />
     <ClInclude Include="..\Header\Metric\InterestExpense_MY.h" />
     <ClInclude Include="..\Header\Metric\InterestExpense_SY.h" />

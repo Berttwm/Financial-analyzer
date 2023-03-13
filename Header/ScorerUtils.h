@@ -76,6 +76,7 @@ enum class MetricType
 	// New
 	PPEDebtRatio_SY,
 	PPEDebtRatio_MY,
+	Goodwill_MY,
 	// New
 
 	// Cash Flows
@@ -116,6 +117,7 @@ const std::unordered_map<MetricType, std::string> MetricTypeString =
 	{MetricType::TotalCurrentRatio_MY, "TotalCurrentRatio_MY"},
 	{MetricType::PPEDebtRatio_SY, "PPEDebtRatio_SY"},
 	{MetricType::PPEDebtRatio_MY, "PPEDebtRatio_MY"},
+	{MetricType::Goodwill_MY, "Goodwill_MY"},
 	// Cash Flows
 	{MetricType::SellingAndBuyingStock_MY, "SellingAndBuyingStock_MY"},
 	{MetricType::CapexMargin_SY, "CapexMargin_SY"},
