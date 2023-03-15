@@ -254,11 +254,14 @@
     <ClInclude Include="..\Header\Metric\PPEDebtRatio_MY.h">
       <Filter>Header Files\Metric</Filter>
     </ClInclude>
-    <ClInclude Include="..\Header\CLIParser.h">
-      <Filter>Header Files\Parser</Filter>
-    </ClInclude>
     <ClInclude Include="..\Header\Metric\Goodwill_MY.h">
       <Filter>Header Files\Metric</Filter>
     </ClInclude>
+    <ClInclude Include="..\Header\Parser\CLIParser.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
