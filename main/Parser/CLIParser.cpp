@@ -1,7 +1,3 @@
-#include <boost/program_options.hpp>
-//#include <boost/algorithm/string/split.hpp>
-//#include <boost/algorithm/string/classification.hpp>
-
 #include "../Header/Parser/CLIParser.h"
 #include "../Header/Puller.h"
 #include "../Header/Scorer.h"
@@ -9,123 +5,45 @@
 #include "../Header/ParserException.h"
 #include "../Header/InputException.h"
 
-namespace boost_opt = boost::program_options;
-
-template<class T>
-ostream& operator<<(ostream& os, const vector<T>& v)
-{
-    copy(v.begin(), v.end(), ostream_iterator<T>(os, " "));
-    return os;
-}
 
 CLIParser::CLIParser(int num_args, char** argv)
     :num_args(num_args),
-    argv(argv){}
-
+    argv(argv) {}
 
 void CLIParser::parse_input()
 {
-    try {
-        boost_opt::variables_map var_map;
-        vector<string> def_val = { "This default" };
-        string call_i;
-        std::vector<uint16_t> c;
-
-        //auto split_ports =
-        //    [&c](std::vector<std::string> const& vv) {
-        //    for (auto& v : vv) {
-        //        auto it = boost::make_split_iterator(
-        //            v, boost::token_finder(boost::algorithm::is_any_of(" ,")));
-        //        std::transform(it, {}, back_inserter(c), [](auto& s) {
-        //            return boost::lexical_cast<uint16_t>(s);
-        //            });
-        //    }
-        //};
-
-
-        boost_opt::options_description generic_options("Program Options");
-        generic_options.add_options()
-            ("stock", boost_opt::value< vector<string> >(), "Display stock data")
-            ("help", "Display help menu");
-
-
-        // Declare a group of options that will be 
-        // allowed both on command line and in
-        // config file boost_opt::value< vector<string> >()->multitoken()->notifier(split_ports), 
-        boost_opt::options_description config("Configuration");
-        config.add_options()
-            ("i", "Display individual stock metric")
-            ("c", "Display category of stock");
-       
-        boost_opt::options_description cmdline_options;
-        cmdline_options.add(generic_options).add(config);
-
-        boost_opt::options_description config_options;
-        config_options.add(config);
-
-        boost_opt::positional_options_description pos;
-        //pos.add("stock", -1);
-        //pos.add("i", -1);
-
-        boost_opt::store(boost_opt::command_line_parser(num_args, argv).options(cmdline_options).positional(pos).run(), var_map);
-        boost_opt::notify(var_map);
-
-        std::string stock;
-
-        if (var_map.count("stock")) {
-            if (var_map["stock"].as< vector<string> >().size() > 1) {
-                throw InputException("Inavlid input arguments. More than 1 stock detected");
-            }
-            else {
-                std::vector<std::string> input = var_map["stock"].as< vector<string> >();
-                for (auto const& s : input) { stock += s; } // convert vector to string
-                std::cout << "Input Stock: " << stock << "\n";
-                parse_entire_stock(stock);
-
-            }
+    switch (num_args) {
+    case 2:
+        // If clause to separate parser
+        if (argv[1] == CLIParser::help) {
+            parse_help();
         }
-
-        if (var_map.count("i")) {
-            if (stock.empty()) {
-                throw InputException("No stock input");
-            } 
-
-            std::cout << "==============================================Boost i selected" << std::endl;
-            Scorer* scorer = get_scorer(stock);
-            get_metrics_performances(scorer);
-
+        else {
+            parse_entire_stock();
         }
-
-        if (var_map.count("c")) {
-            if (stock.empty()) {
-                throw InputException("No stock input");
-            }
-
-            std::cout << "=============================================BOOST -c +++++++++++" << std::endl;
-            Scorer* scorer = get_scorer(stock);
-            get_category_scores(scorer);
-        }
-         
-        if (var_map.count("help")) {
-            std::cout << cmdline_options << std::endl;
-        }
-        /*else {
-            throw ParserException("Unable to parse input");
-        }*/
-
-    }
-    catch (FAException& pe)
-    {
-        // specific handling for the type of exception error
-        std::cerr << "Boost error: " << pe.what() << std::endl;
+        break;
+    case 3:
+        parse_whole_category();
+        break;
+    case 4:
+        parse_specified_category();
+        break;
+    default:
+        throw InputException("Inavlid input arguments");
+        // Expected argument: CLIPArser.exe -h 
     }
 }
 
+void CLIParser::parse_help()
+{
+    std::cout << "+++++++++++ HELP +++++++++++" << std::endl;
 
-Scorer* CLIParser::get_scorer(std::string input)
+}
+
+Scorer* CLIParser::get_scorer()
 {
     // Step 1: Pull from API endpoint
-    //std::string input = argv[1];
+    std::string input = argv[1];
 
     Puller* puller_stock = new Puller(input);
 
@@ -142,13 +60,13 @@ Scorer* CLIParser::get_scorer(std::string input)
 }
 
 
-void CLIParser::parse_entire_stock(std::string stock)
+void CLIParser::parse_entire_stock()
 {
 
     std::cout << std::endl << "[*] === Processing complete... Printing debug statements" << std::endl;
     std::cout << "+++++++++++ OUTPUT ALL STOCK INFO +++++++++++" << std::endl;
 
-    Scorer* scorer = get_scorer(stock);
+    Scorer* scorer = get_scorer();
 
     // Output current score of stock
     std::cout << "Curr Score: " << scorer->get_curr_score() << std::endl << std::endl;
@@ -171,11 +89,11 @@ void CLIParser::parse_entire_stock(std::string stock)
     std::cout << "=== End of processing ===" << std::endl;
 }
 
-void CLIParser::parse_whole_category(std::string stock)
+void CLIParser::parse_whole_category()
 {
     std::cout << "+++++++++++ OUTPUT ALL SCORING OF INPUT CATEGORY+++++++++++" << std::endl;
-    
-    Scorer* scorer = get_scorer(stock);
+
+    Scorer* scorer = get_scorer();
 
     std::string type = argv[2];
     if (type == "-i") {
@@ -190,11 +108,11 @@ void CLIParser::parse_whole_category(std::string stock)
 
 }
 
-void CLIParser::parse_specified_category(std::string stock)
+void CLIParser::parse_specified_category()
 {
     std::cout << "+++++++++++ OUTPUT SCORE OF INPUT CATEGORY AND METRIC +++++++++++" << std::endl;
-    
-    Scorer* scorer = get_scorer(stock);
+
+    Scorer* scorer = get_scorer();
 
     std::string type = argv[2];
     std::string selected_metric = argv[3];
