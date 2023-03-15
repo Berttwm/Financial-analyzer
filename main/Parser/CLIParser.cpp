@@ -1,6 +1,6 @@
 #include <boost/program_options.hpp>
-#include <boost/algorithm/string/split.hpp>
-#include <boost/algorithm/string/classification.hpp>
+//#include <boost/algorithm/string/split.hpp>
+//#include <boost/algorithm/string/classification.hpp>
 
 #include "../Header/Parser/CLIParser.h"
 #include "../Header/Puller.h"
@@ -31,16 +31,16 @@ void CLIParser::parse_input()
         string call_i;
         std::vector<uint16_t> c;
 
-        auto split_ports =
-            [&c](std::vector<std::string> const& vv) {
-            for (auto& v : vv) {
-                auto it = boost::make_split_iterator(
-                    v, boost::token_finder(boost::algorithm::is_any_of(" ,")));
-                std::transform(it, {}, back_inserter(c), [](auto& s) {
-                    return boost::lexical_cast<uint16_t>(s);
-                    });
-            }
-        };
+        //auto split_ports =
+        //    [&c](std::vector<std::string> const& vv) {
+        //    for (auto& v : vv) {
+        //        auto it = boost::make_split_iterator(
+        //            v, boost::token_finder(boost::algorithm::is_any_of(" ,")));
+        //        std::transform(it, {}, back_inserter(c), [](auto& s) {
+        //            return boost::lexical_cast<uint16_t>(s);
+        //            });
+        //    }
+        //};
 
 
         boost_opt::options_description generic_options("Program Options");
