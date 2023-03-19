@@ -4,6 +4,9 @@
 #include "../Header/Stock.h"
 #include "../Header/ParserException.h"
 #include "../Header/InputException.h"
+#include "../Header/Parser/ParserUtils.h"
+#include "../Header/Parser/ParseMetricCmd.h"
+#include <stack>
 
 
 CLIParser::CLIParser(int num_args, char** argv)
@@ -12,26 +15,79 @@ CLIParser::CLIParser(int num_args, char** argv)
 
 void CLIParser::parse_input()
 {
-    switch (num_args) {
-    case 2:
-        // If clause to separate parser
-        if (argv[1] == CLIParser::help) {
-            parse_help();
+    std::stack<Commands*> cmd_stack;
+
+    std::string stock_input = argv[1];
+    Scorer* scorer = get_scorer();
+
+    // i starts from 1 to exclude the command line
+    for (int i = 2; i < num_args; i++) {
+        // parse argument and convert to lowercase
+        std::string input = argv[i];
+        std::transform(input.begin(), input.end(), input.begin(), ::tolower);
+
+        std::cout << input << std::endl;
+        std::cout << "+++++++++++ ARGUMENT " << i << " ++++++++++" << std::endl;
+
+        if (InputStringToCommand.count(input)) {
+            std::cout << input << std::endl;
+            std::cout << "=============== Found " << i << " ===================" << std::endl;
+            CommandType cmd_type = InputStringToCommand.at(input);
+
+            
+            if (cmd_type == CommandType::metric)
+            {
+                std::cout << "=============== METRIC " << i << " ===================" << std::endl;
+                ParseMetricCmd cmd = ParseMetricCmd(scorer);
+                std::cout << "=============== TEST " << i << " ===================" << std::endl;
+                cmd_stack.push(&cmd);
+
+            }
+
+            if (cmd_type == CommandType::category)
+            {
+                std::cout << "=============== CATEGORY " << i << " ===================" << std::endl;
+                
+
+            }
+
+            if (cmd_type == CommandType::help)
+            {
+                std::cout << "=============== HELP " << i << " ===================" << std::endl;
+                
+            }
+
         }
-        else {
-            parse_entire_stock();
+
+        while (!cmd_stack.empty()) {
+            std::cout << "=============== EXECUTING STACK " << i << " ===================" << std::endl;
+            cmd_stack.top()->execute();
+            cmd_stack.pop();
+            std::cout << "=============== FINISHED EXECUTING STACK " << i << " ===================" << std::endl;
         }
-        break;
-    case 3:
-        parse_whole_category();
-        break;
-    case 4:
-        parse_specified_category();
-        break;
-    default:
-        throw InputException("Inavlid input arguments");
-        // Expected argument: CLIPArser.exe -h 
+
     }
+
+    //switch (num_args) {
+    //case 2:
+    //    // If clause to separate parser
+    //    if (argv[1] == CLIParser::help) {
+    //        parse_help();
+    //    }
+    //    else {
+    //        parse_entire_stock();
+    //    }
+    //    break;
+    //case 3:
+    //    parse_whole_category();
+    //    break;
+    //case 4:
+    //    parse_specified_category();
+    //    break;
+    //default:
+    //    throw InputException("Inavlid input arguments");
+    //    // Expected argument: CLIPArser.exe -h 
+    //}
 }
 
 void CLIParser::parse_help()

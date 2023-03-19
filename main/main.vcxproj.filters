@@ -129,6 +129,9 @@
     <ClCompile Include="Metric\Goodwill_MY.cpp">
       <Filter>Source Files\Metric</Filter>
     </ClCompile>
+    <ClCompile Include="Parser\ParseMetricCmd.cpp">
+      <Filter>Source Files\Parser</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Header\Puller.h">
@@ -258,6 +261,15 @@
       <Filter>Header Files\Metric</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\Parser\CLIParser.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Parser\ParserUtils.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Parser\Commands.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Parser\ParseMetricCmd.h">
       <Filter>Header Files\Parser</Filter>
     </ClInclude>
   </ItemGroup>
