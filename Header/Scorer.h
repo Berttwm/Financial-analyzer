@@ -27,6 +27,8 @@
 #include "Metric/PPEDebtRatio_SY.h"
 #include "Metric/PPEDebtRatio_MY.h"
 #include "Metric/Goodwill_MY.h"
+#include "Metric/ReturnOnTotalAsset_SY.h"
+#include "Metric/ReturnOnTotalAsset_MY.h"
 #include "Metric/SellingAndBuyingStock_MY.h"
 #include "Metric/CapexMargin_SY.h"
 #include "Metric/CapexMargin_MY.h"
@@ -92,6 +94,8 @@ private:
 		{MetricType::PPEDebtRatio_SY, 0},
 		{MetricType::PPEDebtRatio_MY, 0},
 		{MetricType::Goodwill_MY, 0},
+		{MetricType::ReturnOnTotalAsset_SY, 0},
+		{MetricType::ReturnOnTotalAsset_MY, 0},
 		// Cash Flows
 		{MetricType::SellingAndBuyingStock_MY, 0},
 		{MetricType::CapexMargin_SY, 0},
@@ -126,6 +130,8 @@ private:
 		{MetricType::PPEDebtRatio_SY, 0},
 		{MetricType::PPEDebtRatio_MY, 0},
 		{MetricType::Goodwill_MY, 0},
+		{MetricType::ReturnOnTotalAsset_SY, 0},
+		{MetricType::ReturnOnTotalAsset_MY, 0},
 		// Cash Flows
 		{MetricType::SellingAndBuyingStock_MY, 0},
 		{MetricType::CapexMargin_SY, 0},

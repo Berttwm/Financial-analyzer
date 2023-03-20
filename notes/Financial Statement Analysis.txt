@@ -38,9 +38,9 @@ Assets:
 	- increasing goodwill over years imply more acquisitions, can possibly cross refer if the acquisitions are of good companies
 - 8) Intangibles assets (no physical attribute, can’t be touched) 
 	- internally developed intangibles is not reflected on balance sheets, if you know the company has an increased in assets due to intangibles, consider it
-9) Long term assets (is at cost price, cannot reflect appreciation) 
+- 9) Long term assets (is at cost price, cannot reflect appreciation) 
 	- probably cross refer with actual acquisitions if they have appreciated
-10)Total Assets (Total current + long term) 
+** 10)Total Assets (Total current + long term) - Return on Total Assets (Net Income/Total Assets) above 5% or great if >20%
 	- Use net earnings / total assets for efficiency of assets in cash generating. Must cross refer with capital, high assets negates low efficiency, but low assets and high efficiency means it is still a penetrable field.
 11) Cheap assets: Market Cap < (Assets - Liabilities) * 1.5
 
