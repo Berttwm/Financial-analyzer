@@ -1,17 +1,7 @@
 #pragma once
-#include <cpr/cpr.h>
-
-#include "rapidjson/document.h"
-#include "rapidjson/writer.h"
-#include "rapidjson/stringbuffer.h"
-#include "../Header/Scorer.h"
-
 #include <algorithm>
-#include <exception>
-#include <fstream>
-#include <iostream>
-#include <sstream>
-#include <string>
+
+#include "../Header/Scorer.h"
 
 class CLIParser
 {

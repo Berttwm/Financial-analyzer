@@ -1,11 +1,13 @@
 #pragma once
 #include <iostream>
 #include <algorithm>
+#include <vector>
 
-#include "../Header/Parser/Commands.h"
 #include "../Header/Parser/ParseMetricCmd.h"
+#include "../Header/Parser/Commands.h"
 #include "../Header/ParserException.h"
 #include "../Header/InputException.h"
+
 
 ParseMetricCmd::ParseMetricCmd(Scorer* scorer) : Commands(scorer){};
 

@@ -1,3 +1,7 @@
+#pragma once
+#include <iostream>
+#include <stack>
+
 #include "../Header/Parser/CLIParser.h"
 #include "../Header/Puller.h"
 #include "../Header/Scorer.h"
@@ -6,7 +10,6 @@
 #include "../Header/InputException.h"
 #include "../Header/Parser/ParserUtils.h"
 #include "../Header/Parser/ParseMetricCmd.h"
-#include <stack>
 
 
 CLIParser::CLIParser(int num_args, char** argv)
@@ -20,7 +23,7 @@ void CLIParser::parse_input()
     std::string stock_input = argv[1];
     Scorer* scorer = get_scorer();
 
-    // i starts from 1 to exclude the command line
+    // i starts from 1 to exclude the command line and stock input 
     for (int i = 2; i < num_args; i++) {
         // parse argument and convert to lowercase
         std::string input = argv[i];
@@ -29,9 +32,12 @@ void CLIParser::parse_input()
         std::cout << input << std::endl;
         std::cout << "+++++++++++ ARGUMENT " << i << " ++++++++++" << std::endl;
 
+        // if valid command
         if (InputStringToCommand.count(input)) {
             std::cout << input << std::endl;
             std::cout << "=============== Found " << i << " ===================" << std::endl;
+
+
             CommandType cmd_type = InputStringToCommand.at(input);
 
             
@@ -41,6 +47,7 @@ void CLIParser::parse_input()
                 ParseMetricCmd cmd = ParseMetricCmd(scorer);
                 std::cout << "=============== TEST " << i << " ===================" << std::endl;
                 cmd_stack.push(&cmd);
+
 
             }
 
@@ -57,15 +64,23 @@ void CLIParser::parse_input()
                 
             }
 
+        } else if (!cmd_stack.empty()) {
+            cmd_stack.top()->add_args(input);
+
+        }
+        else {
+            throw InputException("Invalid input arguments");
         }
 
-        while (!cmd_stack.empty()) {
-            std::cout << "=============== EXECUTING STACK " << i << " ===================" << std::endl;
-            cmd_stack.top()->execute();
-            cmd_stack.pop();
-            std::cout << "=============== FINISHED EXECUTING STACK " << i << " ===================" << std::endl;
-        }
-
+    }
+    
+    std::cout << "=============== WAITING TO EXECUTE STACK " << " ===================" << std::endl;
+    // pop command stack and execute commands
+    while (!cmd_stack.empty()) {
+        std::cout << "=============== EXECUTING STACK " << " ===================" << std::endl;
+        cmd_stack.top()->execute();
+        cmd_stack.pop();
+        std::cout << "=============== FINISHED EXECUTING STACK "<< " ===================" << std::endl;
     }
 
     //switch (num_args) {
