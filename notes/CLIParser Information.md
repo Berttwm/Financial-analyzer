@@ -19,22 +19,22 @@ Expected Output:
 
 
 ## To get the information of a specified category of a stock
-Input: 'STOCK -i' OR 'STOCK -c'
+Input: 'STOCK --i' OR 'STOCK --c'
 Expected Output:
-If input == 'STOCK -c'
+If input == 'STOCK --c'
 - Output all category scores of stock
 
-If input == 'STOCK -i'
+If input == 'STOCK --i'
 - Output all metric scores of stock
 
 
-## To get te information of a specific metric score of a stock
-Input: 'STOCK -i [METRIC]' OR 'STOCK -c [CATEGORY]'
+## To get the information of a specific metric score of a stock
+Input: 'STOCK --i [METRIC]' OR 'STOCK --c [CATEGORY]'
 Expected Output:
-If input == 'STOCK -c [CATEGORY]'
+If input == 'STOCK --c [CATEGORY]'
 - Output the specified category score of the stock
 
-If input == 'STOCK -i [METRIC]'
+If input == 'STOCK --i [METRIC]'
 - Output the specified metric score of the stock
 
 
@@ -42,3 +42,11 @@ If input == 'STOCK -i [METRIC]'
 Input: '--help'
 Expected Output:
 - Program will output help instructions
+
+## Technical Implementation details
+Parser will parse all input arguments from the user 
+The first argument should be a valid stock ticker
+The parser will iterate through the rest of the arguments:
+- If the input is a valid command, the respective Command subclass will be created and pushed to a command stack which will be executed later
+- Else, parser will assume that the input is a parameter of a command and will be added to the command on top of the command stack
+The program will then run through the stack and execute each command
