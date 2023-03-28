@@ -208,6 +208,7 @@
     <ClCompile Include="Metric\TotalCurrentRatio_SY.cpp" />
     <ClCompile Include="Metric\TotalInventory_MY.cpp" />
     <ClCompile Include="Metric\TotalReceivablesOverRevenue_MY.cpp" />
+    <ClCompile Include="Parser\ParseCategoryCmd.cpp" />
     <ClCompile Include="Parser\ParseMetricCmd.cpp" />
     <ClCompile Include="Puller.cpp" />
     <ClCompile Include="Scorer.cpp" />
@@ -254,6 +255,7 @@
     <ClInclude Include="..\Header\ParserException.h" />
     <ClInclude Include="..\Header\Parser\CLIParser.h" />
     <ClInclude Include="..\Header\Parser\Commands.h" />
+    <ClInclude Include="..\Header\Parser\ParseCategoryCmd.h" />
     <ClInclude Include="..\Header\Parser\ParseMetricCmd.h" />
     <ClInclude Include="..\Header\Parser\ParserUtils.h" />
     <ClInclude Include="..\Header\Puller.h" />

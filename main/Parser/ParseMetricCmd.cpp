@@ -13,7 +13,6 @@ ParseMetricCmd::ParseMetricCmd(Scorer* scorer) : Commands(scorer){};
 
 void ParseMetricCmd::execute()
 {
-
     std::cout << std::endl << "Metrics individual performances ..." << std::endl;
     // output all metrics if no selected metric
     if (args.empty())
@@ -48,6 +47,7 @@ void ParseMetricCmd::execute()
     if (found_metric == 0) {
         throw InputException("No such metric found");
     }
+   
 }
 
 

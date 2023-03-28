@@ -43,6 +43,7 @@ Input: '--help'
 Expected Output:
 - Program will output help instructions
 
+
 ## Technical Implementation details
 Parser will parse all input arguments from the user 
 The first argument should be a valid stock ticker
