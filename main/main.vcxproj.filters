@@ -141,6 +141,9 @@
     <ClCompile Include="Parser\ParseCategoryCmd.cpp">
       <Filter>Source Files\Parser</Filter>
     </ClCompile>
+    <ClCompile Include="Parser\ParseHelpCmd.cpp">
+      <Filter>Source Files\Parser</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Header\Puller.h">
@@ -288,6 +291,9 @@
       <Filter>Header Files\Metric</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\Parser\ParseCategoryCmd.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Parser\ParseHelpCmd.h">
       <Filter>Header Files\Parser</Filter>
     </ClInclude>
   </ItemGroup>

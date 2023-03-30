@@ -11,6 +11,7 @@
 #include "../Header/Parser/ParserUtils.h"
 #include "../Header/Parser/ParseMetricCmd.h"
 #include "../Header/Parser/ParseCategoryCmd.h"
+#include "../Header/Parser/ParseHelpCmd.h"
 
 
 CLIParser::CLIParser(int num_args, char** argv)
@@ -62,6 +63,8 @@ void CLIParser::parse_input()
             if (cmd_type == CommandType::help)
             {
                 std::cout << "=============== HELP " << i << " ===================" << std::endl;
+                ParseHelpCmd cmd = ParseHelpCmd(scorer);
+                cmd_stack.push(&cmd);
                 
             }
 
