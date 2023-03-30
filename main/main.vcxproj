@@ -180,6 +180,8 @@
     <ClCompile Include="Metric\Goodwill_MY.cpp" />
     <ClCompile Include="Metric\ReturnOnTotalAsset_MY.cpp" />
     <ClCompile Include="Metric\ReturnOnTotalAsset_SY.cpp" />
+    <ClCompile Include="Metric\ShortLongTermDebtRatio_MY.cpp" />
+    <ClCompile Include="Metric\ShortLongTermDebtRatio_SY.cpp" />
     <ClCompile Include="Parser\CLIParser.cpp" />
     <ClCompile Include="IncomeStatement.cpp" />
     <ClCompile Include="main.cpp" />
@@ -249,6 +251,8 @@
     <ClInclude Include="..\Header\Metric\SellingAndBuyingStock_MY.h" />
     <ClInclude Include="..\Header\Metric\SGA_MY.h" />
     <ClInclude Include="..\Header\Metric\SGA_SY.h" />
+    <ClInclude Include="..\Header\Metric\ShortLongTermDebtRatio_MY.h" />
+    <ClInclude Include="..\Header\Metric\ShortLongTermDebtRatio_SY.h" />
     <ClInclude Include="..\Header\Metric\TotalCurrentRatio_MY.h" />
     <ClInclude Include="..\Header\Metric\TotalCurrentRatio_SY.h" />
     <ClInclude Include="..\Header\Metric\TotalInventory_MY.h" />
