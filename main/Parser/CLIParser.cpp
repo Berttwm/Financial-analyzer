@@ -31,41 +31,27 @@ void CLIParser::parse_input()
         std::string input = argv[i];
         std::transform(input.begin(), input.end(), input.begin(), ::tolower);
 
-        std::cout << input << std::endl;
-        std::cout << "+++++++++++ ARGUMENT " << i << " ++++++++++" << std::endl;
-
         // if valid command
         if (InputStringToCommand.count(input)) {
-            std::cout << input << std::endl;
-            std::cout << "=============== Found " << i << " ===================" << std::endl;
-
 
             CommandType cmd_type = InputStringToCommand.at(input);
-
             
             if (cmd_type == CommandType::metric)
             {
-                std::cout << "=============== METRIC " << i << " ===================" << std::endl;
                 ParseMetricCmd cmd = ParseMetricCmd(scorer);
                 cmd_stack.push(&cmd);
-
-
             }
 
             if (cmd_type == CommandType::category)
             {
-                std::cout << "=============== CATEGORY " << i << " ===================" << std::endl;
                 ParseCategoryCmd cmd = ParseCategoryCmd(scorer);
                 cmd_stack.push(&cmd);
-
             }
 
             if (cmd_type == CommandType::help)
             {
-                std::cout << "=============== HELP " << i << " ===================" << std::endl;
                 ParseHelpCmd cmd = ParseHelpCmd(scorer);
                 cmd_stack.push(&cmd);
-                
             }
 
         } else if (!cmd_stack.empty()) {
@@ -78,20 +64,11 @@ void CLIParser::parse_input()
 
     }
     
-    std::cout << "=============== WAITING TO EXECUTE STACK " << " ===================" << std::endl;
     // pop command stack and execute commands
     while (!cmd_stack.empty()) {
-        std::cout << "=============== EXECUTING STACK " << " ===================" << std::endl;
         cmd_stack.top()->execute();
         cmd_stack.pop();
-        std::cout << "=============== FINISHED EXECUTING STACK "<< " ===================" << std::endl;
     }
-
-}
-
-void CLIParser::parse_help()
-{
-    std::cout << "+++++++++++ HELP +++++++++++" << std::endl;
 
 }
 
@@ -117,9 +94,6 @@ Scorer* CLIParser::get_scorer()
 
 void CLIParser::parse_entire_stock()
 {
-
-    std::cout << std::endl << "[*] === Processing complete... Printing debug statements" << std::endl;
-    std::cout << "+++++++++++ OUTPUT ALL STOCK INFO +++++++++++" << std::endl;
 
     Scorer* scorer = get_scorer();
 
