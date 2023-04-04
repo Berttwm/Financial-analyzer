@@ -118,45 +118,6 @@ void CLIParser::parse_entire_stock()
     std::cout << "=== End of processing ===" << std::endl;
 }
 
-void CLIParser::parse_whole_category()
-{
-    std::cout << "+++++++++++ OUTPUT ALL SCORING OF INPUT CATEGORY+++++++++++" << std::endl;
-
-    Scorer* scorer = get_scorer();
-
-    std::string type = argv[2];
-    if (type == "-i") {
-        get_metrics_performances(scorer);
-    }
-    else if (type == "-c") {
-        get_category_scores(scorer);
-    }
-    else {
-        throw InputException("Please enter a valid argument");
-    }
-
-}
-
-void CLIParser::parse_specified_category()
-{
-    std::cout << "+++++++++++ OUTPUT SCORE OF INPUT CATEGORY AND METRIC +++++++++++" << std::endl;
-
-    Scorer* scorer = get_scorer();
-
-    std::string type = argv[2];
-    std::string selected_metric = argv[3];
-    std::transform(selected_metric.begin(), selected_metric.end(), selected_metric.begin(), ::tolower);
-
-    if (type == "-i") {
-        get_metrics_performances(scorer, selected_metric);
-    }
-    else if (type == "-c") {
-        get_category_scores(scorer, selected_metric);
-    }
-    else {
-        throw InputException("Please enter a valid argument");
-    }
-}
 
 void CLIParser::get_metrics_performances(Scorer* scorer, std::string selected_metric)
 {

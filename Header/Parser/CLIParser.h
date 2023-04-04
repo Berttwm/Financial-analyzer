@@ -17,8 +17,6 @@ private:
 	Scorer* get_scorer();
 
 	void parse_entire_stock();
-	void parse_whole_category();
-	void parse_specified_category();
 
 	void get_metrics_performances(Scorer*, std::string = "");
 	void get_category_scores(Scorer*, std::string = "");
