@@ -38,7 +38,7 @@ void ParseCategoryCmd::execute()
             std::string current_metric = CategoryTypeString.find(category.first)->second;
             std::transform(current_metric.begin(), current_metric.end(), current_metric.begin(), ::tolower);
 
-            if (current_metric.compare(selected_category) == 0) {
+            if (current_metric.compare(*selected_category) == 0) {
                 std::cout << "category: " << CategoryTypeString.find(category.first)->second << ", value: " << category.second << std::endl;
                 found_category = 1;
             }

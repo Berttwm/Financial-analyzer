@@ -37,7 +37,7 @@ void ParseMetricCmd::execute()
             std::string current_metric = MetricTypeString.find(metric.first)->second;
             std::transform(current_metric.begin(), current_metric.end(), current_metric.begin(), ::tolower);
 
-            if (current_metric.compare(selected_metric) == 0) {
+            if (current_metric.compare(*selected_metric) == 0) {
                 std::cout << "metric: " << MetricTypeString.find(metric.first)->second << ", value: " << metric.second << std::endl;
                 found_metric = 1;
             }
