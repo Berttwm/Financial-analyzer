@@ -21,9 +21,7 @@ public:
 		args.reserve(ARG_LIMIT);
 	}
 
-	virtual void execute() {
-		std::cout << std::endl << "COMMANDS PARENT EXECUTE." << std::endl;
-	}
+	virtual void execute() = 0;
 
 	void add_args(std::string* input) {
 		args.push_back(input);

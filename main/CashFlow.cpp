@@ -30,19 +30,19 @@ void CashFlow::processDocumentObject(rapidjson::Document& doc)
 			}
 			else {
 				std::cout << "IncStmtError: No such data type." << std::endl;
-				std::cout << metric << std::endl;
+				//std::cout << metric << std::endl;
 			}
 		}
 	}
-	for (auto& it : this->metrics_yearly_map)
-	{
-		std::cout << CashFlowMetricsStrings.find(it.first)->second << ": ";
-		for (auto& x : it.second)
-		{
-			std::cout << x << ",";
-		}
-		std::cout << std::endl;
-	}
+	//for (auto& it : this->metrics_yearly_map)
+	//{
+		//std::cout << CashFlowMetricsStrings.find(it.first)->second << ": ";
+		//for (auto& x : it.second)
+		//{
+		//	std::cout << x << ",";
+		//}
+		//std::cout << std::endl;
+	//}
 }
 
 void CashFlow::addToMap(CashFlowMetrics metric, std::string value)
@@ -63,7 +63,7 @@ void CashFlow::addToMap(CashFlowMetrics metric, std::string value)
 long double CashFlow::getKeyFromMap(CashFlowMetrics statementMetric, int year_from) const
 {
 	long double key = std::stold(this->metrics_yearly_map.find(statementMetric)->second[year_from]);
-	std::cout << std::setprecision(17) << "CashFlow getKeyFromMap = " << key << std::endl;
+	//std::cout << std::setprecision(17) << "CashFlow getKeyFromMap = " << key << std::endl;
 	return key;
 }
 

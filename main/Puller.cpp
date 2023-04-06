@@ -119,7 +119,7 @@ void Puller::read_stmt_annual_from_files()
     cash_flow_file.close();
     cash_flow_json_str = cash_flow_ss.str();
 
-    std::cout << "[*LOG] Successfully read statements from files..." << std::endl;
+    std::cout << "[*LOG] Successfully read statements from files" << std::endl;
 
 }
 
@@ -136,12 +136,12 @@ void Puller::parse_json()
     // Test print method to play around with json parser - Example to play around with
     //      d_inc_stmt[0] = latest year, d_inc_stmt[1] = second latest year
     //      d_inc_stmt[0]["symbol"] = income statement latest year "symbol" 
-    std::string test_str_inc_stmt = d_inc_stmt[0]["symbol"].GetString();
-    std::string test_str_bal_sheet = d_bal_sheet[0]["symbol"].GetString();
-    std::string test_str_cash_flow = d_inc_stmt[0]["symbol"].GetString();
-    std::cout << "test string for inc stmt = " << test_str_inc_stmt << std::endl;
-    std::cout << "test string for bal sheet = " << test_str_bal_sheet << std::endl;
-    std::cout << "test string for cash flow = " << test_str_cash_flow << std::endl;
+    //std::string test_str_inc_stmt = d_inc_stmt[0]["symbol"].GetString();
+    //std::string test_str_bal_sheet = d_bal_sheet[0]["symbol"].GetString();
+    //std::string test_str_cash_flow = d_inc_stmt[0]["symbol"].GetString();
+    //std::cout << "test string for inc stmt = " << test_str_inc_stmt << std::endl;
+    //std::cout << "test string for bal sheet = " << test_str_bal_sheet << std::endl;
+    //std::cout << "test string for cash flow = " << test_str_cash_flow << std::endl;
 
-    std::cout << "[*LOG] Successfully Parsed Json" << std::endl;
+    std::cout << "[*LOG] Successfully parsed Json" << std::endl;
 }

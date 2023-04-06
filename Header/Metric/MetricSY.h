@@ -34,7 +34,7 @@ protected:
 	{
 		auto it = this->MetricPerformances->find(MT); // TODO FIX THIS
 		if (it != this->MetricPerformances->end())
-			std::cout << this->MetricPerformances << std::endl;
+			//std::cout << this->MetricPerformances << std::endl;
 		it->second = this->performance;
 	};
 public:
