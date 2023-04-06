@@ -8,7 +8,7 @@ Things to take note:
 
 
 ## To get all the information regarding a specific stock
-Input: 'STOCK'
+Input: 'STOCK --all'
 Expected Output: 
 - Output current score of stock
 - Output all category scores of stock
