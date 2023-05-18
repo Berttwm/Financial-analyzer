@@ -6,7 +6,7 @@
 *	Single Year metrics measure only current year metrics
 *	Multi Year metrics measure for stated amount of years (usually 10) or for the number of readily available statements, whichever is less.
 *
-*	SocringTier provides a scoring grade for each metric (HIGH = 10, FAIL =0)
+*	ScoringTier provides a scoring grade for each metric (HIGH = 10, FAIL =0)
 * 
 *	Multiple Metrics will include multiple CategoryTypes. This is intended to allow multiple category scoring for each metric 
 *	Single Metric will include single MetricType. This is intended to collate every metrics individual score.
