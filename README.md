@@ -1,11 +1,17 @@
-# **Val** v1.0  -The Financial-analyzer (value investing principles)
-Have you ever wanted an AI-Powered, data-driven, history-analyzed, quick-compute program to do your quantitative assessments? Insert your favorite stock tickers and **Val** will do all the hard work within a matter of seconds for you. 
+# Financial Analyzer 
 
-**Val** is currently undergoing production for *version 1.0* which comes equipped with an **1) overall** and **2) category** score per stock symbol you typed in.
-> Version 1.0 value investing metrics and scoring inspired by texts from: **Warren Buffet and the Interpretation of Financial Statements - David Clark and Mary Buffett**
+Have you ever wanted to automate your quantitative stock assessments? **Val** is an AI-powered program that analyses historical data to 
+quickly calculate quantitative scores for your favorite stock symbols. **Val** is currently in production for version 1.0, which will provide both an overall score 
+and category scores for each stock you enter.
 
-> Version 2.0 will use AI and historical data analysis to aide the analysis of companies. (Future developments await)
+> Version 1.0 of **Val** uses value investing metrics and scoring inspired by the book "Warren Buffett and the Interpretation of Financial Statements" by 
+David Clark and Mary Buffett. **Val's** metrics and scoring are based on value investing principles of Warren Buffett, and they are designed to help 
+investors identify undervalued companies.
 
+> Version 2.0 of **Val** will use artificial intelligence (AI) and historical data analysis to further improve its ability to analyze companies. 
+AI will allow **Val** to learn from historical data and identify patterns that may not be visible to human analysts. 
+
+# 
 
 # Iterations (Rough Plan)
 The following segment dictates the rough timeline this project will follow. The timeline is currently only concrete for version 1.0, and version 2.0 will be further discussed after at least iteration 2 of version 1.0 is complete.
