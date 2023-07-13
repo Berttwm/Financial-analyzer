@@ -11,6 +11,8 @@ David Clark and Mary Buffett.
 > Version 2.0 of **Val** will use artificial intelligence (AI) and historical data analysis to further improve its ability to analyze companies. 
 
 ## Demonstration of Financial Analyzer 
+https://github.com/Berttwm/Financial-analyzer/assets/64951628/16c5a906-8ec7-4e70-87c1-45f755c12f8e
+
 
 
 ## How to get started
