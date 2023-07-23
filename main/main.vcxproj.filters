@@ -153,6 +153,15 @@
     <ClCompile Include="Parser\ParseAllCmd.cpp">
       <Filter>Source Files\Parser</Filter>
     </ClCompile>
+    <ClCompile Include="Metric\LongTermDebtEarningsRatio_MY.cpp">
+      <Filter>Source Files\Metric</Filter>
+    </ClCompile>
+    <ClCompile Include="Metric\AdjustedTotalDebtShareHolderEquityRatio_SY.cpp">
+      <Filter>Source Files\Metric</Filter>
+    </ClCompile>
+    <ClCompile Include="Metric\AdjustedTotalDebtShareHolderEquityRatio_MY.cpp">
+      <Filter>Source Files\Metric</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Header\Puller.h">
@@ -313,6 +322,15 @@
     </ClInclude>
     <ClInclude Include="..\Header\Parser\ParseAllCmd.h">
       <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\LongTermDebtEarningsRatio_MY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\AdjustedTotalDebtShareHolderEquityRatio_SY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\AdjustedTotalDebtShareHolderEquityRatio_MY.h">
+      <Filter>Header Files\Metric</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

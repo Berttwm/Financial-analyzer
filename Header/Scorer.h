@@ -31,6 +31,9 @@
 #include "Metric/ReturnOnTotalAsset_MY.h"
 #include "Metric/ShortLongTermDebtRatio_SY.h"
 #include "Metric/ShortLongTermDebtRatio_MY.h"
+#include "Metric/LongTermDebtEarningsRatio_MY.h"
+#include "Metric/AdjustedTotalDebtShareHolderEquityRatio_SY.h"
+#include "Metric/AdjustedTotalDebtShareHolderEquityRatio_MY.h"
 #include "Metric/SellingAndBuyingStock_MY.h"
 #include "Metric/CapexMargin_SY.h"
 #include "Metric/CapexMargin_MY.h"
@@ -100,6 +103,9 @@ private:
 		{MetricType::ReturnOnTotalAsset_MY, 0},
 		{MetricType::ShortLongTermDebtRatio_SY, 0},
 		{MetricType::ShortLongTermDebtRatio_MY, 0},
+		{MetricType::LongTermDebtEarningsRatio_MY, 0},
+		{MetricType::AdjustedTotalDebtShareHolderEquityRatio_SY, 0},
+		{MetricType::AdjustedTotalDebtShareHolderEquityRatio_MY, 0},
 		// Cash Flows
 		{MetricType::SellingAndBuyingStock_MY, 0},
 		{MetricType::CapexMargin_SY, 0},
@@ -138,6 +144,9 @@ private:
 		{MetricType::ReturnOnTotalAsset_MY, 0},
 		{MetricType::ShortLongTermDebtRatio_SY, 0},
 		{MetricType::ShortLongTermDebtRatio_MY, 0},
+		{MetricType::LongTermDebtEarningsRatio_MY, 0},
+		{MetricType::AdjustedTotalDebtShareHolderEquityRatio_SY, 0},
+		{MetricType::AdjustedTotalDebtShareHolderEquityRatio_MY, 0},
 		// Cash Flows
 		{MetricType::SellingAndBuyingStock_MY, 0},
 		{MetricType::CapexMargin_SY, 0},

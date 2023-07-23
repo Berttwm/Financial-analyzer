@@ -13,8 +13,8 @@ TotalCurrentRatio_MY::TotalCurrentRatio_MY(const Stock& stock, int& score, std::
 	// iterate from earliest date available (year_count) to latest date
 	for (int i = this->year_count - 1; i >= 0; i--)
 	{
-		long double totalCurrentAssets = stock.get_BS_metric(BalanceSheetMetrics::totalCurrentAssets, 0);
-		long double totalCurrentLiabilities = stock.get_BS_metric(BalanceSheetMetrics::totalCurrentLiabilities, 0);
+		long double totalCurrentAssets = stock.get_BS_metric(BalanceSheetMetrics::totalCurrentAssets, i);
+		long double totalCurrentLiabilities = stock.get_BS_metric(BalanceSheetMetrics::totalCurrentLiabilities, i);
 		long double currentRatio_curr = totalCurrentAssets / totalCurrentLiabilities;
 		if (i == this->year_count - 1)
 		{

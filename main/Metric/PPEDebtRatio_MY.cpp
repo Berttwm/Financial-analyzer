@@ -13,8 +13,8 @@ PPEDebtRatio_MY::PPEDebtRatio_MY(const Stock& stock, int& score, std::unordered_
 	// iterate from earliest date available (year_count) to latest date
 	for (int i = this->year_count - 1; i >= 0; i--)
 	{
-		long double propertyPlantEquipmentNet = stock.get_BS_metric(BalanceSheetMetrics::propertyPlantEquipmentNet, 0);
-		long double totalDebt = stock.get_BS_metric(BalanceSheetMetrics::totalDebt, 0);
+		long double propertyPlantEquipmentNet = stock.get_BS_metric(BalanceSheetMetrics::propertyPlantEquipmentNet, i);
+		long double totalDebt = stock.get_BS_metric(BalanceSheetMetrics::totalDebt, i);
 		long double PPEDebtRatio_curr = propertyPlantEquipmentNet / totalDebt;
 		if (i == this->year_count - 1)
 		{

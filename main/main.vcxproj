@@ -177,7 +177,10 @@
   <ItemGroup>
     <ClCompile Include="BalanceSheet.cpp" />
     <ClCompile Include="CashFlow.cpp" />
+    <ClCompile Include="Metric\AdjustedTotalDebtShareHolderEquityRatio_MY.cpp" />
+    <ClCompile Include="Metric\AdjustedTotalDebtShareHolderEquityRatio_SY.cpp" />
     <ClCompile Include="Metric\Goodwill_MY.cpp" />
+    <ClCompile Include="Metric\LongTermDebtEarningsRatio_MY.cpp" />
     <ClCompile Include="Metric\ReturnOnTotalAsset_MY.cpp" />
     <ClCompile Include="Metric\ReturnOnTotalAsset_SY.cpp" />
     <ClCompile Include="Metric\ShortLongTermDebtRatio_MY.cpp" />
@@ -225,6 +228,8 @@
     <ClInclude Include="..\Header\IncomeStatement.h" />
     <ClInclude Include="..\Header\InputException.h" />
     <ClInclude Include="..\Header\Interval.h" />
+    <ClInclude Include="..\Header\Metric\AdjustedTotalDebtShareHolderEquityRatio_MY.h" />
+    <ClInclude Include="..\Header\Metric\AdjustedTotalDebtShareHolderEquityRatio_SY.h" />
     <ClInclude Include="..\Header\Metric\CapexMargin_MY.h" />
     <ClInclude Include="..\Header\Metric\CapexMargin_SY.h" />
     <ClInclude Include="..\Header\Metric\DebtRatio_SY.h" />
@@ -236,6 +241,7 @@
     <ClInclude Include="..\Header\Metric\GrossProfitMargin_SY.h" />
     <ClInclude Include="..\Header\Metric\InterestExpense_MY.h" />
     <ClInclude Include="..\Header\Metric\InterestExpense_SY.h" />
+    <ClInclude Include="..\Header\Metric\LongTermDebtEarningsRatio_MY.h" />
     <ClInclude Include="..\Header\Metric\Metric.h" />
     <ClInclude Include="..\Header\Metric\MetricMY.h" />
     <ClInclude Include="..\Header\Metric\MetricSY.h" />

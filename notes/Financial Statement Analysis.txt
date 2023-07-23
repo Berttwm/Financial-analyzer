@@ -45,22 +45,22 @@ Assets:
 - 11) Cheap assets: Market Cap < (Assets - Liabilities) * 1.5
 
 Liabilities:
-1) Current Liabilities (money owe within current year)
-2) Accounts Payable (Money owed to vendors for purchases incurred)
-3) Accrued Expense (Incurred but yet to be paid for, tax wages rent)
-4) Short term debt (Money owed by the corporation and due within the year) 
+-1) Current Liabilities (money owe within current year)
+-2) Accounts Payable (Money owed to vendors for purchases incurred)
+-3) Accrued Expense (Incurred but yet to be paid for, tax wages rent)
+**4) Short term debt (Money owed by the corporation and due within the year) 
 	- bad in high interest rate environment, good in short term bad in long term. If short term debt exceeds long term debt, company is looking to earn more in liquid cash (Wells Fargo - 57c of short term debt for every long term debt)
-5) Long term debt due (long term debt that have to be paid off in current year) 
+-5) Long term debt due (long term debt that have to be paid off in current year) 
 	- Generally companies should require little to no long term debt. If sudden long term debt due, check horizon, too much long term debt due will lower price for stocks to buy.
-6) Total Current Assets/Total Current Liabilities (liquidity of company, higher imply higher liquidity, greater ability to pay off current liabilities) 
+(Already impl) 6) Total Current Assets/Total Current Liabilities (liquidity of company, higher imply higher liquidity, greater ability to pay off current liabilities) 
 	- should be above 1 for companies w weaker assets, strong companies doesn’t matter.
-7) Long term debt (due more than a year later)
+*7) Long term debt (due more than a year later)
 	- little to no long term debt over 10 years imply strong in its field, in any given year, should have sufficient earnings to pay back long term debt in 3/4 years (even lower is better)
-8) Deferred income tax (due not yet paid taxes)
-9) Minority Interest - value not belonging to this balance sheet (when the company owns above 80% or more of another company) of the acquired company.  
+--8) Deferred income tax (due not yet paid taxes)
+--9) Minority Interest - value not belonging to this balance sheet (when the company owns above 80% or more of another company) of the acquired company.  
 	(i.e owning 90% of company XYZ means you put 100% of XYZ on your balance sheet and 10% of it in minority interest)
-10) Other liabilities - catch all for anything else
-11) Total liabilities (debt to equities ratio indicates whether the company is using debt or equity to finance its operations, durable company uses its earning power, others uses debt) 
+--10) Other liabilities - catch all for anything else
+**11) Total liabilities (debt to equities ratio indicates whether the company is using debt or equity to finance its operations, durable company uses its earning power, others uses debt) 
 	- adjusted debt to equity ratio = (Total liabilities / Shareholders Equity + treasury stock), must be adjusted with share buybacks, bad companies have higher ratio, good companies below 0.8
 
 Total Shareholder Equity/net worth/book value (amt of money the shareholders/owners put in) - net worth = total assets - total liabilities. we can use this to calculate return on shareholders equity.

@@ -13,8 +13,8 @@ ReturnOnTotalAsset_MY::ReturnOnTotalAsset_MY(const Stock& stock, int& score, std
 	// iterate from earliest date available (year_count) to latest date
 	for (int i = this->year_count - 1; i >= 0; i--)
 	{
-		long double netIncome = stock.get_IS_metric(IncomeStatementMetrics::netIncome, 0);
-		long double totalAssets = stock.get_BS_metric(BalanceSheetMetrics::totalAssets, 0);
+		long double netIncome = stock.get_IS_metric(IncomeStatementMetrics::netIncome, i);
+		long double totalAssets = stock.get_BS_metric(BalanceSheetMetrics::totalAssets, i);
 		long double ReturnOnTotalAsset_curr = netIncome / totalAssets;
 		if (i == this->year_count - 1)
 		{

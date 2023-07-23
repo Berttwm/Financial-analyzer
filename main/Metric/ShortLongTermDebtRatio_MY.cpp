@@ -13,8 +13,8 @@ ShortLongTermDebtRatio_MY::ShortLongTermDebtRatio_MY(const Stock& stock, int& sc
 	// iterate from earliest date available (year_count) to latest date
 	for (int i = this->year_count - 1; i >= 0; i--)
 	{
-		long double shortTermDebt = stock.get_BS_metric(BalanceSheetMetrics::shortTermDebt, 0);
-		long double longTermDebt = stock.get_BS_metric(BalanceSheetMetrics::longTermDebt, 0);
+		long double shortTermDebt = stock.get_BS_metric(BalanceSheetMetrics::shortTermDebt, i);
+		long double longTermDebt = stock.get_BS_metric(BalanceSheetMetrics::longTermDebt, i);
 		long double ShortLongTermDebtRatio_curr = shortTermDebt / longTermDebt;
 		if (i == this->year_count - 1)
 		{
