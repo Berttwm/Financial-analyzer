@@ -80,10 +80,12 @@ enum class MetricType
 	ReturnOnTotalAsset_MY,
 	ShortLongTermDebtRatio_SY,
 	ShortLongTermDebtRatio_MY,
-	// New
 	LongTermDebtEarningsRatio_MY,
 	AdjustedTotalDebtShareHolderEquityRatio_SY,
 	AdjustedTotalDebtShareHolderEquityRatio_MY,
+	// New
+	PreferredStock_SY,
+	PreferredStock_MY,
 	// New
 
 	// Cash Flows
@@ -132,6 +134,8 @@ const std::unordered_map<MetricType, std::string> MetricTypeString =
 	{MetricType::LongTermDebtEarningsRatio_MY, "LongTermDebtEarningsRatio_MY"},
 	{MetricType::AdjustedTotalDebtShareHolderEquityRatio_SY, "AdjustedTotalDebtShareHolderEquityRatio_SY"},
 	{MetricType::AdjustedTotalDebtShareHolderEquityRatio_MY, "AdjustedTotalDebtShareHolderEquityRatio_MY"},
+	{MetricType::PreferredStock_SY, "PreferredStock_SY"},
+	{MetricType::PreferredStock_MY, "PreferredStock_MY"},
 	// Cash Flows
 	{MetricType::SellingAndBuyingStock_MY, "SellingAndBuyingStock_MY"},
 	{MetricType::CapexMargin_SY, "CapexMargin_SY"},

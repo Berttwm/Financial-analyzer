@@ -162,6 +162,12 @@
     <ClCompile Include="Metric\AdjustedTotalDebtShareHolderEquityRatio_MY.cpp">
       <Filter>Source Files\Metric</Filter>
     </ClCompile>
+    <ClCompile Include="Metric\PreferredStock_SY.cpp">
+      <Filter>Source Files\Metric</Filter>
+    </ClCompile>
+    <ClCompile Include="Metric\PreferredStock_MY.cpp">
+      <Filter>Source Files\Metric</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Header\Puller.h">
@@ -330,6 +336,12 @@
       <Filter>Header Files\Metric</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\Metric\AdjustedTotalDebtShareHolderEquityRatio_MY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\PreferredStock_SY.h">
+      <Filter>Header Files\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\Metric\PreferredStock_MY.h">
       <Filter>Header Files\Metric</Filter>
     </ClInclude>
   </ItemGroup>

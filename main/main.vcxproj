@@ -181,6 +181,8 @@
     <ClCompile Include="Metric\AdjustedTotalDebtShareHolderEquityRatio_SY.cpp" />
     <ClCompile Include="Metric\Goodwill_MY.cpp" />
     <ClCompile Include="Metric\LongTermDebtEarningsRatio_MY.cpp" />
+    <ClCompile Include="Metric\PreferredStock_MY.cpp" />
+    <ClCompile Include="Metric\PreferredStock_SY.cpp" />
     <ClCompile Include="Metric\ReturnOnTotalAsset_MY.cpp" />
     <ClCompile Include="Metric\ReturnOnTotalAsset_SY.cpp" />
     <ClCompile Include="Metric\ShortLongTermDebtRatio_MY.cpp" />
@@ -251,6 +253,8 @@
     <ClInclude Include="..\Header\Metric\OperatingExpenses_MY.h" />
     <ClInclude Include="..\Header\Metric\PPEDebtRatio_MY.h" />
     <ClInclude Include="..\Header\Metric\PPEDebtRatio_SY.h" />
+    <ClInclude Include="..\Header\Metric\PreferredStock_MY.h" />
+    <ClInclude Include="..\Header\Metric\PreferredStock_SY.h" />
     <ClInclude Include="..\Header\Metric\ReturnOnTotalAsset_MY.h" />
     <ClInclude Include="..\Header\Metric\ReturnOnTotalAsset_SY.h" />
     <ClInclude Include="..\Header\Metric\RND_MY.h" />

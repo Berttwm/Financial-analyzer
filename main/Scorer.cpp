@@ -57,6 +57,8 @@ void Scorer::process()
 	LongTermDebtEarningsRatio_MY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances, year_count);
 	AdjustedTotalDebtShareHolderEquityRatio_SY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances);
 	AdjustedTotalDebtShareHolderEquityRatio_MY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances, year_count);
+	PreferredStock_SY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances);
+	PreferredStock_MY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances, year_count);
 
 	// CashFlows
 	SellingAndBuyingStock_MY(this->stock, CURR_SCORE, &CategoryScores, &MetricScores, &MaxCategoryScores, &MaxMetricScores, &MetricPerformances, year_count);

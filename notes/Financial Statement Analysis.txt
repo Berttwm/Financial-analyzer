@@ -64,8 +64,8 @@ Liabilities:
 	- adjusted debt to equity ratio = (Total liabilities / Shareholders Equity + treasury stock), must be adjusted with share buybacks, bad companies have higher ratio, good companies below 0.8
 
 Total Shareholder Equity/net worth/book value (amt of money the shareholders/owners put in) - net worth = total assets - total liabilities. we can use this to calculate return on shareholders equity.
-1) Common stock (ownership in companies, board of directors decisions)- par value, not value sold to public
-2) Preferred Stock (no voting rights but right to fixed/adjustable dividend) - par value, not value sold to public - absence of pref stock in durable company
+-1) Common stock (ownership in companies, board of directors decisions)- par value, not value sold to public
+** 2) Preferred Stock (no voting rights but right to fixed/adjustable dividend) - par value, not value sold to public - absence of pref stock in durable company
 3) Paid in Capital - value of the entire volume of (stock par price - stock sold price)
 4) Retained Earnings (Company net earnings retained to keep company growing) 
 	- the most important factor is the rate of growth of the retained earnings,(Over 5 years - 7.9%(coke) to 23% (Berkshire))
