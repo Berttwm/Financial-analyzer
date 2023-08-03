@@ -11,5 +11,7 @@ public:
 	ParseMetricCmd(Scorer* scorer);
 	
 	void execute() override;
+
+	void get_help() override;
 	
 };

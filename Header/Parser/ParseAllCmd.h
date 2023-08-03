@@ -11,6 +11,7 @@ public:
 	ParseAllCmd(Scorer* scorer);
 
 	void execute() override;
+	void get_help() override;
 
 private:
 	void get_category_scores(Scorer* scorer);

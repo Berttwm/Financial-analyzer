@@ -23,6 +23,8 @@ public:
 
 	virtual void execute() = 0;
 
+	virtual void get_help() = 0;
+
 	void add_args(char ** input) {
 		args.push_back(input);
 	}

@@ -12,6 +12,8 @@ public:
 
 	void execute() override;
 
+	void get_help() override;
+
 	void add_prev_cmd(Commands*);
 
 private:

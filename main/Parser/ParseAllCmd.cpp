@@ -34,6 +34,11 @@ void ParseAllCmd::execute()
 
 }
 
+void ParseAllCmd::get_help()
+{
+    std::cout << std::endl << "Parse All Command Help" << std::endl;
+}
+
 void ParseAllCmd::get_category_scores(Scorer* scorer)
 {
 

@@ -50,4 +50,9 @@ void ParseMetricCmd::execute()
    
 }
 
+void ParseMetricCmd::get_help()
+{
+    std::cout << std::endl << "Parse Metric Command Help" << std::endl;
+}
+
 

@@ -51,4 +51,9 @@ void ParseCategoryCmd::execute()
 
 }
 
+void ParseCategoryCmd::get_help()
+{
+    std::cout << std::endl << "Parse Category Command Help" << std::endl;
+}
+
 

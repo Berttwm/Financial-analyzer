@@ -12,4 +12,5 @@ public:
 
 	void execute() override;
 
+	void get_help() override;
 };
