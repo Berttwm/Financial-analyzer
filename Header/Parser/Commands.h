@@ -15,7 +15,7 @@ protected:
 
 
 public:
-	std::vector<std::string *> args;
+	std::vector<char **> args;
 
 	Commands(Scorer* scorer) : scorer(scorer) {
 		args.reserve(ARG_LIMIT);
@@ -23,7 +23,7 @@ public:
 
 	virtual void execute() = 0;
 
-	void add_args(std::string* input) {
+	void add_args(char ** input) {
 		args.push_back(input);
 	}
 };

@@ -31,7 +31,7 @@ void ParseCategoryCmd::execute()
 
     int found_category = 0;
     // output only selected category
-    for (auto& selected_category : args) {
+    for (auto selected_category : args) {
 
         for (auto category : scorer->get_categoryscores())
         {

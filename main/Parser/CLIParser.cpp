@@ -62,7 +62,7 @@ void CLIParser::parse_input()
             }
 
         } else if (!cmd_stack.empty()) {
-            cmd_stack.top()->add_args(&input);
+            cmd_stack.top()->add_args(&argv[i]);
 
         }
         else {

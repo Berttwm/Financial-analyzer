@@ -30,7 +30,7 @@ void ParseMetricCmd::execute()
 
     int found_metric = 0;
     // output only selected metrics
-    for (auto& selected_metric : args) {
+    for (auto selected_metric : args) {
 
         for (auto metric : scorer->get_metricperformance())
         {
