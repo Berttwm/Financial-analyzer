@@ -52,7 +52,15 @@ void CLIParser::parse_input()
             if (cmd_type == CommandType::help)
             {
                 ParseHelpCmd cmd = ParseHelpCmd(scorer);
+                // take in the latest command as arg, check metric then get message
+                if (!cmd_stack.empty()) {
+                    cmd.add_prev_cmd(cmd_stack.top());
+                }
+
+                // clear stack 
+                cmd_stack = std::stack<Commands*>();
                 cmd_stack.push(&cmd);
+                break;
             }
 
             if (cmd_type == CommandType::all)
