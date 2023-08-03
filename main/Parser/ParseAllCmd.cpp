@@ -36,7 +36,20 @@ void ParseAllCmd::execute()
 
 void ParseAllCmd::get_help()
 {
-    std::cout << std::endl << "Parse All Command Help" << std::endl;
+    std::cout << std::endl <<
+        "Returns all information regarding the input stock\n\n"
+
+        "Usage : .\\main.exe STOCK --all \n\n"
+
+        "Things to take note: \n"
+        "   Keywords in uppercase e.g STOCK / PARAMS means that, it is a user input \n"
+        "   Keywords in [] means that, this parameter can be omitted \n\n"
+
+        "Examples: \n"
+        "   .\\main.exe tsla --all             Returns all information regarding Tesla \n"
+        "   .\\main.exe AAPL --all             Returns all information regarding Apple \n"
+
+        "\nUse .\\main.exe STOCK --all --help for more information about a given command." << std::endl;
 }
 
 void ParseAllCmd::get_category_scores(Scorer* scorer)

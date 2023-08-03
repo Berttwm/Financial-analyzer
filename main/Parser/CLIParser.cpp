@@ -84,7 +84,7 @@ void CLIParser::parse_input()
         cmd_stack.top()->execute();
         cmd_stack.pop();
     }
-    std::cout << std::endl << "[*LOG] Successfully executed all commands" << std::endl;
+    // std::cout << std::endl << "[*LOG] Successfully executed all commands" << std::endl;
 
 }
 

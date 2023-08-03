@@ -119,7 +119,7 @@ void Puller::read_stmt_annual_from_files()
     cash_flow_file.close();
     cash_flow_json_str = cash_flow_ss.str();
 
-    std::cout << "[*LOG] Successfully read statements from files" << std::endl;
+    //std::cout << "[*LOG] Successfully read statements from files" << std::endl;
 
 }
 
@@ -143,5 +143,5 @@ void Puller::parse_json()
     //std::cout << "test string for bal sheet = " << test_str_bal_sheet << std::endl;
     //std::cout << "test string for cash flow = " << test_str_cash_flow << std::endl;
 
-    std::cout << "[*LOG] Successfully parsed Json" << std::endl;
+    //std::cout << "[*LOG] Successfully parsed Json" << std::endl;
 }

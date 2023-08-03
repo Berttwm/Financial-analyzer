@@ -53,7 +53,26 @@ void ParseCategoryCmd::execute()
 
 void ParseCategoryCmd::get_help()
 {
-    std::cout << std::endl << "Parse Category Command Help" << std::endl;
+    if (args.empty()) {
+        std::cout << std::endl <<
+            "Returns the information of all the categories of the input stock\n\n"
+
+            "Usage : .\\main.exe STOCK --c [CATEGORY] \n\n"
+
+            "Things to take note: \n"
+            "   Keywords in uppercase e.g STOCK / PARAMS means that, it is a user input \n"
+            "   Keywords in [] means that, this parameter can be omitted \n\n"
+
+            "Examples: \n"
+            "   .\\main.exe tsla --c             Returns the information of all the categories of Tesla \n"
+            "   .\\main.exe AAPL --c             Returns the information of all the categories of Apple \n"
+
+            "\nUse .\\main.exe STOCK --c [CATEGORY] --help for more information about a given command." << std::endl;
+    }
+    else {
+        std::cout << std::endl <<
+            "Get specific help" << std::endl;
+    }
 }
 
 
