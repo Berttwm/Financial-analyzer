@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libParser.a CMakeFiles/Parser.dir/CLIParser.cpp.o CMakeFiles/Parser.dir/ParseAllCmd.cpp.o CMakeFiles/Parser.dir/ParseCategoryCmd.cpp.o CMakeFiles/Parser.dir/ParseHelpCmd.cpp.o CMakeFiles/Parser.dir/ParseMetricCmd.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libParser.a
