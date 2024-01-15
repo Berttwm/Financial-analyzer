@@ -1,0 +1,41 @@
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../Include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../Header)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../Parser)
+add_library(Metric 
+            AdjustedTotalDebtShareHolderEquityRatio_MY.cpp
+            AdjustedTotalDebtShareHolderEquityRatio_SY.cpp
+            CMakeLists.txt
+            CapexMargin_MY.cpp
+            CapexMargin_SY.cpp
+            DebtRatio_MY.cpp
+            DebtRatio_SY.cpp
+            Depreciation_MY.cpp
+            Depreciation_SY.cpp
+            EarningsGrowth_MY.cpp
+            Goodwill_MY.cpp
+            GrossProfitMargin_SY.cpp
+            InterestExpense_MY.cpp
+            InterestExpense_SY.cpp
+            LongTermDebtEarningsRatio_MY.cpp
+            NegativeEarnings_MY.cpp
+            NetEarningsOverRevenue_MY.cpp
+            NetEarnings_MY.cpp
+            OperatingExpenses_MY.cpp
+            PPEDebtRatio_MY.cpp
+            PPEDebtRatio_SY.cpp
+            PreferredStock_MY.cpp
+            PreferredStock_SY.cpp
+            RND_MY.cpp
+            RND_SY.cpp
+            ReturnOnTotalAsset_MY.cpp
+            ReturnOnTotalAsset_SY.cpp
+            SGA_MY.cpp
+            SGA_SY.cpp
+            SellingAndBuyingStock_MY.cpp
+            ShortLongTermDebtRatio_MY.cpp
+            ShortLongTermDebtRatio_SY.cpp
+            TotalCurrentRatio_MY.cpp
+            TotalCurrentRatio_SY.cpp
+            TotalInventory_MY.cpp
+            TotalReceivablesOverRevenue_MY.cpp
+            )
