@@ -129,9 +129,9 @@ void Puller::parse_json()
    // d_inc_stmt.Parse(inc_stmt_json_cstr);
    //std::cout << inc_stmt_json_str << std::endl;
    //d_inc_stmt = new rapidjson::Document();
-    if (this->d_inc_stmt.Parse<0>(inc_stmt_json_str.c_str()).HasParseError()) throw std::exception("[*ERROR] Unable to parse income statement");
-    if (this->d_bal_sheet.Parse<0>(bal_sheet_json_str.c_str()).HasParseError()) throw std::exception("[*ERROR] Unable to parse balance sheet");
-    if (this->d_cash_flow.Parse<0>(cash_flow_json_str.c_str()).HasParseError()) throw std::exception("[*ERROR] Unable to parse cash flow");
+    if (this->d_inc_stmt.Parse<0>(inc_stmt_json_str.c_str()).HasParseError()) throw std::runtime_error("[*ERROR] Unable to parse income statement");
+    if (this->d_bal_sheet.Parse<0>(bal_sheet_json_str.c_str()).HasParseError()) throw std::runtime_error("[*ERROR] Unable to parse balance sheet");
+    if (this->d_cash_flow.Parse<0>(cash_flow_json_str.c_str()).HasParseError()) throw std::runtime_error("[*ERROR] Unable to parse cash flow");
 
     // Test print method to play around with json parser - Example to play around with
     //      d_inc_stmt[0] = latest year, d_inc_stmt[1] = second latest year
