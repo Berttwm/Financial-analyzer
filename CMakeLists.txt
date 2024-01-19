@@ -8,7 +8,7 @@ include_directories(Header)
 include_directories(Header/Metric)
 include_directories(Header/Parser)
 include_directories(Include)
-include_directories(Include/curl)
+#include_directories(Include/curl)
 include_directories(Include/rapidjson)
 include_directories(Include/rapidjson/error)
 include_directories(Include/rapidjson/internal)
@@ -81,16 +81,6 @@ add_executable(Financial_analyzer
         Header/Statements.h
         Header/Stock.h
         Header/StockUtils.h
-        Include/curl/curl.h
-        Include/curl/curlver.h
-        Include/curl/easy.h
-        Include/curl/mprintf.h
-        Include/curl/multi.h
-        Include/curl/options.h
-        Include/curl/stdcheaders.h
-        Include/curl/system.h
-        Include/curl/typecheck-gcc.h
-        Include/curl/urlapi.h
         Include/rapidjson/error/en.h
         Include/rapidjson/error/error.h
         Include/rapidjson/internal/biginteger.h
@@ -177,6 +167,16 @@ add_executable(Financial_analyzer
 
 target_link_libraries(Financial_analyzer PUBLIC cpr::cpr)
 
+# Find libcurl
+find_package(CURL REQUIRED)
+
+# Include directories
+target_include_directories(Financial_analyzer PRIVATE ${CURL_INCLUDE_DIRS})
+
+# Link against libcurl
+target_link_libraries(Financial_analyzer PRIVATE ${CURL_LIBRARIES})
+
+
 # TODO: Add conditional to compile this when on Windows
 #Include/rapidjson/msinttypes/inttypes.h
 #Include/rapidjson/msinttypes/stdint.h
@@ -218,3 +218,15 @@ target_link_libraries(Financial_analyzer PUBLIC cpr::cpr)
 #        Include/cpr/user_agent.h
 #        Include/cpr/util.h
 #        Include/cpr/verbose.h
+
+# Old way to include curl
+#Include/curl/curl.h
+#Include/curl/curlver.h
+#Include/curl/easy.h
+#Include/curl/mprintf.h
+#Include/curl/multi.h
+#Include/curl/options.h
+#Include/curl/stdcheaders.h
+#Include/curl/system.h
+#Include/curl/typecheck-gcc.h
+#Include/curl/urlapi.h
