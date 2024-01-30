@@ -8,17 +8,13 @@ include_directories(Header)
 include_directories(Header/Metric)
 include_directories(Header/Parser)
 include_directories(Include)
-#include_directories(Include/curl)
 include_directories(Include/rapidjson)
 include_directories(Include/rapidjson/error)
 include_directories(Include/rapidjson/internal)
 
-# TODO: Add conditional to include this when on Windows
-#include_directories(Include/rapidjson/msinttypes)
-
-include(FetchContent)
-FetchContent_Declare(cpr GIT_REPOSITORY https://github.com/libcpr/cpr.git GIT_TAG 3b15fa82ea74739b574d705fea44959b58142eb8)
-FetchContent_MakeAvailable(cpr)
+if (MSVC)
+    include_directories(Include/rapidjson/msinttypes)
+endif()
 
 add_executable(Financial_analyzer
         Header/Metric/AdjustedTotalDebtShareHolderEquityRatio_MY.h
@@ -165,68 +161,20 @@ add_executable(Financial_analyzer
         main/Scorer.cpp
         main/Stock.cpp)
 
+if (MSVC)
+    add_executable(Financial_analyzer
+            Include/rapidjson/msinttypes/inttypes.h
+            Include/rapidjson/msinttypes/stdint.h
+    )
+endif()
+
+# Include cpr
+include(FetchContent)
+FetchContent_Declare(cpr GIT_REPOSITORY https://github.com/libcpr/cpr.git GIT_TAG 3b15fa82ea74739b574d705fea44959b58142eb8)
+FetchContent_MakeAvailable(cpr)
 target_link_libraries(Financial_analyzer PUBLIC cpr::cpr)
 
-# Find libcurl
+# Include libcurl
 find_package(CURL REQUIRED)
-
-# Include directories
 target_include_directories(Financial_analyzer PRIVATE ${CURL_INCLUDE_DIRS})
-
-# Link against libcurl
 target_link_libraries(Financial_analyzer PRIVATE ${CURL_LIBRARIES})
-
-
-# TODO: Add conditional to compile this when on Windows
-#Include/rapidjson/msinttypes/inttypes.h
-#Include/rapidjson/msinttypes/stdint.h
-
-# Old way to include cpr
-# TODO: Remove if not needed for Windows
-#        Include/cpr/api.h
-#        Include/cpr/auth.h
-#        Include/cpr/bearer.h
-#        Include/cpr/body.h
-#        Include/cpr/callback.h
-#        Include/cpr/connect_timeout.h
-#        Include/cpr/cookies.h
-#        Include/cpr/cpr.h
-#        Include/cpr/cprtypes.h
-#        Include/cpr/cprver.h
-#        Include/cpr/curl_container.h
-#        Include/cpr/curlholder.h
-#        Include/cpr/digest.h
-#        Include/cpr/error.h
-#        Include/cpr/http_version.h
-#        Include/cpr/interface.h
-#        Include/cpr/limit_rate.h
-#        Include/cpr/low_speed.h
-#        Include/cpr/multipart.h
-#        Include/cpr/ntlm.h
-#        Include/cpr/parameters.h
-#        Include/cpr/payload.h
-#        Include/cpr/proxies.h
-#        Include/cpr/proxyauth.h
-#        Include/cpr/range.h
-#        Include/cpr/redirect.h
-#        Include/cpr/response.h
-#        Include/cpr/session.h
-#        Include/cpr/ssl_options.h
-#        Include/cpr/status_codes.h
-#        Include/cpr/timeout.h
-#        Include/cpr/unix_socket.h
-#        Include/cpr/user_agent.h
-#        Include/cpr/util.h
-#        Include/cpr/verbose.h
-
-# Old way to include curl
-#Include/curl/curl.h
-#Include/curl/curlver.h
-#Include/curl/easy.h
-#Include/curl/mprintf.h
-#Include/curl/multi.h
-#Include/curl/options.h
-#Include/curl/stdcheaders.h
-#Include/curl/system.h
-#Include/curl/typecheck-gcc.h
-#Include/curl/urlapi.h
